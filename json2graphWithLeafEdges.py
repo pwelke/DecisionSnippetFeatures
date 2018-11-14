@@ -1,20 +1,3 @@
-
-# coding: utf-8
-
-# # Ideas
-# 
-# - random forests: are there frequent subtrees in the random forests generated from some data set
-# - labels of vertices in the forests can be of two variants:
-#     - only the feature on which the split happens
-#     - feature < threshold
-# - should we keep the leaf vertices (the decisions) or should we skip them?
-# - which subtrees are interesting?
-#     - each vertex in the tree defines a subtree of all vertices below it
-#     - rooted subtrees in the classical sense
-#     - unrooted subtrees
-#     
-# 
-
 ## This script creates a graph database from the decision trees in Sebastians json Format as follows:
 # - the root vertex of the tree has index 1 (counting starts with 1)
 # - each vertex is labeled by its split feature or by 'leaf'
