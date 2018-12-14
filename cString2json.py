@@ -60,6 +60,7 @@ def parseCStringFileFixedSizePatterns(fIn,  patternSize):
 	# transform to json strings
 	jsonCStrings = map(lambda pair: '{"patternid":' + pair[0] + ',"pattern":' + cString2json(pair[1]) + '}', pairs)
 
+	# if your memory explodes, feel free to change this line and the output mode of this function
 	jsonBlob = '[' + ',\n'.join(jsonCStrings) + ']'
 
 	return jsonBlob
@@ -85,6 +86,7 @@ def parseCStringFileUpToSizePatterns(fIn, patternSize):
 	# transform to json strings
 	jsonCStrings = map(lambda pair: '{"patternid":' + pair[0] + ',"pattern":' + cString2json(pair[1]) + '}', pairs)
 
+	# if your memory explodes, feel free to change this line and the output mode of this function
 	jsonBlob = '[' + ',\n'.join(jsonCStrings) + ']'
 
 	return jsonBlob
