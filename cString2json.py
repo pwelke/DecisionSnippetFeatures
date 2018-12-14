@@ -14,30 +14,30 @@ import sys
 
 
 def cString2json(cString):
-    '''Pascals canonical string format and the json format used in Dortmund are 
-    basically identical (up to ordering, symbols, and general feeling of course ;) ).
-    This is a converter that transforms a single tree from cString format to json format 
-    (entirely by string maipulation).'''
-    
-    intermediate = cString.replace('( leftChild', ',"leftChild":{').replace('( rightChild', ',"rightChild":{').replace(')', '}').replace('leaf', '-1 "prediction":[]')
-    tokens = intermediate.split(' ')
-    
-    json = ''
-    i = 0
-    for t in tokens:
-        try:
-            feature = int(t)
-            if feature != -1:
-                s = '"id":' + str(i) + ',"feature":' + t
-            else:
-                s = '"id":' + str(i) + ','
-            json += s
-            i += 1
-        except ValueError:
-            json += t
-            
-            
-    return ('{' + json.rstrip() + '}')
+	'''Pascals canonical string format and the json format used in Dortmund are 
+	basically identical (up to ordering, symbols, and general feeling of course ;) ).
+	This is a converter that transforms a single tree from cString format to json format 
+	(entirely by string maipulation).'''
+	
+	intermediate = cString.replace('( leftChild', ',"leftChild":{').replace('( rightChild', ',"rightChild":{').replace(')', '}').replace('leaf', '-1 "prediction":[]')
+	tokens = intermediate.split(' ')
+	
+	json = ''
+	i = 0
+	for t in tokens:
+		try:
+			feature = int(t)
+			if feature != -1:
+			    s = '"id":' + str(i) + ',"feature":' + t
+			else:
+			    s = '"id":' + str(i) + ','
+			json += s
+			i += 1
+		except ValueError:
+			json += t
+		    
+		    
+	return ('{' + json.rstrip() + '}')
 
 
 def parseCStringFileFixedSizePatterns(fIn,  patternSize):
