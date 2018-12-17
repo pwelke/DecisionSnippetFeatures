@@ -82,7 +82,7 @@ def findAllEmbeddings(pattern, patternid, transaction):
     mapping = checkForEmbedding(pattern, transaction)
     if mapping != None:
         transaction['patterns'].append((patternid, mapping))
-        print(transaction['patterns'])
+
 
 def initTransactionTreeForEmbeddingStorage(transaction):
     '''We want to be able to store all matching patterns and their embeddings at the
