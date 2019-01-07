@@ -24,19 +24,29 @@ def cString2json(cString):
 	
 	json = ''
 	i = 0
+	# convert the vertex labels of cString to feature (and split) infos
 	for t in tokens:
 		try:
+			# if t is an int, it is the label of a vertex in the cString and must be converted to "feature":t
 			feature = int(t)
 			if feature != -1:
-			    s = '"id":' + str(i) + ',"feature":' + t
+				s = '"id":' + str(i) + ',"feature":' + t
 			else:
-			    s = '"id":' + str(i) + ','
+				s = '"id":' + str(i) + ','
 			json += s
 			i += 1
 		except ValueError:
-			json += t
-		    
-		    
+			# this happens, if t is a label with split value of the form f<x or something that was already converted, 
+			# in which case t will just be appended 
+			hasSplitValues = t.split('<')
+			if len(hasSplitValues) == 2:
+				s = '"id":' + str(i) + ',"feature":' + hasSplitValues[0] + ',"split":' + hasSplitValues[1]
+				json += s
+				i += 1
+			else:
+				json += t
+
+
 	return ('{' + json.rstrip() + '}')
 
 
