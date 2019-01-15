@@ -67,7 +67,8 @@ def makeProperBinaryDT(vertex):
 
 
 
-# subclass Sebastians Tree class to have a function like predict that returns the leaf node id
+# subclass Sebastians Tree class to have a function like predict that returns the leaf node id on which the data maps
+# (instead of the prediction given by that node)
 
 class FeatureGeneratingTree(Tree.Tree):
     
@@ -102,6 +103,13 @@ class FrequentSubtreeFeatures():
         self.n_features = len(self.patterns)
 
     def get_n_values(self):
+        ''' To allow OneHotEncoding with a fixed number of features that does not depend on the data, 
+        but only on the FeatureGeneratingTrees present in the model, use the following code:
+
+        dsf = DecisionSnippetFeatures.FrequentSubtreeFeatures(map(lambda x: x['pattern'], frequentpatterns[-100:])) 
+        fts = dsf.fit_transform(X)
+        fts_onehot = OneHotEncoder(n_values=dsf.get_n_values()).fit_transform(fts)
+        '''
         return [pattern.n_nodes for pattern in self.patterns]
     
     def fit(self, X=None, y=None):
