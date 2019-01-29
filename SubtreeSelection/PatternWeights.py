@@ -11,10 +11,15 @@ from SubtreeSelection.cString2json import parseCStringFileUpToSizePatterns
 
 
 class PatternStatistics():
-    """Compute Statistics over all embeddings of a set of rooted subtress in a random forest.
-
+    """Compute Statistics over all embeddings of a set of rooted subtress in a random forest given a certain weightFunction.
 
     Subclasses of this class provide constructors to handle different input formats.
+
+    weightFunction must either be a string that appears in PatternStatistics.weightFunctions or a function that must accept
+    - a pattern of the form (id, tree) where id is an int and tree is a tree in a partial Buschjäger et al. format.
+    - a transaction vertex (the root of the embedding being currently weighted)
+    as input and
+    - output an int.
 
     """
 
@@ -78,17 +83,16 @@ class PatternStatistics():
 
 
 class PatternStatisticsFromPrecomputed(PatternStatistics):
+    """Compute weights of patterns (stored in patternFile) based on their embeddings in a random forest
+    (where the embeddings are already stored together with the random forest in transactionFile)
+    and output the most important / frequent / whatever patterns prettily.
+
+    See the base class for info on the possible weight functions.
+    See  __init__(...) for info on the input file formats.
+    """
 
     def __init__(self, patternFile, embeddingFile, weightFunction):
-        """Create an object that weights the embeddings (stored in transactionFile) of the patterns (stored in patternFile)
-        and outputs the most important / frequent / whatever patterns prettily.
 
-        weightFunction must either be a string that appears in PatternStatistics.weightFunctions or a function that must accept
-        - a pattern of the form (id, tree) where id is an int and tree is a tree in a partial Buschjäger et al. format.
-        - a transaction vertex (the root of the embedding being currently weighted)
-        as input and
-        - output an int.
-        """
         super(PatternStatisticsFromPrecomputed, self).__init__(weightFunction)
 
         f = open(patternFile)
@@ -101,8 +105,15 @@ class PatternStatisticsFromPrecomputed(PatternStatistics):
 
 
 class PatternStatisticsFromPatternSet(PatternStatistics):
+    """Compute weights of patterns (stored in patternFile) in a random forest (stored in transactionFile)
+    and output the most important / frequent / whatever patterns prettily.
+
+    See the base class for info on the possible weight functions.
+    See  __init__(...) for info on the input file formats.
+    """
 
     def __init__(self, patternFile, transactionFile, weightFunction):
+        """Compute a score for each pattern in pattern file that depends on all embeddings of the pattern in """
         super(PatternStatisticsFromPatternSet, self).__init__(weightFunction)
 
         pf = open(patternFile, 'r')
@@ -119,8 +130,28 @@ class PatternStatisticsFromPatternSet(PatternStatistics):
 
 
 class PatternStatisticsWithMining(PatternStatistics):
+    """Mine frequent rooted subtrees in a random forest, compute weights of these patterns in the random forest
+    and output the most important / frequent / whatever patterns prettily.
+
+    See the base class for info on the possible weight functions.
+    See  __init__(...) for info on the input file formats and parameters.
+    """
 
     def __init__(self, transactionFile, weightFunction, frequencyThreshold=10, maxPatternSize=10, withLeafVertices=True, withSplitValues=False):
+        '''Mine patterns, find all embeddings, and compute pattern weights, given a random forest and some parameters.
+
+        :param transactionFile: a json file in Buschjäger et al.s format containing a random forest
+        :param weightFunction: see base class PatternStatistics for available options
+        :param frequencyThreshold: an integer giving an absolute frequency threshold for mining. I.e., for a pattern to
+          be found frequent it must be subgraph isomorphic to at least frequencyThreshold many decision trees in the
+          random forest
+        :param maxPatternSize: an integer, specifying the maximum number of vertices of patterns
+        :param withLeafVertices: boolean. if False, leaf vertices are not considered in the frequent patterns.
+          (although, due to implementation, a single frequent 'leaf' pattern will be found.)
+        :param withSplitValues: (boolean) if False, then the vertices of the random forest are labeled only with the
+          split feature id. If True, then the vertices of the random forest are labeled 'split_feature_id<value'. This
+          usually results in a significantly lower number of frequent patterns.
+        '''
         super(PatternStatisticsWithMining, self).__init__(weightFunction)
         # store transactions in self.transactions
         tf = open(transactionFile, 'r')
