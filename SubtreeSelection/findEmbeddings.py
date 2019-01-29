@@ -98,9 +98,7 @@ def initTransactionTreeForEmbeddingStorage(transaction):
     transaction['patterns'] = list()
 
 
-def loadAndProcess(patternInput, transactionInput, transactionOutput):
-    transactions = json.load(transactionInput)
-    patterns = json.load(patternInput)
+def annotateEmbeddings(patterns, transactions):
     
     for transaction in transactions:
         initTransactionTreeForEmbeddingStorage(transaction)
@@ -108,17 +106,21 @@ def loadAndProcess(patternInput, transactionInput, transactionOutput):
     for transaction in transactions:
         for pattern in patterns:
             findAllEmbeddings(pattern['pattern'], pattern['patternid'], transaction)
-        
-    json.dump(transactions, transactionOutput)
-    
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
         sys.stderr.write('You need exactly two arguments: first a pattern file, second a transaction database, both in a certain json format\n')
         sys.exit(1)
-    else:
-        patternInFile = open(sys.argv[1], 'r')
-        transactionInFile = open(sys.argv[2], 'r')
-        loadAndProcess(patternInFile, transactionInFile, sys.stdout)
-        patternInFile.close()
-        transactionInFile.close()
+
+    transactionInFile = open(sys.argv[2], 'r')
+    transactions = json.load(transactionInFile)
+    transactionInFile.close()
+
+    patternInFile = open(sys.argv[1], 'r')
+    patterns = json.load(patternInFile)
+    patternInFile.close()
+
+    annotateEmbeddings(patterns, transactions)
+
+    json.dump(transactions, sys.stdout)
+
