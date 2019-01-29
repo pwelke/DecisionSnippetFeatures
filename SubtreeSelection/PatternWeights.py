@@ -100,10 +100,10 @@ class PatternStatisticsFromPrecomputed(PatternStatistics):
         f.close()
 
 
-class PatternStatisticsFromSkratch(PatternStatistics):
+class PatternStatisticsFromPatternSet(PatternStatistics):
 
     def __init__(self, patternFile, transactionFile, weightFunction):
-        super(PatternStatisticsFromSkratch, self).__init__(weightFunction)
+        super(PatternStatisticsFromPatternSet, self).__init__(weightFunction)
 
         pf = open(patternFile, 'r')
         patterns = json.load(pf)
