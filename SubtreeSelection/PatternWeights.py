@@ -1,11 +1,22 @@
 import json
+from collections import Counter
+import subprocess
+import tempfile
 
 # import from relative path
-from .findEmbeddings import annotateEmbeddings
-from collections import Counter
+from SubtreeSelection.findEmbeddings import annotateEmbeddings
+from SubtreeSelection.cString2json import parseCStringFileUpToSizePatterns
+
+
 
 
 class PatternStatistics():
+    """Compute Statistics over all embeddings of a set of rooted subtress in a random forest.
+
+
+    Subclasses of this class provide constructors to handle different input formats.
+
+    """
 
     transactions = None
     counter = None
@@ -105,3 +116,58 @@ class PatternStatisticsFromSkratch(PatternStatistics):
         self.patternDict = { pattern['patternid'] : pattern['pattern'] for pattern in patterns }
 
         annotateEmbeddings(patterns, self.transactions)
+
+
+class PatternStatisticsWithMining(PatternStatistics):
+
+    def __init__(self, transactionFile, weightFunction, frequencyThreshold=10, maxPatternSize=10, withLeafVertices=True, withSplitValues=False):
+        super(PatternStatisticsWithMining, self).__init__(weightFunction)
+        # store transactions in self.transactions
+        tf = open(transactionFile, 'r')
+        self.transactions = json.load(tf)
+        tf.close()
+        # convert transactions for mining
+        convertedTransactionFile = self.convertTransactions(transactionFile, withLeafVertices, withSplitValues)
+        # mine frequent patterns, annotate all embeddings of the patterns in self.transactions, and store patterns in self.patternDict
+        self.mineAndStore(convertedTransactionFile, frequencyThreshold, maxPatternSize)
+
+    def convertTransactions(self, transactionFile, withLeafVertices, withSplitValues):
+        # choose an appropriate converter from json to graph
+        converter = None
+        if withLeafVertices:
+            if withSplitValues:
+                converter = '../json2graphWithLeafEdgesWithSplitValues.py'
+            else:
+                converter = '../json2graphWithLeafEdges.py'
+        else:
+            if withSplitValues:
+                converter = '../json2graphNoLeafEdgesWithSplitValues.py'
+            else:
+                converter = '../json2graphNoLeafEdges.py'
+
+        # convert transaction json file to graph format used by lwgr and store it in a temp file
+        tmpfile = tempfile.NamedTemporaryFile()
+        finished = subprocess.run(['python3', converter, transactionFile], check=True, stdout=tmpfile)
+        return tmpfile
+
+    def mineAndStore(self, transactionFile, frequencyThreshold, maxPatternSize):
+        # compute frequent patterns using an external c program and store them in a temp file
+        tmpfile = tempfile.NamedTemporaryFile()
+        finished = subprocess.run(['../lwgr', '-erootedTrees', '-t' + str(frequencyThreshold), '-p' + str(maxPatternSize), '-o' + tmpfile.name, '-f/dev/null', transactionFile.name], check=True)
+
+        # convert patterns from cstring format to json
+        newtmphandle = open(tmpfile.name, 'r')
+        patterns = json.loads(parseCStringFileUpToSizePatterns(newtmphandle, maxPatternSize))
+        self.patternDict = {pattern['patternid']: pattern['pattern'] for pattern in patterns}
+        newtmphandle.close()
+        tmpfile.close()
+
+        # find all embeddings of the patterns and store these in self.transactions
+        annotateEmbeddings(patterns, self.transactions)
+
+
+
+if __name__ == '__main__':
+    transactionFile = '/home/pascal/Documents/Uni_synced/random_forests/forests/adult/text/RF_10.json'
+    test = PatternStatisticsWithMining(transactionFile, weightFunction='data_support', frequencyThreshold=10, maxPatternSize=10)
+    print(test.most_common_patterns_string())
