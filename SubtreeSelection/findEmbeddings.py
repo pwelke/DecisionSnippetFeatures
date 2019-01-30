@@ -60,7 +60,8 @@ def recCheckEmbedding(pattern, transaction, mapping):
 def checkForEmbedding(pattern, transaction):
     '''For two given root vertices, check whether pattern is a rooted 
     subtree of transaction such that the roots map to each other 
-    and return a mapping id->id if so, o/w None'''
+    and return a mapping id->id if so, o/w None
+    '''
     
     mapping = dict()
     if recCheckEmbedding(pattern, transaction, mapping):
@@ -72,7 +73,20 @@ def checkForEmbedding(pattern, transaction):
 def findAllEmbeddings(pattern, patternid, transaction):
     '''Find all embeddings of pattern into transaction and store them in the transaction
     at the positions where the root vertex of the pattern maps to.
-    This method expects to be called after initTransactionTreeForEmbeddingStorage()'''
+    This method expects to be called after initTransactionTreeForEmbeddingStorage()
+
+    There must be a smarter way than the following. 
+    However, this is rather easy to implement:
+    We iterate (recursively) over the transaction (decision) tree 
+    vertices $v$ and check whether there is a rooted subgraph 
+    isomorphism from pattern to the transaction mapping the root of 
+    pattern to $v$.
+    This is decided by (again) recursion over pattern and transaction 
+    simultaneously, as long as it fits.
+
+    We'll see whether this is fast enough for our case. Its something 
+    along $O(n * p)$ where $n$ and $p$ are the numbers of vertices of 
+    transactions and patterns, respectively.'''
     if 'feature' in transaction.keys():
         if 'leftChild' in transaction.keys():
             findAllEmbeddings(pattern, patternid, transaction['leftChild'])
