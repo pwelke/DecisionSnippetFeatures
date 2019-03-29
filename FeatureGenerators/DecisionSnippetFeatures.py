@@ -72,6 +72,7 @@ class FeatureGeneratingTree(Tree.Tree):
     def __init__(self, pattern):
         super(FeatureGeneratingTree, self).__init__()
         self.fromJSON(makeProperBinaryDT(pattern))
+        self.n_nodes = len(self.nodes)
 
     def get_features(self, x):
         curNode = self.head
