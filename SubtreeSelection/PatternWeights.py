@@ -5,6 +5,7 @@ import tempfile
 
 # import from relative path
 from SubtreeSelection.findEmbeddings import annotateEmbeddings
+from SubtreeSelection.findNonoverlappingEmbeddings import annotateNonoverlappingEmbeddingsBottomUp, annotateNonoverlappingEmbeddingsTopDown
 from SubtreeSelection.cString2json import parseCStringFileUpToSizePatterns
 
 
@@ -15,11 +16,13 @@ class PatternStatistics():
 
     Subclasses of this class provide constructors to handle different input formats.
 
-    weightFunction must either be a string that appears in PatternStatistics.weightFunctions or a function that must accept
+    :param weightFunction must either be a string that appears in PatternStatistics.weightFunctions or a function that must accept
     - a pattern of the form (id, tree) where id is an int and tree is a tree in a partial Buschjäger et al. format.
     - a transaction vertex (the root of the embedding being currently weighted)
     as input and
     - output an int.
+
+    :param overlap defines how to select a set of embeddings for each pattern. Are they allowed to overlap?
 
     """
 
@@ -27,12 +30,29 @@ class PatternStatistics():
     counter = None
     weightFunction = None
     patternDict = None
+    overlap = None
 
-    def __init__(self, weightFunction):
+    def __init__(self, weightFunction, overlap):
         if isinstance(weightFunction, str):
             self.weightFunction = self.weightFunctions[weightFunction]
         else:
             self.weightFunction = weightFunction
+
+        if isinstance(overlap, str):
+            self.overlap = self.overlapDict[overlap]
+        else:
+            raise ValueError('overlap must be str, but is ' + str(overlap))
+
+    overlapDict = {
+        # allow overlapping embeddings (i.e., consider all embeddings)
+        'yes' : annotateEmbeddings,
+
+        # bottom up greedy selection of nonoverlapping embeddings; maximizes number of nonoverlapping embeddings
+        'bottom_up' : annotateNonoverlappingEmbeddingsBottomUp,
+
+        # top down greedy selection of nonoverlapping embeddins; maximizes number of training examples seen by embeddings
+        'top_down' : annotateNonoverlappingEmbeddingsTopDown
+    }
 
     weightFunctions = {
         # weight each embedding with the data support of its root node, if the pattern has more than one vertex
@@ -42,8 +62,15 @@ class PatternStatistics():
         'frequency' : lambda p,t : 1,
 
         # this weight function tells us, how much vertices we could save in the RF by contracting each embedding of a pattern into a single vertex:
-        'single_node_compression' : lambda p,t : 1 if len(p[1]) - 1 > 1 else 0
+        'single_node_compression' : lambda p,t : len(p[1]) - 1
     }
+
+    def annotateTransactions(self, patterns):
+        '''This function is used by some subclasses to find and store the embeddings of the patterns in the transactions.
+        Either all embeddings are found, regardless whether they overlap, or a maximal set of nonoverlapping embeddings
+        is found by a bottom up algorithm. '''
+        self.overlap(patterns, self.transactions)
+
 
     def __embeddingStatsRec(self, currentNode):
 
@@ -91,9 +118,9 @@ class PatternStatisticsFromPrecomputed(PatternStatistics):
     See  __init__(...) for info on the input file formats.
     """
 
-    def __init__(self, patternFile, embeddingFile, weightFunction):
+    def __init__(self, patternFile, embeddingFile, weightFunction, overlap):
 
-        super(PatternStatisticsFromPrecomputed, self).__init__(weightFunction)
+        super(PatternStatisticsFromPrecomputed, self).__init__(weightFunction, overlap)
 
         f = open(patternFile)
         self.patternDict = { pattern['patternid'] : pattern['pattern'] for pattern in json.load(f) }
@@ -112,9 +139,12 @@ class PatternStatisticsFromPatternSet(PatternStatistics):
     See  __init__(...) for info on the input file formats.
     """
 
-    def __init__(self, patternFile, transactionFile, weightFunction):
-        """Compute a score for each pattern in pattern file that depends on all embeddings of the pattern in """
-        super(PatternStatisticsFromPatternSet, self).__init__(weightFunction)
+    def __init__(self, patternFile, transactionFile, weightFunction, overlap):
+        """Compute a score for each pattern in pattern file that depends on all embeddings of the pattern in the random
+        forest and output the most important / frequent / whatever patterns prettily.
+        """
+
+        super(PatternStatisticsFromPatternSet, self).__init__(weightFunction, overlap)
 
         pf = open(patternFile, 'r')
         patterns = json.load(pf)
@@ -126,7 +156,7 @@ class PatternStatisticsFromPatternSet(PatternStatistics):
 
         self.patternDict = { pattern['patternid'] : pattern['pattern'] for pattern in patterns }
 
-        annotateEmbeddings(patterns, self.transactions)
+        self.annotateTransactions(patterns)
 
 
 class PatternStatisticsWithMining(PatternStatistics):
@@ -137,7 +167,7 @@ class PatternStatisticsWithMining(PatternStatistics):
     See  __init__(...) for info on the input file formats and parameters.
     """
 
-    def __init__(self, transactionFile, weightFunction, frequencyThreshold=10, maxPatternSize=10, withLeafVertices=True, withSplitValues=False):
+    def __init__(self, transactionFile, weightFunction, overlap, frequencyThreshold=10, maxPatternSize=10, withLeafVertices=True, withSplitValues=False):
         '''Mine patterns, find all embeddings, and compute pattern weights, given a random forest and some parameters.
 
         :param transactionFile: a json file in Buschjäger et al.s format containing a random forest
@@ -152,7 +182,7 @@ class PatternStatisticsWithMining(PatternStatistics):
           split feature id. If True, then the vertices of the random forest are labeled 'split_feature_id<value'. This
           usually results in a significantly lower number of frequent patterns.
         '''
-        super(PatternStatisticsWithMining, self).__init__(weightFunction)
+        super(PatternStatisticsWithMining, self).__init__(weightFunction, overlap)
         # store transactions in self.transactions
         tf = open(transactionFile, 'r')
         self.transactions = json.load(tf)
@@ -194,11 +224,11 @@ class PatternStatisticsWithMining(PatternStatistics):
         tmpfile.close()
 
         # find all embeddings of the patterns and store these in self.transactions
-        annotateEmbeddings(patterns, self.transactions)
+        self.annotateTransactions(patterns)
 
 
 
 if __name__ == '__main__':
     transactionFile = '/home/pascal/Documents/Uni_synced/random_forests/forests/adult/text/RF_10.json'
-    test = PatternStatisticsWithMining(transactionFile, weightFunction='data_support', frequencyThreshold=10, maxPatternSize=10)
+    test = PatternStatisticsWithMining(transactionFile, weightFunction='data_support', overlap=False, frequencyThreshold=10, maxPatternSize=10)
     print(test.most_common_patterns_string())
