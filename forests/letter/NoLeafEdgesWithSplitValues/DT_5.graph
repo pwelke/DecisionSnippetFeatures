@@ -1,0 +1,4 @@
+# 0 0 63 30
+6<9 10<2 12<1 8<5 12<0 leaf leaf 6<5 leaf leaf 8<3 13<2 leaf leaf 14<1 leaf leaf 7<1 2<4 12<0 leaf leaf 14<2 leaf leaf 9<13 14<2 leaf leaf 11<6 leaf leaf 12<5 8<5 12<1 9<8 leaf leaf 10<9 leaf leaf 5<4 10<9 leaf leaf 6<10 leaf leaf 10<7 1<10 5<7 leaf leaf 0<10 leaf leaf 13<9 9<8 leaf leaf 14<2 leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 11 15 rightChild 2 18 rightChild 18 19 leftChild 19 20 leftChild 19 23 rightChild 18 26 rightChild 26 27 leftChild 26 30 rightChild 1 33 rightChild 33 34 leftChild 34 35 leftChild 35 36 leftChild 35 39 rightChild 34 42 rightChild 42 43 leftChild 42 46 rightChild 33 49 rightChild 49 50 leftChild 50 51 leftChild 50 54 rightChild 49 57 rightChild 57 58 leftChild 57 61 rightChild 
+$
