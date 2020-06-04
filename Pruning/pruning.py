@@ -24,6 +24,9 @@ import numpy as np
 def Min_IntSet(intervals):
     #preparations: initialize two lists and the number of intervals
     s = []; I = []; n = len(intervals)
+    if n == 0:
+        return s, I
+    
     #from now on we follow the pseudocode of Algorithm 1 Min_IntSet (k is not needed)
     i = sorted(range(len(intervals)), key=lambda x: intervals[x][0])    #calculate the indices that would sort the intervals by the values of l_i in ascending order
     t = intervals[i[0]][1]; b = 0
@@ -56,8 +59,6 @@ def Min_DBN(feature_vectors, decision_forest, sigma):
             if (i is None) or ( theta is None ):
                 continue
             l, u = get_lu(X_lower[h], X_higher[h], sigma, min_l[i], max_u[i])
-            #if j ==0 and h==0:
-                #print(l, u)
             L[i].append((l,u, j, h))
 
     for i in range(d):
