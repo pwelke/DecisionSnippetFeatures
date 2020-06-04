@@ -2,3 +2,4 @@ arch-forest/*/*
 !arch-forest/*/trainForest.py
 !arch-forest/*/init.sh
 .ipynb_checkpoints/
+forests
