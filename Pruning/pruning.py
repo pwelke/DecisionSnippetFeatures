@@ -167,27 +167,41 @@ def get_feature_vectors():
     #X = np.vstack((red[:,:-1],white[:,:-1])).astype(dtype=np.float32)
     data = np.genfromtxt("create_test_RF/test_dataset.csv", delimiter=';', skip_header=1)
     X = data[:,:-1]
+    X.dump("create_test_RF/FeatureVectors.dat")
     return X
 
+
+
 if __name__ == '__main__':
-    input_file = "create_test_RF/RF_5.json"
+    #expects three parameters
+    if len(sys.argv) != 4:
+        print('Invalid number of arguments. Please provide the following parameters \n \
+              1. the input file of the forest (json), \n \
+              2. the input file of the feature vectors (json) and \n \
+              3. the parameter sigma.')
+        sys.exit()
+        
+    input_file = sys.argv[1]
+    feature_vectors_file = sys.argv[2]
+    sigma = float(sys.argv[3])
+    
     f = Forest.Forest()
     f.fromJSON(input_file)
     print(f.trees[0].getNumNodes())
     t = f.trees[0]
     print(t.nodes[0])
     
-    feature_vectors = get_feature_vectors()
+    feature_vectors = np.load(feature_vectors_file, allow_pickle=True)
     print(feature_vectors[0])
     print(feature_vectors.shape)
 
-    sigma=0.1
     Min_DBN(feature_vectors, f, sigma)
     post_processing(f)
     print(f.pstr())
     
-    output_file = input_file.split('.')[0]
-    output_file += '_pruned.json'
+    #save the pruned forest in a json file
+    sigma_as_string = '_'.join(str(sigma).split('.'))
+    output_file = input_file.split('.')[0] + '_pruned_with_sigma_' + sigma_as_string + '.json'
     
     with open(output_file, 'w') as outfile:
         json.dump(f.pstr(), outfile)
