@@ -14,7 +14,8 @@ def main(argv):
 	# NOTE: It seems, that SKLEarn produces an internal mapping from 0-(|Y| - 1) for classification
 	# 		For some reason I was not able to extract this mapping from SKLearn ?!?!
 	Y = Y-min(Y)
-
+	
+	X.dump("FeatureVectors.dat")
 	fitModels(False,X,Y)
 
 if __name__ == "__main__":
