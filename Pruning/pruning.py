@@ -13,10 +13,9 @@ by Nakamura and Sakurada
 #Input: List of 2-Tuples
 #Output: 2 Lists: List one contains real numbers, List two conains Lists of indices
 import sys
-sys.path.append('../arch-forest/code/')
+sys.path.append('arch-forest/code/')
 import Forest
 import numpy as np
-import json
 
 #from code.Forest import *
 
@@ -57,8 +56,8 @@ def Min_DBN(feature_vectors, decision_forest, sigma):
             if (i is None) or ( theta is None ):
                 continue
             l, u = get_lu(X_lower[h], X_higher[h], sigma, min_l[i], max_u[i])
-            if j ==0 and h==0:
-                print(l, u)
+            #if j ==0 and h==0:
+                #print(l, u)
             L[i].append((l,u, j, h))
 
     for i in range(d):
@@ -112,7 +111,7 @@ def get_lu(X_lower, X_higher, sigma, min_l, max_u):
         #following could definitely be more efficient by using argpartition
         u = np.sort(X_higher)[Threshold] #+epsilon #min
 
-    print(X_lower, X_higher, l, u)
+    #print(X_lower, X_higher, l, u)
     return l, u
 
     #np.argpartition(vals,)
@@ -190,17 +189,13 @@ if __name__ == '__main__':
     
     f = Forest.Forest()
     f.fromJSON(input_file)
-    print(f.trees[0].getNumNodes())
     t = f.trees[0]
-    print(t.nodes[0])
     
     feature_vectors = np.load(feature_vectors_file, allow_pickle=True)
-    print(feature_vectors[0])
-    print(feature_vectors.shape)
 
     Min_DBN(feature_vectors, f, sigma)
     post_processing(f)
-    print(f.pstr())
+    #print(f.pstr())
     
     #save the pruned forest in a json file
     sigma_as_string = '_'.join(str(sigma).split('.'))

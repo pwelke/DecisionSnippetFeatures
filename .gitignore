@@ -3,3 +3,4 @@ arch-forest/*/*
 !arch-forest/*/init.sh
 .ipynb_checkpoints/
 forests
+.ipynb_checkpoints
