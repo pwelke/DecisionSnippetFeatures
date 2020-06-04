@@ -173,6 +173,9 @@ def get_feature_vectors():
 
 
 if __name__ == '__main__':
+    #try out the following command in a terminal:
+    #./pruning.py create_test_RF/RF_5.json create_test_RF/FeatureVectors.dat 0.1
+    
     #expects three parameters
     if len(sys.argv) != 4:
         print('Invalid number of arguments. Please provide the following parameters \n \
@@ -204,7 +207,7 @@ if __name__ == '__main__':
     output_file = input_file.split('.')[0] + '_pruned_with_sigma_' + sigma_as_string + '.json'
     
     with open(output_file, 'w') as outfile:
-        json.dump(f.pstr(), outfile)
+        outfile.write(f.str())
 
 
 ################ Remarks
