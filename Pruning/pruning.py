@@ -13,7 +13,8 @@ by Nakamura and Sakurada
 #Input: List of 2-Tuples
 #Output: 2 Lists: List one contains real numbers, List two conains Lists of indices
 import sys
-sys.path.append('arch-forest/code/')
+sys.path.append('arch-forest/code/')		#for execution as: python Pruning/pruning.py
+sys.path.append('../arch-forest/code/')		#for execution as: python pruning.py
 import Forest
 import numpy as np
 
