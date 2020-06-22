@@ -1,0 +1,76 @@
+# 0 0 41 19
+4 22 24 8 23 leaf leaf 11 leaf leaf 15 56 leaf leaf 18 leaf leaf 43 52 26 leaf leaf leaf leaf 25 28 52 43 leaf leaf 41 leaf leaf leaf 17 leaf 20 leaf 26 leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 11 15 rightChild 2 18 rightChild 18 19 leftChild 19 20 leftChild 1 25 rightChild 25 26 leftChild 26 27 leftChild 27 28 leftChild 27 31 rightChild 25 35 rightChild 35 37 rightChild 37 39 rightChild 
+# 1 0 39 18
+6 51 7 51 24 leaf leaf 52 leaf leaf 29 52 leaf leaf leaf 8 45 24 leaf leaf leaf 17 leaf 5 leaf leaf 34 26 15 54 leaf leaf 32 leaf leaf leaf 51 leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 2 16 rightChild 16 17 leftChild 17 18 leftChild 16 22 rightChild 22 24 rightChild 1 27 rightChild 27 28 leftChild 28 29 leftChild 29 30 leftChild 29 33 rightChild 27 37 rightChild 
+# 2 0 59 28
+55 4 51 54 20 leaf leaf 56 leaf leaf 11 52 leaf leaf 25 leaf leaf 24 20 51 leaf leaf 51 leaf leaf 17 24 leaf leaf leaf 23 16 6 24 leaf leaf 20 leaf leaf 36 11 leaf leaf 7 leaf leaf 44 54 8 leaf leaf 25 leaf leaf 20 leaf 18 leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 11 15 rightChild 2 18 rightChild 18 19 leftChild 19 20 leftChild 19 23 rightChild 18 26 rightChild 26 27 leftChild 1 31 rightChild 31 32 leftChild 32 33 leftChild 33 34 leftChild 33 37 rightChild 32 40 rightChild 40 41 leftChild 40 44 rightChild 31 47 rightChild 47 48 leftChild 48 49 leftChild 48 52 rightChild 47 55 rightChild 55 57 rightChild 
+# 3 0 51 24
+17 9 51 56 24 leaf leaf 25 leaf leaf 52 54 leaf leaf 24 leaf leaf 4 55 52 leaf leaf 49 leaf leaf 54 39 leaf leaf 25 leaf leaf 51 52 25 4 leaf leaf leaf 12 54 leaf leaf leaf 34 14 26 leaf leaf leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 11 15 rightChild 2 18 rightChild 18 19 leftChild 19 20 leftChild 19 23 rightChild 18 26 rightChild 26 27 leftChild 26 30 rightChild 1 33 rightChild 33 34 leftChild 34 35 leftChild 35 36 leftChild 34 40 rightChild 40 41 leftChild 33 45 rightChild 45 46 leftChild 46 47 leftChild 
+# 4 0 53 25
+51 6 52 22 54 leaf leaf 48 leaf leaf 34 18 leaf leaf leaf 44 35 52 leaf leaf 2 leaf leaf leaf 24 56 54 20 leaf leaf 34 leaf leaf 38 41 leaf leaf 39 leaf leaf 49 2 9 leaf leaf 20 leaf leaf 8 leaf 48 leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 2 16 rightChild 16 17 leftChild 17 18 leftChild 17 21 rightChild 1 25 rightChild 25 26 leftChild 26 27 leftChild 27 28 leftChild 27 31 rightChild 26 34 rightChild 34 35 leftChild 34 38 rightChild 25 41 rightChild 41 42 leftChild 42 43 leftChild 42 46 rightChild 41 49 rightChild 49 51 rightChild 
+# 5 0 55 26
+15 56 6 23 17 leaf leaf leaf 11 18 leaf leaf 54 leaf leaf 22 20 24 leaf leaf 24 leaf leaf 52 22 leaf leaf 37 leaf leaf 25 41 11 40 leaf leaf 2 leaf leaf 55 41 leaf leaf 22 leaf leaf 25 51 leaf 30 leaf leaf 35 leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 3 9 rightChild 9 10 leftChild 9 13 rightChild 2 16 rightChild 16 17 leftChild 17 18 leftChild 17 21 rightChild 16 24 rightChild 24 25 leftChild 24 28 rightChild 1 31 rightChild 31 32 leftChild 32 33 leftChild 33 34 leftChild 33 37 rightChild 32 40 rightChild 40 41 leftChild 40 44 rightChild 31 47 rightChild 47 48 leftChild 48 50 rightChild 47 53 rightChild 
+# 6 0 51 24
+51 22 54 4 24 leaf leaf 15 leaf leaf 26 21 leaf leaf leaf 35 55 5 leaf leaf 13 leaf leaf 3 leaf leaf 4 6 55 54 leaf leaf 34 leaf leaf 56 18 leaf leaf 56 leaf leaf 33 43 56 leaf leaf 51 leaf leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 2 16 rightChild 16 17 leftChild 17 18 leftChild 17 21 rightChild 16 24 rightChild 1 27 rightChild 27 28 leftChild 28 29 leftChild 29 30 leftChild 29 33 rightChild 28 36 rightChild 36 37 leftChild 36 40 rightChild 27 43 rightChild 43 44 leftChild 44 45 leftChild 44 48 rightChild 
+# 7 0 55 26
+52 15 23 55 20 leaf leaf 4 leaf leaf 29 44 leaf leaf leaf 25 51 6 leaf leaf 12 leaf leaf 22 2 leaf leaf leaf 51 36 26 8 leaf leaf leaf 24 21 leaf leaf 10 leaf leaf 11 44 52 leaf leaf leaf 41 24 leaf leaf 41 leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 2 16 rightChild 16 17 leftChild 17 18 leftChild 17 21 rightChild 16 24 rightChild 24 25 leftChild 1 29 rightChild 29 30 leftChild 30 31 leftChild 31 32 leftChild 30 36 rightChild 36 37 leftChild 36 40 rightChild 29 43 rightChild 43 44 leftChild 44 45 leftChild 43 49 rightChild 49 50 leftChild 49 53 rightChild 
+# 8 0 43 20
+4 10 23 22 6 leaf leaf 24 leaf leaf 36 44 leaf leaf leaf 51 20 36 leaf leaf leaf 24 8 leaf leaf leaf 26 18 19 54 leaf leaf 4 leaf leaf 24 41 leaf leaf 52 leaf leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 2 16 rightChild 16 17 leftChild 17 18 leftChild 16 22 rightChild 22 23 leftChild 1 27 rightChild 27 28 leftChild 28 29 leftChild 29 30 leftChild 29 33 rightChild 28 36 rightChild 36 37 leftChild 36 40 rightChild 
+# 9 0 53 25
+55 20 21 55 2 leaf leaf 6 leaf leaf leaf 6 17 52 leaf leaf 16 leaf leaf 24 26 leaf leaf leaf 36 20 24 32 leaf leaf 4 leaf leaf 51 26 leaf leaf 56 leaf leaf 51 10 18 leaf leaf leaf 24 49 leaf leaf 49 leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 2 12 rightChild 12 13 leftChild 13 14 leftChild 13 17 rightChild 12 20 rightChild 20 21 leftChild 1 25 rightChild 25 26 leftChild 26 27 leftChild 27 28 leftChild 27 31 rightChild 26 34 rightChild 34 35 leftChild 34 38 rightChild 25 41 rightChild 41 42 leftChild 42 43 leftChild 41 47 rightChild 47 48 leftChild 47 51 rightChild 
+# 10 0 53 25
+55 20 22 52 18 leaf leaf 56 leaf leaf 18 54 leaf leaf leaf 42 55 17 leaf leaf 22 leaf leaf leaf 36 18 26 55 leaf leaf leaf 23 56 leaf leaf 54 leaf leaf 51 18 56 leaf leaf 54 leaf leaf 3 42 leaf leaf 54 leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 2 16 rightChild 16 17 leftChild 17 18 leftChild 17 21 rightChild 1 25 rightChild 25 26 leftChild 26 27 leftChild 27 28 leftChild 26 32 rightChild 32 33 leftChild 32 36 rightChild 25 39 rightChild 39 40 leftChild 40 41 leftChild 40 44 rightChild 39 47 rightChild 47 48 leftChild 47 51 rightChild 
+# 11 0 47 22
+52 17 30 4 3 leaf leaf 51 leaf leaf leaf 20 55 11 leaf leaf 25 leaf leaf 34 55 leaf leaf 24 leaf leaf 26 49 24 41 leaf leaf 51 leaf leaf 20 41 leaf leaf 14 leaf leaf 49 9 leaf leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 2 12 rightChild 12 13 leftChild 13 14 leftChild 13 17 rightChild 12 20 rightChild 20 21 leftChild 20 24 rightChild 1 27 rightChild 27 28 leftChild 28 29 leftChild 29 30 leftChild 29 33 rightChild 28 36 rightChild 36 37 leftChild 36 40 rightChild 27 43 rightChild 43 44 leftChild 
+# 12 0 49 23
+56 52 16 9 23 leaf leaf 9 leaf leaf 24 51 leaf leaf leaf 41 36 45 leaf leaf leaf leaf 20 25 24 45 leaf leaf 3 leaf leaf 36 53 leaf leaf 15 leaf leaf 25 18 55 leaf leaf 23 leaf leaf 15 leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 2 16 rightChild 16 17 leftChild 17 18 leftChild 1 23 rightChild 23 24 leftChild 24 25 leftChild 25 26 leftChild 25 29 rightChild 24 32 rightChild 32 33 leftChild 32 36 rightChild 23 39 rightChild 39 40 leftChild 40 41 leftChild 40 44 rightChild 39 47 rightChild 
+# 13 0 47 22
+54 6 22 17 36 leaf leaf 29 leaf leaf 55 18 leaf leaf 56 leaf leaf 31 40 51 leaf leaf leaf leaf 26 24 8 4 leaf leaf 34 leaf leaf 4 24 leaf leaf 0 leaf leaf 26 leaf 8 leaf 24 leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 11 15 rightChild 2 18 rightChild 18 19 leftChild 19 20 leftChild 1 25 rightChild 25 26 leftChild 26 27 leftChild 27 28 leftChild 27 31 rightChild 26 34 rightChild 34 35 leftChild 34 38 rightChild 25 41 rightChild 41 43 rightChild 43 45 rightChild 
+# 14 0 45 21
+56 23 15 6 51 leaf leaf 54 leaf leaf 56 20 leaf leaf 9 leaf leaf 6 49 leaf leaf leaf 51 26 36 4 leaf leaf 10 leaf leaf leaf 26 4 16 leaf leaf 51 leaf leaf 36 56 leaf leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 11 15 rightChild 2 18 rightChild 18 19 leftChild 1 23 rightChild 23 24 leftChild 24 25 leftChild 25 26 leftChild 25 29 rightChild 23 33 rightChild 33 34 leftChild 34 35 leftChild 34 38 rightChild 33 41 rightChild 41 42 leftChild 
+# 15 0 47 22
+22 25 51 20 6 leaf leaf 11 leaf leaf 54 15 leaf leaf 45 leaf leaf 6 27 55 leaf leaf leaf 5 leaf leaf 36 51 0 20 leaf leaf leaf 18 15 leaf leaf 55 leaf leaf 2 29 51 leaf leaf leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 11 15 rightChild 2 18 rightChild 18 19 leftChild 19 20 leftChild 18 24 rightChild 1 27 rightChild 27 28 leftChild 28 29 leftChild 29 30 leftChild 28 34 rightChild 34 35 leftChild 34 38 rightChild 27 41 rightChild 41 42 leftChild 42 43 leftChild 
+# 16 0 51 24
+15 51 23 16 52 leaf leaf 55 leaf leaf 55 44 leaf leaf leaf 23 4 51 leaf leaf 52 leaf leaf 44 7 leaf leaf 7 leaf leaf 51 36 5 54 leaf leaf leaf 5 2 leaf leaf leaf 30 25 55 leaf leaf 55 leaf leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 2 16 rightChild 16 17 leftChild 17 18 leftChild 17 21 rightChild 16 24 rightChild 24 25 leftChild 24 28 rightChild 1 31 rightChild 31 32 leftChild 32 33 leftChild 33 34 leftChild 32 38 rightChild 38 39 leftChild 31 43 rightChild 43 44 leftChild 44 45 leftChild 44 48 rightChild 
+# 17 0 45 21
+51 54 10 22 6 leaf leaf 25 leaf leaf 4 17 leaf leaf leaf 50 36 26 leaf leaf leaf 26 leaf leaf 23 15 56 18 leaf leaf 52 leaf leaf 28 36 leaf leaf leaf 45 32 51 leaf leaf leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 2 16 rightChild 16 17 leftChild 17 18 leftChild 16 22 rightChild 1 25 rightChild 25 26 leftChild 26 27 leftChild 27 28 leftChild 27 31 rightChild 26 34 rightChild 34 35 leftChild 25 39 rightChild 39 40 leftChild 40 41 leftChild 
+# 18 0 37 17
+23 20 3 54 7 leaf leaf 6 leaf leaf 47 leaf leaf 29 15 56 leaf leaf 26 leaf leaf leaf 25 54 20 16 leaf leaf 11 leaf leaf 49 4 leaf leaf leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 2 14 rightChild 14 15 leftChild 15 16 leftChild 15 19 rightChild 1 23 rightChild 23 24 leftChild 24 25 leftChild 25 26 leftChild 25 29 rightChild 24 32 rightChild 32 33 leftChild 
+# 19 0 47 22
+6 4 8 15 25 leaf leaf 56 leaf leaf 32 52 leaf leaf 15 leaf leaf 36 54 52 leaf leaf 27 leaf leaf 5 24 leaf leaf 22 leaf leaf 31 50 45 9 leaf leaf 49 leaf leaf 26 50 leaf leaf leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 11 15 rightChild 2 18 rightChild 18 19 leftChild 19 20 leftChild 19 23 rightChild 18 26 rightChild 26 27 leftChild 26 30 rightChild 1 33 rightChild 33 34 leftChild 34 35 leftChild 35 36 leftChild 35 39 rightChild 34 42 rightChild 42 43 leftChild 
+# 20 0 49 23
+4 23 20 52 21 leaf leaf 34 leaf leaf 54 51 leaf leaf 51 leaf leaf 36 25 20 leaf leaf leaf leaf 54 24 15 23 leaf leaf 26 leaf leaf 55 11 leaf leaf 4 leaf leaf 30 48 45 leaf leaf 2 leaf leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 11 15 rightChild 2 18 rightChild 18 19 leftChild 19 20 leftChild 1 25 rightChild 25 26 leftChild 26 27 leftChild 27 28 leftChild 27 31 rightChild 26 34 rightChild 34 35 leftChild 34 38 rightChild 25 41 rightChild 41 42 leftChild 42 43 leftChild 42 46 rightChild 
+# 21 0 41 19
+25 8 55 55 39 leaf leaf 15 leaf leaf 24 6 leaf leaf 9 leaf leaf 22 52 6 leaf leaf 8 leaf leaf 22 28 leaf leaf 23 leaf leaf 21 6 51 22 leaf leaf leaf leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 11 15 rightChild 2 18 rightChild 18 19 leftChild 19 20 leftChild 19 23 rightChild 18 26 rightChild 26 27 leftChild 26 30 rightChild 1 33 rightChild 33 34 leftChild 34 35 leftChild 35 36 leftChild 
+# 22 0 47 22
+52 55 26 15 18 leaf leaf 36 leaf leaf leaf 34 4 49 leaf leaf 48 leaf leaf leaf 36 22 54 26 leaf leaf 48 leaf leaf 23 52 leaf leaf 20 leaf leaf 54 2 36 leaf leaf leaf 25 6 leaf leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 2 12 rightChild 12 13 leftChild 13 14 leftChild 13 17 rightChild 1 21 rightChild 21 22 leftChild 22 23 leftChild 23 24 leftChild 23 27 rightChild 22 30 rightChild 30 31 leftChild 30 34 rightChild 21 37 rightChild 37 38 leftChild 38 39 leftChild 37 43 rightChild 43 44 leftChild 
+# 23 0 55 26
+51 20 6 22 24 leaf leaf 23 leaf leaf 4 49 leaf leaf 25 leaf leaf 6 52 44 leaf leaf 20 leaf leaf 51 56 leaf leaf 20 leaf leaf 23 56 44 22 leaf leaf 15 leaf leaf 28 38 leaf leaf leaf 44 16 51 leaf leaf leaf 52 leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 11 15 rightChild 2 18 rightChild 18 19 leftChild 19 20 leftChild 19 23 rightChild 18 26 rightChild 26 27 leftChild 26 30 rightChild 1 33 rightChild 33 34 leftChild 34 35 leftChild 35 36 leftChild 35 39 rightChild 34 42 rightChild 42 43 leftChild 33 47 rightChild 47 48 leftChild 48 49 leftChild 47 53 rightChild 
+# 24 0 45 21
+55 22 51 52 18 leaf leaf 12 leaf leaf 20 19 leaf leaf 4 leaf leaf 56 55 leaf leaf leaf 52 6 51 16 leaf leaf 18 leaf leaf 26 47 leaf leaf leaf 25 45 26 leaf leaf leaf 6 leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 11 15 rightChild 2 18 rightChild 18 19 leftChild 1 23 rightChild 23 24 leftChild 24 25 leftChild 25 26 leftChild 25 29 rightChild 24 32 rightChild 32 33 leftChild 23 37 rightChild 37 38 leftChild 38 39 leftChild 37 43 rightChild 
+$

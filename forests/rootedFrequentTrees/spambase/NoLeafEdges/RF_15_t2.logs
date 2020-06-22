@@ -1,0 +1,15 @@
+Write patterns to file: forests/rootedFrequentTrees/spambase/NoLeafEdgesWithSplitValues/RF_15_t2.patterns
+Number of frequent vertices: 1027
+Number of frequent edges: 2
+Processing patterns with 2 vertices:
+generated extensions: 4
+unique extensions: 4
+apriori filtered extensions: 4
+intersection filtered extensions: 4
+frequent patterns: 1
+Processing patterns with 3 vertices:
+generated extensions: 3
+unique extensions: 3
+apriori filtered extensions: 1
+intersection filtered extensions: 1
+frequent patterns: 0
