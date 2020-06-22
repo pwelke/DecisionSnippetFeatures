@@ -1,0 +1,4 @@
+# 0 0 63 30
+323 436 329 380 468 leaf leaf 412 leaf leaf 539 373 leaf leaf 487 leaf leaf 596 571 402 leaf leaf 684 leaf leaf 299 516 leaf leaf 128 leaf leaf 494 462 488 520 leaf leaf 152 leaf leaf 318 206 leaf leaf 408 leaf leaf 156 405 596 leaf leaf 344 leaf leaf 317 583 leaf leaf 426 leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 11 15 rightChild 2 18 rightChild 18 19 leftChild 19 20 leftChild 19 23 rightChild 18 26 rightChild 26 27 leftChild 26 30 rightChild 1 33 rightChild 33 34 leftChild 34 35 leftChild 35 36 leftChild 35 39 rightChild 34 42 rightChild 42 43 leftChild 42 46 rightChild 33 49 rightChild 49 50 leftChild 50 51 leftChild 50 54 rightChild 49 57 rightChild 57 58 leftChild 57 61 rightChild 
+$

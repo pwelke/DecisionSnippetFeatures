@@ -1,0 +1,21 @@
+Write patterns to file: forests/rootedFrequentTrees/wine-quality/WithLeafEdgesWithSplitValues/RF_20_t13.patterns
+Number of frequent vertices: 429
+Number of frequent edges: 236
+Processing patterns with 2 vertices:
+generated extensions: 472
+unique extensions: 472
+apriori filtered extensions: 472
+intersection filtered extensions: 472
+frequent patterns: 236
+Processing patterns with 3 vertices:
+generated extensions: 56084
+unique extensions: 56008
+apriori filtered extensions: 312
+intersection filtered extensions: 270
+frequent patterns: 18
+Processing patterns with 4 vertices:
+generated extensions: 8532
+unique extensions: 8532
+apriori filtered extensions: 0
+intersection filtered extensions: 0
+frequent patterns: 0
