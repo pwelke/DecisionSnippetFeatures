@@ -30,4 +30,4 @@ moeglicherweise interessante Dateien im Repository (für die Auswertung der Erge
 
 für Auswertung nur einen Datensatz benutzen (adult)?
 
-
+!!! im Notebook Program.ipynb werden evtl die Dateien erstellt die in LearningAlgo.ipynb benutzt werden !!!
