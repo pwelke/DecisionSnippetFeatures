@@ -4,6 +4,7 @@ private notes of Manuel and Markus
 Was haben wir gemacht?
 - pruning.py erstellt für das prunen der Random Forests (json -> json)
 - trainForest.py im arch-forest Ordner abgeändert. Fuer jeden Datensatz den Befehl "X.dump("FeatureVectors.dat")" in die trainForest Datei eingefuegt. Dadurch entstehen auch neue Dateien (FeatureVectors.dat) fuer jeden Datensatz im arch-forest Order.
+- '0 Pruning Distinct Branching Conditions.ipynb' erstellt um pruning.py auf die Decision Forest Dateien anzuwenden. 
 - '2 Initial Rooted Frequent Subtree Mining -- With Split Values'.ipynb erstellt fuer das frequent-subtree-mining. Nur fuer threshold 2! 
 
 
