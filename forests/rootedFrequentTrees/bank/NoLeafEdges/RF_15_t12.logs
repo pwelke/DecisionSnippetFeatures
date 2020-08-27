@@ -1,0 +1,15 @@
+Write patterns to file: forests/rootedFrequentTrees/bank/NoLeafEdgesWithSplitValues/RF_15_t12.patterns
+Number of frequent vertices: 202
+Number of frequent edges: 332
+Processing patterns with 2 vertices:
+generated extensions: 664
+unique extensions: 664
+apriori filtered extensions: 664
+intersection filtered extensions: 664
+frequent patterns: 166
+Processing patterns with 3 vertices:
+generated extensions: 10607
+unique extensions: 9861
+apriori filtered extensions: 2503
+intersection filtered extensions: 218
+frequent patterns: 0
