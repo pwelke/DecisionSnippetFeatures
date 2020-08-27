@@ -1,0 +1,1008 @@
+13	1	56<-39300 
+19	2	57<1410 
+16	3	0<19 
+20	4	57<883 
+16	5	57<876 
+13	6	57<1257 
+17	7	0<71 
+18	8	54<-3200 
+14	9	57<743 
+14	10	57<735 
+14	11	50<2000 
+13	12	49<4000 
+19	13	49<5500 
+14	14	57<1442 
+14	15	57<1320 
+13	16	58<5209550 
+14	17	56<-30750 
+17	18	17<0 
+16	19	56<-29950 
+13	20	57<879 
+18	21	57<4911 
+15	22	57<4865 
+17	23	57<4912 
+16	24	57<4862 
+16	25	49<8000 
+16	26	0<70 
+16	27	49<7500 
+13	28	49<505500 
+21	29	0<68 
+18	30	0<64 
+16	31	57<1422 
+17	32	57<1295 
+20	33	48<7000 
+15	34	56<-32500 
+15	35	57<865 
+18	36	57<882 
+14	37	57<860 
+21	38	55<93559 
+16	39	56<-31550 
+15	40	55<92540 
+16	41	57<736 
+16	42	49<10500 
+17	43	56<-50150 
+14	44	0<20 
+16	45	55<94684 
+20	46	0<60 
+25	47	52<0 
+25	48	51<0 
+25	49	23<0 
+18	50	56<-34700 
+25	51	3<0 
+25	52	leaf 
+25	53	2<0 
+16	54	50<3500 
+25	55	33<0 
+25	56	30<0 
+25	57	0<47 
+25	58	28<0 
+19	59	49<2000 
+25	60	5<0 
+25	61	48<1500 
+25	62	44<0 
+25	63	43<0 
+25	64	0<30 
+25	65	25<0 
+25	66	27<0 
+25	67	0<29 
+25	68	16<0 
+25	69	19<0 
+25	70	20<0 
+21	71	49<6500 
+25	72	50<1500 
+25	73	45<0 
+25	74	21<0 
+25	75	1<0 
+19	76	57<714 
+25	77	0<37 
+25	78	0<31 
+25	79	46<0 
+25	80	49<4500 
+25	81	47<0 
+25	82	10<0 
+25	83	48<3000 
+23	84	42<0 
+25	85	9<0 
+25	86	24<0 
+25	87	0<35 
+21	88	49<5000 
+25	89	39<0 
+13	90	49<2500 
+25	91	11<0 
+25	92	8<0 
+25	93	18<0 
+25	94	15<0 
+25	95	0<33 
+25	96	14<0 
+25	97	0<42 
+25	98	0<34 
+25	99	4<0 
+19	100	0<21 
+23	101	58<4977600 
+25	102	40<0 
+25	103	48<5500 
+25	104	50<2500 
+25	105	29<0 
+25	106	0<46 
+25	107	7<0 
+25	108	36<0 
+25	109	0<45 
+25	110	38<0 
+25	111	0<32 
+25	112	37<0 
+23	113	0<22 
+22	114	56<-46650 
+25	115	48<2500 
+18	116	57<1387 
+25	117	6<0 
+25	118	26<0 
+19	119	49<11500 
+15	120	56<-43500 
+18	121	57<1330 
+25	122	0<58 
+20	123	57<1268 
+25	124	0<27 
+23	125	49<3500 
+25	126	12<0 
+18	127	57<1296 
+23	128	58<5087650 
+25	129	54<-1400 
+19	130	56<-39050 
+14	131	57<719 
+25	132	13<0 
+25	133	0<25 
+25	134	34<0 
+22	135	58<5020500 
+25	136	35<0 
+23	137	54<-2350 
+25	138	48<3500 
+17	139	57<1264 
+21	140	56<-28350 
+25	141	0<36 
+25	142	41<0 
+18	143	58<5049850 
+25	144	48<4500 
+15	145	55<93812 
+16	146	56<-39900 
+25	147	0<38 
+25	148	48<2000 
+21	149	58<5000150 
+25	150	0<50 
+23	151	48<5000 
+18	152	57<880 
+18	153	57<871 
+25	154	0<54 
+25	155	0<41 
+17	156	55<92290 
+14	157	57<877 
+20	158	55<92405 
+16	159	56<-28500 
+21	160	57<878 
+18	161	57<881 
+25	162	0<39 
+25	163	48<6500 
+20	164	57<1273 
+22	165	57<1261 
+13	166	57<1302 
+25	167	0<48 
+23	168	57<1286 
+25	169	0<40 
+17	170	57<1306 
+24	171	57<1254 
+17	172	57<1247 
+25	173	0<43 
+25	174	0<28 
+19	175	57<1402 
+25	176	0<59 
+25	177	0<23 
+18	178	57<1339 
+24	179	57<1275 
+19	180	57<1278 
+25	181	0<52 
+18	182	57<1307 
+25	183	0<44 
+21	184	57<1281 
+25	185	0<51 
+25	186	0<55 
+25	187	0<49 
+18	188	55<92984 
+25	189	0<56 
+25	190	0<26 
+21	191	57<1385 
+15	192	57<1430 
+25	193	0<53 
+20	194	57<1271 
+18	195	57<1435 
+14	196	56<-48550 
+15	197	57<1398 
+21	198	54<-3150 
+25	199	0<24 
+18	200	57<1267 
+18	201	57<1263 
+21	202	58<5046850 
+15	203	55<92335 
+13	204	55<94127 
+15	205	55<94207 
+13	206	55<94041 
+15	207	48<10500 
+22	208	58<5211950 
+21	209	57<4048 
+23	210	55<93681 
+15	211	55<93322 
+20	212	57<4958 
+25	213	57<4967 
+25	214	57<4965 
+23	215	57<4963 
+25	216	57<4964 
+14	217	57<4956 
+20	218	56<-39400 
+25	219	57<4960 
+25	220	57<4961 
+25	221	57<4962 
+14	222	57<4097 
+25	223	0<57 
+16	224	48<11500 
+21	225	48<6000 
+22	226	54<650 
+14	227	55<94229 
+24	228	57<4858 
+17	229	57<4855 
+24	230	57<4856 
+24	231	48<4000 
+25	232	57<4857 
+18	233	57<4861 
+15	234	57<4864 
+23	235	57<4959 
+19	236	48<8500 
+21	237	57<1265 
+19	238	58<5013100 
+15	239	57<1256 
+16	240	57<718 
+18	241	57<731 
+15	242	57<875 
+20	243	55<92681 
+19	244	57<1258 
+14	245	57<737 
+18	246	57<1407 
+22	247	48<7500 
+16	248	57<1317 
+19	249	57<1349 
+18	250	57<1408 
+14	251	54<1250 
+16	252	56<-42250 
+17	253	55<94191 
+24	254	57<4966 
+17	255	56<-42350 
+23	256	57<4957 
+20	257	57<4859 
+24	258	53<0 
+17	259	0<66 
+19	260	0<62 
+15	261	55<94408 
+14	262	56<-44900 
+16	263	0<73 
+20	264	0<69 
+13	265	57<643 
+21	266	50<500 
+22	267	48<9500 
+19	268	0<61 
+14	269	49<502500 
+20	270	57<872 
+16	271	0<67 
+16	272	56<-40050 
+13	273	57<732 
+21	274	57<717 
+22	275	0<65 
+13	276	0<76 
+19	277	0<63 
+14	278	0<75 
+19	279	57<715 
+23	280	54<-1750 
+19	281	0<72 
+15	1967	52<0 ( rightChild 24<0 ) 
+13	1966	51<0 ( leftChild 10<0 ) 
+16	1956	23<0 ( rightChild 48<1500 ) 
+13	1965	23<0 ( leftChild 48<2500 ) 
+18	1964	23<0 ( leftChild 25<0 ) 
+15	1963	23<0 ( leftChild 47<0 ) 
+16	1962	23<0 ( leftChild 43<0 ) 
+14	1961	23<0 ( leftChild 45<0 ) 
+13	1960	23<0 ( leftChild 2<0 ) 
+14	1959	23<0 ( leftChild 44<0 ) 
+16	1958	23<0 ( leftChild 27<0 ) 
+13	1957	23<0 ( leftChild 24<0 ) 
+14	1955	23<0 ( leftChild 1<0 ) 
+13	1954	23<0 ( leftChild 18<0 ) 
+13	1953	3<0 ( leftChild 5<0 ) 
+13	1952	3<0 ( leftChild 6<0 ) 
+13	1951	3<0 ( leftChild 25<0 ) 
+14	1950	3<0 ( leftChild 28<0 ) 
+16	1949	3<0 ( leftChild 19<0 ) 
+14	1948	3<0 ( leftChild 21<0 ) 
+17	1947	3<0 ( leftChild 10<0 ) 
+17	1945	2<0 ( leftChild 24<0 ) 
+16	1943	2<0 ( leftChild 25<0 ) 
+15	1938	2<0 ( leftChild 3<0 ) 
+19	1937	2<0 ( leftChild 45<0 ) 
+17	1936	2<0 ( leftChild 5<0 ) 
+18	1935	2<0 ( leftChild 8<0 ) 
+13	1934	2<0 ( leftChild 43<0 ) 
+16	1933	2<0 ( leftChild 47<0 ) 
+14	1932	2<0 ( leftChild 6<0 ) 
+15	1931	2<0 ( leftChild 48<1500 ) 
+15	1930	2<0 ( leftChild 44<0 ) 
+13	1928	2<0 ( leftChild 27<0 ) 
+14	1927	2<0 ( leftChild 16<0 ) 
+13	1926	2<0 ( leftChild 19<0 ) 
+13	1925	2<0 ( leftChild 21<0 ) 
+18	1924	2<0 ( leftChild 1<0 ) 
+17	1923	2<0 ( leftChild 10<0 ) 
+16	1921	2<0 ( leftChild 15<0 ) 
+16	1920	2<0 ( leftChild 18<0 ) 
+15	1918	2<0 ( leftChild 13<0 ) 
+16	1946	2<0 ( rightChild 24<0 ) 
+15	1944	2<0 ( rightChild 25<0 ) 
+17	1942	2<0 ( rightChild 48<1500 ) 
+18	1941	2<0 ( rightChild 45<0 ) 
+15	1940	2<0 ( rightChild 46<0 ) 
+17	1939	2<0 ( rightChild 43<0 ) 
+18	1929	2<0 ( rightChild 27<0 ) 
+18	1922	2<0 ( rightChild 15<0 ) 
+16	1919	2<0 ( rightChild 14<0 ) 
+16	1917	2<0 ( rightChild 13<0 ) 
+13	1915	30<0 ( leftChild 24<0 ) 
+16	1916	30<0 ( rightChild 24<0 ) 
+17	1914	30<0 ( rightChild 25<0 ) 
+13	1913	30<0 ( rightChild 44<0 ) 
+17	1912	30<0 ( rightChild 48<1500 ) 
+13	1911	30<0 ( rightChild 8<0 ) 
+14	1910	30<0 ( rightChild 47<0 ) 
+14	1909	30<0 ( rightChild 45<0 ) 
+16	1908	30<0 ( rightChild 28<0 ) 
+13	1907	30<0 ( rightChild 27<0 ) 
+13	1906	30<0 ( rightChild 10<0 ) 
+14	1905	30<0 ( rightChild 15<0 ) 
+13	1904	28<0 ( rightChild 24<0 ) 
+15	1902	28<0 ( rightChild 25<0 ) 
+14	1900	28<0 ( rightChild 47<0 ) 
+14	1899	28<0 ( rightChild 44<0 ) 
+13	1898	28<0 ( rightChild 48<1500 ) 
+16	1886	28<0 ( rightChild 16<0 ) 
+14	1884	28<0 ( rightChild 19<0 ) 
+13	1881	28<0 ( rightChild 21<0 ) 
+21	1879	28<0 ( rightChild 1<0 ) 
+13	1874	28<0 ( rightChild 18<0 ) 
+24	1903	28<0 ( leftChild 24<0 ) 
+19	1901	28<0 ( leftChild 25<0 ) 
+24	1897	28<0 ( leftChild 48<1500 ) 
+18	1896	28<0 ( leftChild 44<0 ) 
+18	1895	28<0 ( leftChild 46<0 ) 
+14	1894	28<0 ( leftChild 3<0 ) 
+13	1893	28<0 ( leftChild 48<2500 ) 
+14	1892	28<0 ( leftChild 8<0 ) 
+16	1891	28<0 ( leftChild 45<0 ) 
+17	1890	28<0 ( leftChild 2<0 ) 
+13	1889	28<0 ( leftChild 5<0 ) 
+20	1888	28<0 ( leftChild 43<0 ) 
+17	1887	28<0 ( leftChild 47<0 ) 
+22	1885	28<0 ( leftChild 16<0 ) 
+19	1883	28<0 ( leftChild 19<0 ) 
+13	1882	28<0 ( leftChild 20<0 ) 
+16	1880	28<0 ( leftChild 1<0 ) 
+19	1878	28<0 ( leftChild 10<0 ) 
+14	1877	28<0 ( leftChild 11<0 ) 
+15	1876	28<0 ( leftChild 15<0 ) 
+17	1875	28<0 ( leftChild 18<0 ) 
+13	1873	28<0 ( leftChild 14<0 ) 
+18	1872	5<0 ( rightChild 24<0 ) 
+14	1871	5<0 ( rightChild 25<0 ) 
+13	1867	5<0 ( rightChild 48<1500 ) 
+15	1866	5<0 ( rightChild 44<0 ) 
+16	1870	5<0 ( leftChild 25<0 ) 
+13	1869	5<0 ( leftChild 2<0 ) 
+17	1868	5<0 ( leftChild 48<1500 ) 
+15	1865	5<0 ( leftChild 27<0 ) 
+13	1864	5<0 ( leftChild 16<0 ) 
+15	1863	5<0 ( leftChild 19<0 ) 
+14	1862	5<0 ( leftChild 45<0 ) 
+19	1861	5<0 ( leftChild 1<0 ) 
+14	1860	5<0 ( leftChild 46<0 ) 
+13	1859	5<0 ( leftChild 47<0 ) 
+17	1858	5<0 ( leftChild 10<0 ) 
+18	1857	5<0 ( leftChild 8<0 ) 
+17	1856	5<0 ( leftChild 7<0 ) 
+14	1855	48<1500 ( rightChild 24<0 ) 
+18	1853	48<1500 ( rightChild 25<0 ) 
+16	1849	48<1500 ( rightChild 28<0 ) 
+17	1847	48<1500 ( rightChild 43<0 ) 
+17	1843	48<1500 ( rightChild 48<2500 ) 
+18	1841	48<1500 ( rightChild 44<0 ) 
+16	1840	48<1500 ( rightChild 27<0 ) 
+15	1838	48<1500 ( rightChild 16<0 ) 
+18	1836	48<1500 ( rightChild 19<0 ) 
+14	1833	48<1500 ( rightChild 45<0 ) 
+14	1831	48<1500 ( rightChild 1<0 ) 
+16	1830	48<1500 ( rightChild 46<0 ) 
+16	1827	48<1500 ( rightChild 47<0 ) 
+17	1825	48<1500 ( rightChild 15<0 ) 
+22	1854	48<1500 ( leftChild 24<0 ) 
+23	1852	48<1500 ( leftChild 25<0 ) 
+16	1851	48<1500 ( leftChild 2<0 ) 
+13	1850	48<1500 ( leftChild 30<0 ) 
+18	1848	48<1500 ( leftChild 28<0 ) 
+19	1846	48<1500 ( leftChild 43<0 ) 
+13	1845	48<1500 ( leftChild 8<0 ) 
+17	1844	48<1500 ( leftChild 5<0 ) 
+21	1842	48<1500 ( leftChild 44<0 ) 
+18	1839	48<1500 ( leftChild 27<0 ) 
+15	1837	48<1500 ( leftChild 16<0 ) 
+18	1835	48<1500 ( leftChild 19<0 ) 
+19	1834	48<1500 ( leftChild 45<0 ) 
+21	1832	48<1500 ( leftChild 1<0 ) 
+15	1829	48<1500 ( leftChild 46<0 ) 
+20	1828	48<1500 ( leftChild 47<0 ) 
+19	1826	48<1500 ( leftChild 10<0 ) 
+17	1824	48<1500 ( leftChild 15<0 ) 
+19	1823	48<1500 ( leftChild 18<0 ) 
+14	1822	48<1500 ( leftChild 13<0 ) 
+13	1821	48<1500 ( leftChild 0<41 ) 
+17	1820	44<0 ( rightChild 24<0 ) 
+22	1818	44<0 ( rightChild 25<0 ) 
+14	1814	44<0 ( rightChild 30<0 ) 
+16	1813	44<0 ( rightChild 28<0 ) 
+18	1803	44<0 ( rightChild 48<1500 ) 
+15	1802	44<0 ( rightChild 27<0 ) 
+14	1800	44<0 ( rightChild 16<0 ) 
+15	1798	44<0 ( rightChild 19<0 ) 
+13	1795	44<0 ( rightChild 21<0 ) 
+15	1793	44<0 ( rightChild 1<0 ) 
+17	1792	44<0 ( rightChild 10<0 ) 
+15	1790	44<0 ( rightChild 15<0 ) 
+19	1819	44<0 ( leftChild 24<0 ) 
+21	1817	44<0 ( leftChild 25<0 ) 
+18	1816	44<0 ( leftChild 2<0 ) 
+13	1815	44<0 ( leftChild 30<0 ) 
+13	1812	44<0 ( leftChild 28<0 ) 
+23	1811	44<0 ( leftChild 43<0 ) 
+16	1810	44<0 ( leftChild 5<0 ) 
+18	1809	44<0 ( leftChild 48<1500 ) 
+23	1808	44<0 ( leftChild 45<0 ) 
+23	1807	44<0 ( leftChild 46<0 ) 
+16	1806	44<0 ( leftChild 6<0 ) 
+13	1805	44<0 ( leftChild 48<2500 ) 
+22	1804	44<0 ( leftChild 47<0 ) 
+17	1801	44<0 ( leftChild 27<0 ) 
+18	1799	44<0 ( leftChild 16<0 ) 
+19	1797	44<0 ( leftChild 19<0 ) 
+15	1796	44<0 ( leftChild 21<0 ) 
+18	1794	44<0 ( leftChild 1<0 ) 
+15	1791	44<0 ( leftChild 10<0 ) 
+17	1789	44<0 ( leftChild 15<0 ) 
+15	1788	44<0 ( leftChild 18<0 ) 
+19	1787	43<0 ( rightChild 24<0 ) 
+14	1785	43<0 ( rightChild 23<0 ) 
+19	1784	43<0 ( rightChild 25<0 ) 
+13	1782	43<0 ( rightChild 2<0 ) 
+16	1779	43<0 ( rightChild 30<0 ) 
+15	1778	43<0 ( rightChild 28<0 ) 
+17	1776	43<0 ( rightChild 48<1500 ) 
+13	1769	43<0 ( rightChild 27<0 ) 
+21	1767	43<0 ( rightChild 16<0 ) 
+14	1765	43<0 ( rightChild 19<0 ) 
+19	1762	43<0 ( rightChild 1<0 ) 
+13	1760	43<0 ( rightChild 15<0 ) 
+20	1786	43<0 ( leftChild 24<0 ) 
+17	1783	43<0 ( leftChild 25<0 ) 
+16	1781	43<0 ( leftChild 2<0 ) 
+14	1780	43<0 ( leftChild 30<0 ) 
+15	1777	43<0 ( leftChild 28<0 ) 
+14	1775	43<0 ( leftChild 8<0 ) 
+17	1774	43<0 ( leftChild 47<0 ) 
+17	1773	43<0 ( leftChild 48<1500 ) 
+20	1772	43<0 ( leftChild 45<0 ) 
+23	1771	43<0 ( leftChild 44<0 ) 
+19	1770	43<0 ( leftChild 46<0 ) 
+17	1768	43<0 ( leftChild 27<0 ) 
+20	1766	43<0 ( leftChild 16<0 ) 
+16	1764	43<0 ( leftChild 19<0 ) 
+14	1763	43<0 ( leftChild 1<0 ) 
+16	1761	43<0 ( leftChild 10<0 ) 
+13	1759	43<0 ( leftChild 15<0 ) 
+14	1758	43<0 ( leftChild 13<0 ) 
+17	1742	25<0 ( leftChild 44<0 ) 
+17	1741	25<0 ( leftChild 2<0 ) 
+14	1740	25<0 ( leftChild 48<2500 ) 
+20	1739	25<0 ( leftChild 27<0 ) 
+15	1738	25<0 ( leftChild 30<0 ) 
+13	1737	25<0 ( leftChild 8<0 ) 
+20	1736	25<0 ( leftChild 45<0 ) 
+22	1735	25<0 ( leftChild 47<0 ) 
+20	1734	25<0 ( leftChild 48<1500 ) 
+18	1733	25<0 ( leftChild 43<0 ) 
+15	1732	25<0 ( leftChild 28<0 ) 
+21	1731	25<0 ( leftChild 46<0 ) 
+16	1730	25<0 ( leftChild 0<30 ) 
+20	1728	25<0 ( leftChild 16<0 ) 
+16	1726	25<0 ( leftChild 19<0 ) 
+14	1724	25<0 ( leftChild 21<0 ) 
+17	1723	25<0 ( leftChild 1<0 ) 
+15	1720	25<0 ( leftChild 10<0 ) 
+17	1717	25<0 ( leftChild 15<0 ) 
+20	1716	25<0 ( leftChild 18<0 ) 
+13	1713	25<0 ( leftChild 14<0 ) 
+15	1712	25<0 ( leftChild 13<0 ) 
+16	1757	25<0 ( rightChild 23<0 ) 
+14	1756	25<0 ( rightChild 30<0 ) 
+19	1755	25<0 ( rightChild 45<0 ) 
+17	1754	25<0 ( rightChild 2<0 ) 
+13	1753	25<0 ( rightChild 5<0 ) 
+21	1752	25<0 ( rightChild 47<0 ) 
+15	1751	25<0 ( rightChild 7<0 ) 
+13	1750	25<0 ( rightChild 8<0 ) 
+19	1749	25<0 ( rightChild 44<0 ) 
+23	1748	25<0 ( rightChild 48<1500 ) 
+20	1747	25<0 ( rightChild 43<0 ) 
+21	1746	25<0 ( rightChild 28<0 ) 
+21	1745	25<0 ( rightChild 27<0 ) 
+19	1744	25<0 ( rightChild 46<0 ) 
+14	1743	25<0 ( rightChild 48<2500 ) 
+22	1729	25<0 ( rightChild 16<0 ) 
+18	1727	25<0 ( rightChild 19<0 ) 
+13	1725	25<0 ( rightChild 20<0 ) 
+22	1722	25<0 ( rightChild 1<0 ) 
+18	1721	25<0 ( rightChild 10<0 ) 
+13	1719	25<0 ( rightChild 11<0 ) 
+20	1718	25<0 ( rightChild 15<0 ) 
+23	1715	25<0 ( rightChild 18<0 ) 
+13	1714	25<0 ( rightChild 0<33 ) 
+17	1711	25<0 ( rightChild 13<0 ) 
+14	1709	27<0 ( leftChild 24<0 ) 
+15	1706	27<0 ( leftChild 25<0 ) 
+13	1692	27<0 ( leftChild 47<0 ) 
+13	1691	27<0 ( leftChild 46<0 ) 
+13	1689	27<0 ( leftChild 16<0 ) 
+16	1687	27<0 ( leftChild 19<0 ) 
+14	1685	27<0 ( leftChild 1<0 ) 
+19	1710	27<0 ( rightChild 24<0 ) 
+19	1708	27<0 ( rightChild 23<0 ) 
+23	1707	27<0 ( rightChild 25<0 ) 
+13	1705	27<0 ( rightChild 8<0 ) 
+16	1704	27<0 ( rightChild 30<0 ) 
+13	1703	27<0 ( rightChild 7<0 ) 
+19	1702	27<0 ( rightChild 2<0 ) 
+19	1701	27<0 ( rightChild 47<0 ) 
+21	1700	27<0 ( rightChild 45<0 ) 
+16	1699	27<0 ( rightChild 43<0 ) 
+17	1698	27<0 ( rightChild 44<0 ) 
+13	1697	27<0 ( rightChild 48<2500 ) 
+17	1696	27<0 ( rightChild 48<1500 ) 
+13	1695	27<0 ( rightChild 3<0 ) 
+18	1694	27<0 ( rightChild 5<0 ) 
+20	1693	27<0 ( rightChild 46<0 ) 
+21	1690	27<0 ( rightChild 16<0 ) 
+21	1688	27<0 ( rightChild 19<0 ) 
+13	1686	27<0 ( rightChild 20<0 ) 
+17	1684	27<0 ( rightChild 1<0 ) 
+16	1683	27<0 ( rightChild 10<0 ) 
+18	1682	27<0 ( rightChild 15<0 ) 
+17	1681	27<0 ( rightChild 18<0 ) 
+13	1680	27<0 ( rightChild 0<33 ) 
+13	1679	27<0 ( rightChild 14<0 ) 
+15	1678	16<0 ( rightChild 47<0 ) 
+18	1677	16<0 ( rightChild 44<0 ) 
+16	1676	16<0 ( rightChild 43<0 ) 
+21	1675	16<0 ( rightChild 27<0 ) 
+24	1674	16<0 ( rightChild 24<0 ) 
+14	1673	16<0 ( rightChild 28<0 ) 
+14	1672	16<0 ( rightChild 21<0 ) 
+13	1671	16<0 ( rightChild 48<2500 ) 
+17	1670	16<0 ( rightChild 46<0 ) 
+18	1669	16<0 ( rightChild 48<1500 ) 
+18	1668	16<0 ( rightChild 8<0 ) 
+17	1667	16<0 ( rightChild 25<0 ) 
+15	1666	16<0 ( rightChild 45<0 ) 
+20	1665	16<0 ( rightChild 1<0 ) 
+14	1645	16<0 ( rightChild 10<0 ) 
+17	1664	16<0 ( leftChild 45<0 ) 
+23	1663	16<0 ( leftChild 25<0 ) 
+14	1662	16<0 ( leftChild 2<0 ) 
+20	1661	16<0 ( leftChild 19<0 ) 
+21	1660	16<0 ( leftChild 20<0 ) 
+18	1659	16<0 ( leftChild 27<0 ) 
+15	1658	16<0 ( leftChild 46<0 ) 
+18	1657	16<0 ( leftChild 24<0 ) 
+16	1656	16<0 ( leftChild 47<0 ) 
+13	1655	16<0 ( leftChild 23<0 ) 
+20	1654	16<0 ( leftChild 44<0 ) 
+13	1653	16<0 ( leftChild 5<0 ) 
+14	1652	16<0 ( leftChild 21<0 ) 
+13	1651	16<0 ( leftChild 43<0 ) 
+17	1650	16<0 ( leftChild 30<0 ) 
+18	1649	16<0 ( leftChild 1<0 ) 
+23	1648	16<0 ( leftChild 18<0 ) 
+14	1647	16<0 ( leftChild 48<2500 ) 
+24	1646	16<0 ( leftChild 48<1500 ) 
+21	1644	16<0 ( leftChild 10<0 ) 
+22	1643	16<0 ( leftChild 15<0 ) 
+18	1642	16<0 ( leftChild 14<0 ) 
+19	1641	16<0 ( leftChild 13<0 ) 
+22	1639	19<0 ( rightChild 24<0 ) 
+16	1638	19<0 ( rightChild 3<0 ) 
+18	1637	19<0 ( rightChild 46<0 ) 
+23	1636	19<0 ( rightChild 1<0 ) 
+14	1635	19<0 ( rightChild 45<0 ) 
+22	1634	19<0 ( rightChild 25<0 ) 
+19	1633	19<0 ( rightChild 28<0 ) 
+19	1632	19<0 ( rightChild 5<0 ) 
+15	1631	19<0 ( rightChild 48<2500 ) 
+19	1630	19<0 ( rightChild 44<0 ) 
+16	1629	19<0 ( rightChild 47<0 ) 
+15	1628	19<0 ( rightChild 7<0 ) 
+18	1627	19<0 ( rightChild 43<0 ) 
+21	1626	19<0 ( rightChild 48<1500 ) 
+13	1625	19<0 ( rightChild 21<0 ) 
+18	1624	19<0 ( rightChild 27<0 ) 
+21	1607	19<0 ( rightChild 10<0 ) 
+22	1640	19<0 ( leftChild 16<0 ) 
+16	1623	19<0 ( leftChild 25<0 ) 
+16	1622	19<0 ( leftChild 24<0 ) 
+15	1621	19<0 ( leftChild 48<2500 ) 
+16	1620	19<0 ( leftChild 20<0 ) 
+14	1619	19<0 ( leftChild 44<0 ) 
+15	1618	19<0 ( leftChild 27<0 ) 
+17	1617	19<0 ( leftChild 2<0 ) 
+16	1616	19<0 ( leftChild 21<0 ) 
+14	1615	19<0 ( leftChild 8<0 ) 
+17	1614	19<0 ( leftChild 28<0 ) 
+20	1613	19<0 ( leftChild 46<0 ) 
+13	1612	19<0 ( leftChild 45<0 ) 
+17	1611	19<0 ( leftChild 48<1500 ) 
+15	1610	19<0 ( leftChild 30<0 ) 
+15	1609	19<0 ( leftChild 47<0 ) 
+21	1608	19<0 ( leftChild 1<0 ) 
+14	1606	19<0 ( leftChild 10<0 ) 
+20	1605	19<0 ( leftChild 15<0 ) 
+23	1604	19<0 ( leftChild 18<0 ) 
+17	1603	19<0 ( leftChild 13<0 ) 
+21	1602	20<0 ( leftChild 16<0 ) 
+21	1601	20<0 ( leftChild 19<0 ) 
+13	1600	20<0 ( leftChild 24<0 ) 
+16	1599	20<0 ( leftChild 25<0 ) 
+13	1598	20<0 ( leftChild 2<0 ) 
+15	1597	20<0 ( leftChild 48<1500 ) 
+17	1596	20<0 ( leftChild 46<0 ) 
+13	1595	20<0 ( leftChild 5<0 ) 
+13	1594	20<0 ( leftChild 47<0 ) 
+13	1593	20<0 ( leftChild 44<0 ) 
+15	1592	20<0 ( leftChild 1<0 ) 
+14	1591	20<0 ( leftChild 18<0 ) 
+19	1590	20<0 ( leftChild 13<0 ) 
+18	1589	45<0 ( rightChild 24<0 ) 
+18	1586	45<0 ( rightChild 25<0 ) 
+13	1584	45<0 ( rightChild 2<0 ) 
+15	1583	45<0 ( rightChild 28<0 ) 
+13	1579	45<0 ( rightChild 27<0 ) 
+17	1577	45<0 ( rightChild 16<0 ) 
+20	1576	45<0 ( rightChild 19<0 ) 
+17	1567	45<0 ( rightChild 48<1500 ) 
+13	1566	45<0 ( rightChild 21<0 ) 
+17	1564	45<0 ( rightChild 1<0 ) 
+15	1563	45<0 ( rightChild 10<0 ) 
+17	1561	45<0 ( rightChild 15<0 ) 
+23	1588	45<0 ( leftChild 24<0 ) 
+15	1587	45<0 ( leftChild 3<0 ) 
+19	1585	45<0 ( leftChild 25<0 ) 
+22	1582	45<0 ( leftChild 28<0 ) 
+21	1581	45<0 ( leftChild 43<0 ) 
+20	1580	45<0 ( leftChild 44<0 ) 
+17	1578	45<0 ( leftChild 27<0 ) 
+14	1575	45<0 ( leftChild 19<0 ) 
+16	1574	45<0 ( leftChild 20<0 ) 
+13	1573	45<0 ( leftChild 5<0 ) 
+13	1572	45<0 ( leftChild 48<1500 ) 
+15	1571	45<0 ( leftChild 8<0 ) 
+20	1570	45<0 ( leftChild 47<0 ) 
+24	1569	45<0 ( leftChild 46<0 ) 
+14	1568	45<0 ( leftChild 6<0 ) 
+15	1565	45<0 ( leftChild 1<0 ) 
+17	1562	45<0 ( leftChild 10<0 ) 
+19	1560	45<0 ( leftChild 18<0 ) 
+14	1559	45<0 ( leftChild 14<0 ) 
+13	1556	21<0 ( leftChild 24<0 ) 
+14	1558	21<0 ( rightChild 16<0 ) 
+15	1557	21<0 ( rightChild 19<0 ) 
+16	1555	21<0 ( rightChild 25<0 ) 
+17	1554	21<0 ( rightChild 24<0 ) 
+17	1553	21<0 ( rightChild 28<0 ) 
+14	1552	21<0 ( rightChild 27<0 ) 
+15	1551	21<0 ( rightChild 47<0 ) 
+16	1550	21<0 ( rightChild 46<0 ) 
+16	1549	21<0 ( rightChild 48<1500 ) 
+16	1548	21<0 ( rightChild 1<0 ) 
+13	1547	21<0 ( rightChild 10<0 ) 
+14	1546	21<0 ( rightChild 15<0 ) 
+23	1545	1<0 ( rightChild 16<0 ) 
+18	1543	1<0 ( rightChild 19<0 ) 
+22	1522	1<0 ( rightChild 27<0 ) 
+20	1521	1<0 ( rightChild 47<0 ) 
+21	1520	1<0 ( rightChild 24<0 ) 
+20	1519	1<0 ( rightChild 25<0 ) 
+18	1518	1<0 ( rightChild 45<0 ) 
+21	1517	1<0 ( rightChild 48<1500 ) 
+15	1516	1<0 ( rightChild 30<0 ) 
+15	1515	1<0 ( rightChild 43<0 ) 
+19	1514	1<0 ( rightChild 44<0 ) 
+15	1513	1<0 ( rightChild 46<0 ) 
+15	1512	1<0 ( rightChild 28<0 ) 
+15	1509	1<0 ( rightChild 15<0 ) 
+13	1544	1<0 ( leftChild 16<0 ) 
+16	1542	1<0 ( leftChild 19<0 ) 
+21	1541	1<0 ( leftChild 24<0 ) 
+18	1540	1<0 ( leftChild 43<0 ) 
+18	1539	1<0 ( leftChild 5<0 ) 
+13	1538	1<0 ( leftChild 48<3500 ) 
+15	1537	1<0 ( leftChild 6<0 ) 
+16	1536	1<0 ( leftChild 28<0 ) 
+19	1535	1<0 ( leftChild 2<0 ) 
+19	1534	1<0 ( leftChild 48<1500 ) 
+21	1533	1<0 ( leftChild 47<0 ) 
+21	1532	1<0 ( leftChild 25<0 ) 
+16	1531	1<0 ( leftChild 27<0 ) 
+16	1530	1<0 ( leftChild 48<2500 ) 
+16	1529	1<0 ( leftChild 46<0 ) 
+15	1528	1<0 ( leftChild 3<0 ) 
+15	1527	1<0 ( leftChild 7<0 ) 
+16	1526	1<0 ( leftChild 21<0 ) 
+14	1525	1<0 ( leftChild 44<0 ) 
+18	1524	1<0 ( leftChild 8<0 ) 
+15	1523	1<0 ( leftChild 20<0 ) 
+20	1511	1<0 ( leftChild 10<0 ) 
+14	1510	1<0 ( leftChild 11<0 ) 
+13	1508	1<0 ( leftChild 15<0 ) 
+19	1507	1<0 ( leftChild 18<0 ) 
+14	1506	1<0 ( leftChild 13<0 ) 
+17	1505	46<0 ( rightChild 24<0 ) 
+18	1503	46<0 ( rightChild 23<0 ) 
+17	1502	46<0 ( rightChild 25<0 ) 
+13	1500	46<0 ( rightChild 2<0 ) 
+21	1498	46<0 ( rightChild 28<0 ) 
+15	1494	46<0 ( rightChild 27<0 ) 
+16	1492	46<0 ( rightChild 16<0 ) 
+15	1490	46<0 ( rightChild 19<0 ) 
+16	1485	46<0 ( rightChild 1<0 ) 
+15	1484	46<0 ( rightChild 48<1500 ) 
+16	1479	46<0 ( rightChild 10<0 ) 
+13	1475	46<0 ( rightChild 18<0 ) 
+19	1504	46<0 ( leftChild 24<0 ) 
+21	1501	46<0 ( leftChild 25<0 ) 
+15	1499	46<0 ( leftChild 2<0 ) 
+18	1497	46<0 ( leftChild 28<0 ) 
+20	1496	46<0 ( leftChild 43<0 ) 
+22	1495	46<0 ( leftChild 44<0 ) 
+16	1493	46<0 ( leftChild 27<0 ) 
+18	1491	46<0 ( leftChild 16<0 ) 
+19	1489	46<0 ( leftChild 19<0 ) 
+22	1488	46<0 ( leftChild 45<0 ) 
+15	1487	46<0 ( leftChild 21<0 ) 
+15	1486	46<0 ( leftChild 1<0 ) 
+21	1483	46<0 ( leftChild 47<0 ) 
+17	1482	46<0 ( leftChild 48<1500 ) 
+13	1481	46<0 ( leftChild 5<0 ) 
+14	1480	46<0 ( leftChild 8<0 ) 
+16	1478	46<0 ( leftChild 10<0 ) 
+13	1477	46<0 ( leftChild 15<0 ) 
+17	1476	46<0 ( leftChild 18<0 ) 
+13	1474	46<0 ( leftChild 14<0 ) 
+13	1473	46<0 ( leftChild 13<0 ) 
+21	1471	47<0 ( leftChild 24<0 ) 
+21	1469	47<0 ( leftChild 25<0 ) 
+19	1468	47<0 ( leftChild 28<0 ) 
+20	1467	47<0 ( leftChild 43<0 ) 
+20	1466	47<0 ( leftChild 44<0 ) 
+15	1465	47<0 ( leftChild 27<0 ) 
+14	1463	47<0 ( leftChild 16<0 ) 
+19	1461	47<0 ( leftChild 19<0 ) 
+19	1459	47<0 ( leftChild 45<0 ) 
+14	1458	47<0 ( leftChild 21<0 ) 
+21	1457	47<0 ( leftChild 1<0 ) 
+22	1455	47<0 ( leftChild 46<0 ) 
+18	1454	47<0 ( leftChild 48<1500 ) 
+16	1451	47<0 ( leftChild 10<0 ) 
+18	1450	47<0 ( leftChild 15<0 ) 
+15	1449	47<0 ( leftChild 18<0 ) 
+17	1472	47<0 ( rightChild 24<0 ) 
+17	1470	47<0 ( rightChild 25<0 ) 
+13	1464	47<0 ( rightChild 16<0 ) 
+14	1462	47<0 ( rightChild 19<0 ) 
+14	1460	47<0 ( rightChild 20<0 ) 
+16	1456	47<0 ( rightChild 1<0 ) 
+19	1453	47<0 ( rightChild 48<1500 ) 
+16	1452	47<0 ( rightChild 10<0 ) 
+14	1448	47<0 ( rightChild 18<0 ) 
+14	1447	10<0 ( rightChild 16<0 ) 
+15	1446	10<0 ( rightChild 46<0 ) 
+14	1445	10<0 ( rightChild 25<0 ) 
+17	1444	10<0 ( rightChild 24<0 ) 
+19	1443	10<0 ( rightChild 47<0 ) 
+17	1442	10<0 ( rightChild 48<1500 ) 
+18	1441	10<0 ( rightChild 27<0 ) 
+14	1440	10<0 ( rightChild 43<0 ) 
+16	1439	10<0 ( rightChild 28<0 ) 
+14	1438	10<0 ( rightChild 45<0 ) 
+15	1437	10<0 ( rightChild 44<0 ) 
+22	1436	10<0 ( rightChild 19<0 ) 
+17	1435	10<0 ( rightChild 18<0 ) 
+14	1434	10<0 ( leftChild 19<0 ) 
+15	1433	10<0 ( leftChild 11<0 ) 
+16	1432	10<0 ( leftChild 27<0 ) 
+20	1431	10<0 ( leftChild 25<0 ) 
+13	1430	10<0 ( leftChild 48<2500 ) 
+15	1429	10<0 ( leftChild 18<0 ) 
+16	1428	10<0 ( leftChild 46<0 ) 
+14	1427	10<0 ( leftChild 15<0 ) 
+18	1426	10<0 ( leftChild 16<0 ) 
+23	1425	10<0 ( leftChild 1<0 ) 
+18	1424	10<0 ( leftChild 47<0 ) 
+21	1423	10<0 ( leftChild 24<0 ) 
+13	1422	10<0 ( leftChild 3<0 ) 
+18	1421	10<0 ( leftChild 45<0 ) 
+17	1420	10<0 ( leftChild 2<0 ) 
+16	1419	10<0 ( leftChild 5<0 ) 
+15	1418	10<0 ( leftChild 7<0 ) 
+17	1417	10<0 ( leftChild 48<1500 ) 
+13	1416	10<0 ( leftChild 20<0 ) 
+17	1415	10<0 ( leftChild 44<0 ) 
+16	1414	10<0 ( leftChild 43<0 ) 
+20	1413	10<0 ( leftChild 8<0 ) 
+13	1412	10<0 ( leftChild 9<0 ) 
+14	1411	10<0 ( leftChild 14<0 ) 
+20	1410	10<0 ( leftChild 28<0 ) 
+13	1409	9<0 ( leftChild 28<0 ) 
+15	1408	9<0 ( leftChild 16<0 ) 
+16	1407	9<0 ( leftChild 19<0 ) 
+16	1393	24<0 ( leftChild 30<0 ) 
+17	1392	24<0 ( leftChild 45<0 ) 
+15	1391	24<0 ( leftChild 44<0 ) 
+20	1390	24<0 ( leftChild 27<0 ) 
+15	1389	24<0 ( leftChild 48<2500 ) 
+18	1388	24<0 ( leftChild 46<0 ) 
+18	1387	24<0 ( leftChild 47<0 ) 
+13	1386	24<0 ( leftChild 2<0 ) 
+17	1385	24<0 ( leftChild 28<0 ) 
+17	1384	24<0 ( leftChild 43<0 ) 
+23	1383	24<0 ( leftChild 48<1500 ) 
+22	1380	24<0 ( leftChild 16<0 ) 
+19	1378	24<0 ( leftChild 19<0 ) 
+14	1377	24<0 ( leftChild 21<0 ) 
+20	1375	24<0 ( leftChild 1<0 ) 
+19	1372	24<0 ( leftChild 10<0 ) 
+14	1370	24<0 ( leftChild 15<0 ) 
+14	1368	24<0 ( leftChild 13<0 ) 
+14	1406	24<0 ( rightChild 30<0 ) 
+16	1405	24<0 ( rightChild 5<0 ) 
+16	1404	24<0 ( rightChild 48<2500 ) 
+20	1403	24<0 ( rightChild 48<1500 ) 
+18	1402	24<0 ( rightChild 45<0 ) 
+14	1401	24<0 ( rightChild 2<0 ) 
+20	1400	24<0 ( rightChild 44<0 ) 
+19	1399	24<0 ( rightChild 28<0 ) 
+18	1398	24<0 ( rightChild 47<0 ) 
+21	1397	24<0 ( rightChild 27<0 ) 
+16	1396	24<0 ( rightChild 8<0 ) 
+18	1395	24<0 ( rightChild 46<0 ) 
+17	1394	24<0 ( rightChild 43<0 ) 
+16	1382	24<0 ( rightChild 23<0 ) 
+18	1381	24<0 ( rightChild 16<0 ) 
+18	1379	24<0 ( rightChild 19<0 ) 
+14	1376	24<0 ( rightChild 21<0 ) 
+21	1374	24<0 ( rightChild 1<0 ) 
+18	1373	24<0 ( rightChild 10<0 ) 
+13	1371	24<0 ( rightChild 15<0 ) 
+13	1369	24<0 ( rightChild 18<0 ) 
+13	1367	24<0 ( rightChild 13<0 ) 
+13	1366	11<0 ( leftChild 7<0 ) 
+18	1365	11<0 ( leftChild 1<0 ) 
+14	1364	11<0 ( leftChild 24<0 ) 
+13	1363	11<0 ( leftChild 8<0 ) 
+13	1362	11<0 ( leftChild 2<0 ) 
+14	1361	11<0 ( leftChild 48<1500 ) 
+13	1360	8<0 ( rightChild 24<0 ) 
+15	1359	8<0 ( rightChild 25<0 ) 
+13	1356	8<0 ( rightChild 28<0 ) 
+14	1349	8<0 ( rightChild 45<0 ) 
+15	1347	8<0 ( rightChild 46<0 ) 
+13	1343	8<0 ( rightChild 15<0 ) 
+18	1358	8<0 ( leftChild 25<0 ) 
+13	1357	8<0 ( leftChild 2<0 ) 
+14	1355	8<0 ( leftChild 28<0 ) 
+14	1354	8<0 ( leftChild 48<1500 ) 
+15	1353	8<0 ( leftChild 44<0 ) 
+15	1352	8<0 ( leftChild 27<0 ) 
+14	1351	8<0 ( leftChild 16<0 ) 
+19	1350	8<0 ( leftChild 19<0 ) 
+21	1348	8<0 ( leftChild 1<0 ) 
+13	1346	8<0 ( leftChild 46<0 ) 
+14	1345	8<0 ( leftChild 47<0 ) 
+18	1344	8<0 ( leftChild 10<0 ) 
+15	1342	8<0 ( leftChild 15<0 ) 
+15	1341	8<0 ( leftChild 5<0 ) 
+14	1340	8<0 ( leftChild 7<0 ) 
+17	1338	18<0 ( rightChild 10<0 ) 
+18	1320	18<0 ( rightChild 24<0 ) 
+13	1319	18<0 ( rightChild 45<0 ) 
+15	1318	18<0 ( rightChild 27<0 ) 
+13	1317	18<0 ( rightChild 46<0 ) 
+16	1316	18<0 ( rightChild 25<0 ) 
+13	1315	18<0 ( rightChild 44<0 ) 
+15	1314	18<0 ( rightChild 28<0 ) 
+19	1339	18<0 ( leftChild 16<0 ) 
+22	1337	18<0 ( leftChild 15<0 ) 
+17	1336	18<0 ( leftChild 24<0 ) 
+13	1335	18<0 ( leftChild 21<0 ) 
+15	1334	18<0 ( leftChild 20<0 ) 
+14	1333	18<0 ( leftChild 1<0 ) 
+17	1332	18<0 ( leftChild 45<0 ) 
+13	1331	18<0 ( leftChild 7<0 ) 
+17	1330	18<0 ( leftChild 43<0 ) 
+14	1329	18<0 ( leftChild 44<0 ) 
+14	1328	18<0 ( leftChild 2<0 ) 
+14	1327	18<0 ( leftChild 27<0 ) 
+14	1326	18<0 ( leftChild 28<0 ) 
+16	1325	18<0 ( leftChild 46<0 ) 
+21	1324	18<0 ( leftChild 48<1500 ) 
+14	1323	18<0 ( leftChild 8<0 ) 
+21	1322	18<0 ( leftChild 19<0 ) 
+20	1321	18<0 ( leftChild 25<0 ) 
+17	1313	18<0 ( leftChild 14<0 ) 
+19	1312	18<0 ( leftChild 13<0 ) 
+17	1310	15<0 ( rightChild 24<0 ) 
+17	1309	15<0 ( rightChild 25<0 ) 
+14	1308	15<0 ( rightChild 43<0 ) 
+14	1307	15<0 ( rightChild 48<1500 ) 
+21	1306	15<0 ( rightChild 2<0 ) 
+13	1305	15<0 ( rightChild 45<0 ) 
+15	1304	15<0 ( rightChild 47<0 ) 
+15	1311	15<0 ( leftChild 10<0 ) 
+19	1303	15<0 ( leftChild 25<0 ) 
+21	1302	15<0 ( leftChild 19<0 ) 
+17	1301	15<0 ( leftChild 24<0 ) 
+14	1300	15<0 ( leftChild 20<0 ) 
+16	1299	15<0 ( leftChild 18<0 ) 
+13	1298	15<0 ( leftChild 8<0 ) 
+17	1297	15<0 ( leftChild 43<0 ) 
+16	1296	15<0 ( leftChild 45<0 ) 
+13	1295	15<0 ( leftChild 48<2500 ) 
+13	1294	15<0 ( leftChild 23<0 ) 
+21	1293	15<0 ( leftChild 16<0 ) 
+15	1292	15<0 ( leftChild 47<0 ) 
+16	1291	15<0 ( leftChild 28<0 ) 
+15	1290	15<0 ( leftChild 27<0 ) 
+18	1289	15<0 ( leftChild 48<1500 ) 
+20	1288	15<0 ( leftChild 1<0 ) 
+16	1287	15<0 ( leftChild 44<0 ) 
+17	1286	15<0 ( leftChild 13<0 ) 
+16	1285	14<0 ( leftChild 10<0 ) 
+13	1284	14<0 ( leftChild 19<0 ) 
+14	1283	14<0 ( leftChild 25<0 ) 
+13	1282	14<0 ( leftChild 28<0 ) 
+16	1281	14<0 ( leftChild 16<0 ) 
+16	1280	14<0 ( leftChild 15<0 ) 
+14	1279	14<0 ( leftChild 46<0 ) 
+13	1278	14<0 ( leftChild 44<0 ) 
+14	1277	7<0 ( leftChild 48<1500 ) 
+14	1276	7<0 ( leftChild 44<0 ) 
+17	1275	7<0 ( leftChild 1<0 ) 
+15	1274	7<0 ( leftChild 47<0 ) 
+13	1273	7<0 ( leftChild 18<0 ) 
+13	1268	48<2500 ( rightChild 45<0 ) 
+14	1272	48<2500 ( leftChild 24<0 ) 
+13	1271	48<2500 ( leftChild 28<0 ) 
+21	1270	48<2500 ( leftChild 48<1500 ) 
+15	1269	48<2500 ( leftChild 16<0 ) 
+15	1267	48<2500 ( leftChild 1<0 ) 
+15	1266	48<2500 ( leftChild 46<0 ) 
+13	1264	6<0 ( rightChild 44<0 ) 
+17	1265	6<0 ( leftChild 2<0 ) 
+15	1263	6<0 ( leftChild 19<0 ) 
+15	1262	6<0 ( leftChild 1<0 ) 
+14	1261	6<0 ( leftChild 18<0 ) 
+14	1260	6<0 ( leftChild 13<0 ) 
+18	1259	13<0 ( leftChild 10<0 ) 
+16	1258	13<0 ( leftChild 2<0 ) 
+14	1257	13<0 ( leftChild 24<0 ) 
+17	1256	13<0 ( leftChild 5<0 ) 
+17	1255	13<0 ( leftChild 27<0 ) 
+14	1254	13<0 ( leftChild 20<0 ) 
+14	1253	13<0 ( leftChild 45<0 ) 
+14	1252	13<0 ( leftChild 18<0 ) 
+18	1251	13<0 ( leftChild 19<0 ) 
+18	1250	13<0 ( leftChild 15<0 ) 
+17	1249	13<0 ( leftChild 46<0 ) 
+19	1248	13<0 ( leftChild 16<0 ) 
+13	1247	13<0 ( leftChild 43<0 ) 
+16	1246	13<0 ( leftChild 25<0 ) 
+17	1245	13<0 ( rightChild 24<0 ) 
+13	1244	13<0 ( rightChild 46<0 ) 
+16	1243	48<3500 ( leftChild 25<0 ) 
+13	1242	48<3500 ( leftChild 27<0 ) 
+13	1241	50<500 ( leftChild 25<0 ) 

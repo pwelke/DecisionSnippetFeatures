@@ -1,0 +1,5 @@
+3	1	1<0.27250000834465027 
+25	2	leaf 
+3	22	1<0.27250000834465027 ( rightChild leaf ) 
+3	21	1<0.27250000834465027 ( leftChild leaf ) 
+3	23	1<0.27250000834465027 ( leftChild leaf ) ( rightChild leaf ) 
