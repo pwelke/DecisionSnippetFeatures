@@ -1,0 +1,12 @@
+[{"patternid":1,"pattern":{"id":0,"feature":55,"split":950}},
+{"patternid":2,"pattern":{"id":0,"feature":55,"split":1050}},
+{"patternid":3,"pattern":{"id":0,"feature":52,"split":2}},
+{"patternid":4,"pattern":{"id":0,"feature":52,"split":5}},
+{"patternid":5,"pattern":{"id":0,"feature":51,"split":7}},
+{"patternid":6,"pattern":{"id":0,"feature":49,"split":1}},
+{"patternid":7,"pattern":{"id":0,"prediction":[]}},
+{"patternid":8,"pattern":{"id":0,"feature":55,"split":350}},
+{"patternid":9,"pattern":{"id":0,"feature":55,"split":450}},
+{"patternid":10,"pattern":{"id":0,"feature":51,"split":16}},
+{"patternid":11,"pattern":{"id":0,"feature":53,"split":1}},
+{"patternid":12,"pattern":{"id":0,"feature":52,"split":3}}]

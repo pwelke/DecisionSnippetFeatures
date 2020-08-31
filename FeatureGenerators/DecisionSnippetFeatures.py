@@ -74,20 +74,26 @@ class FeatureGeneratingTree(Tree.Tree):
         self.fromJSON(makeProperBinaryDT(pattern))
         self.n_nodes = len(self.nodes)
 
-    def get_features(self, x):
+    def get_features(self, x,output): # to get nodeId set output as 0, to get count of comparisons set output to 1
         curNode = self.head
+        counter = 0 
 
         # walk through the (partial) decision tree as long as possible
-        while(curNode.prediction == None):            
+        while(curNode.prediction == None):
+            counter +=1
             if (x[curNode.feature] <= curNode.split): 
                 curNode = curNode.leftChild
             else:
                 curNode = curNode.rightChild
-         
-        return curNode.id
+        if (output == 0):           
+            return curNode.id
+        else:
+            return counter
+        #return counter
+        #self.x_counter +=1
            
-    def get_features_batch(self, X):
-        return np.array([self.get_features(x) for x in X])
+    def get_features_batch(self, X,output):
+        return np.array([self.get_features(x,output) for x in X])
 
 
 class FrequentSubtreeFeatures():
@@ -133,11 +139,11 @@ class FrequentSubtreeFeatures():
         frequent rooted subtree models."""
         pass
     
-    def transform(self, X):
+    def transform(self, X,output):
         """Compute the ids of the leafs of the decision trees that the data points end up in."""
-        return np.stack([pattern.get_features_batch(X) for pattern in self.patterns]).T
+        return np.stack([pattern.get_features_batch(X,output) for pattern in self.patterns]).T
 
-    def fit_transform(self, X, y=None):
+    def fit_transform(self, X,output, y=None):
         """Equivalent to transform(X)."""
-        return self.transform(X)
+        return self.transform(X,output)
 
