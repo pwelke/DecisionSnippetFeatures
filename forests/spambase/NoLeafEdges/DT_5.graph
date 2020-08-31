@@ -1,0 +1,4 @@
+# 0 0 59 28
+10 55 22 23 26 leaf leaf 6 leaf leaf 24 55 leaf leaf leaf 52 24 23 leaf leaf 15 leaf leaf 25 20 leaf leaf 54 leaf leaf 51 18 11 52 leaf leaf 13 leaf leaf 24 12 leaf leaf 10 leaf leaf 54 24 48 leaf leaf leaf 24 17 leaf leaf 51 leaf leaf 
+1 2 leftChild 2 3 leftChild 3 4 leftChild 4 5 leftChild 4 8 rightChild 3 11 rightChild 11 12 leftChild 2 16 rightChild 16 17 leftChild 17 18 leftChild 17 21 rightChild 16 24 rightChild 24 25 leftChild 24 28 rightChild 1 31 rightChild 31 32 leftChild 32 33 leftChild 33 34 leftChild 33 37 rightChild 32 40 rightChild 40 41 leftChild 40 44 rightChild 31 47 rightChild 47 48 leftChild 48 49 leftChild 47 53 rightChild 53 54 leftChild 53 57 rightChild 
+$
