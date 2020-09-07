@@ -1,5 +1,13 @@
+#!/usr/bin/env python
+
+"""
+usage:
+    ./file_splitting_into_train_and_test.py arch-forest/data/adult/ adult data
+for more information read the comments of the main function
+"""
 
 import numpy as np
+import sys
 from sklearn.model_selection import train_test_split
 
 def split_data_into_train_and_test(dataset_path, dataset_name, dataset_file_extension):    
@@ -27,10 +35,18 @@ def split_data_into_train_and_test(dataset_path, dataset_name, dataset_file_exte
         for line in test:
             f.write(data[line])      
 
+if __name__ == '__main__':
+    #expects three parameters
+    #to split the file /arch-forest/data/adult/adult.data into adult.train and adult.test, use the following command in a terminal:
+    #  ./file_splitting_into_train_and_test.py arch-forest/data/adult/ adult data
+    
+    #dataset_path = "arch-forest/data/adult/"
+    #dataset_name = "adult"
+    #dataset_file_extension = "data"
 
-def main():
-    #split the file /arch-forest/data/adult/adult.data into adult.train and adult.test
-    dataset_path = "/arch-forest/data/adult/"
-    dataset_name = "adult"
-    dataset_file_extension = "data"
+    dataset_path = sys.argv[1]
+    dataset_name = sys.argv[2]
+    dataset_file_extension = sys.argv[3]
+
     split_data_into_train_and_test(dataset_path, dataset_name, dataset_file_extension)
+    print("Successfully splitted", dataset_path + dataset_name + "." + dataset_file_extension, "into", dataset_name + ".train and", dataset_name + ".test.")
