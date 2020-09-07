@@ -1,8 +1,8 @@
 arch-forest/*/*
 !arch-forest/*/trainForest.py
 !arch-forest/*/init.sh
-!arch-forest/*/*/*.train
-!arch-forest/*/*/*.test
+!arch-forest/**.train
+!arch-forest/**.test
 .ipynb_checkpoints/
 forests
 .ipynb_checkpoints
