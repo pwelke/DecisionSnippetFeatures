@@ -48,5 +48,7 @@ if __name__ == '__main__':
     dataset_name = sys.argv[2]
     dataset_file_extension = sys.argv[3]
 
+    np.random.seed(0)
+
     split_data_into_train_and_test(dataset_path, dataset_name, dataset_file_extension)
     print("Successfully splitted", dataset_path + dataset_name + "." + dataset_file_extension, "into", dataset_name + ".train and", dataset_name + ".test.")
