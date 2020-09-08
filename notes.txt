@@ -32,3 +32,21 @@ moeglicherweise interessante Dateien im Repository (für die Auswertung der Erge
 für Auswertung nur einen Datensatz benutzen (adult)?
 
 !!! im Notebook Program.ipynb werden evtl die Dateien erstellt die in LearningAlgo.ipynb benutzt werden !!!
+
+
+------------------
+Classification.ipynb
+- Programmblock zur Erstellung von Ordnern am Anfang eingefügt:
+	- Ordner erstellt: forests/rootedFrequentTrees/adult/Results_NoLeafEdgesWithSplitValues
+	- Ordner erstellt: forests/rootedFrequentTrees/adult/Results_NoLeafEdgesWithSplitValues/leq6
+- Dateipfade von absoluten zu relativen Pfaden geändert:
+	- dataPath, frequentTreesPath and resultsPath
+- dataSet = 'adult':
+	- adult.data in adult.train umbenannt und adult.test vom UCI repository gedownloaded.
+- variant = 'NoLeafEdgesWithSplitValues'
+- for-Schleife hinzugefügt:
+	- for pruning in ['','_pruned_with_sigma_0_0','_pruned_with_sigma_0_1','_pruned_with_sigma_0_2','_pruned_with_sigma_0_3']
+- if Bedingung entfernt (if frequency < 4)
+
+
+
