@@ -3,6 +3,7 @@ arch-forest/*/*
 !arch-forest/*/init.sh
 !**.train
 !**.test
+FeatureGenerators/__pycache__
 .ipynb_checkpoints/
 forests
 .ipynb_checkpoints
