@@ -44,6 +44,7 @@ Classification.ipynb
 - dataSet = 'adult':
 	- adult.data in adult.train umbenannt und adult.test vom UCI repository gedownloaded.
 - variant = 'NoLeafEdgesWithSplitValues'
+- dt_score und rf_score, sowie results_list, in erste for Schleife verschoben (rf_depth)
 - for-Schleife hinzugefügt:
 	- for pruning in ['','_pruned_with_sigma_0_0','_pruned_with_sigma_0_1','_pruned_with_sigma_0_2','_pruned_with_sigma_0_3']
 - if Bedingung entfernt (if frequency < 4)
