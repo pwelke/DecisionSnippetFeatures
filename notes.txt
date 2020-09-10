@@ -49,5 +49,14 @@ Classification.ipynb
 	- for pruning in ['','_pruned_with_sigma_0_0','_pruned_with_sigma_0_1','_pruned_with_sigma_0_2','_pruned_with_sigma_0_3']
 - if Bedingung entfernt (if frequency < 4)
 
+SizeComparison.ipynb
+- Dateipfade von absoluten zu relativen Pfaden geaendert
+- dataSet = 'adult', variant = 'NoLeafEdgesWithSplitValues'
+- for Schleife (pruning) am Anfang hinzugefuegt
+- beim Einlesen der accuracy.csv files: line_count auf 120 erhoeht.
+- den in rf_list abgespeicherten String auf rowStr[0] abgeaendert (dudurch ist auch 'pruned_with_sigma...' enthalten)
+- bei size_list_dsf (usw.) lineCount auf 481 erhoeht
+- bei best_dsf (usw.) Werte fuer i in if Bedingung erhoeht
+
 
 
