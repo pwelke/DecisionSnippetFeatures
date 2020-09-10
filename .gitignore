@@ -8,4 +8,5 @@ DSF Random Forest/**
 FeatureGenerators/__pycache__
 .ipynb_checkpoints/
 forests
+!forests/rootedFrequentTrees/adult/Results_NoLeafEdgesWithSplitValues/**
 .ipynb_checkpoints
