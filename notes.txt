@@ -72,6 +72,7 @@ InferenceComparison.ipynb
 DSF_RF.ipynb
 - Dateipfade von absoluten zu relativen Pfaden geaendert
 - dataSet = 'adult', variant = 'NoLeafEdgesWithSplitValues'
+- readDataAdultNormal zu readDataAdult geaendert
 - for Schleife (pruning) am Anfang hinzugefuegt
 	- pruning in entsprechenden Dateipfaden eingefuegt (f = open(...+pruning+...) )
 	- pruning in best_prediction_majority_vote_dsf und best_prediction_average_probability_dsf eingefuegt
