@@ -4,6 +4,7 @@ arch-forest/*/*
 !**.train
 !**.test
 'DSF Random Forest'/**
+DSF Random Forest/**
 FeatureGenerators/__pycache__
 .ipynb_checkpoints/
 forests
