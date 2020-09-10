@@ -48,6 +48,7 @@ Classification.ipynb
 - for-Schleife hinzugefügt:
 	- for pruning in ['','_pruned_with_sigma_0_0','_pruned_with_sigma_0_1','_pruned_with_sigma_0_2','_pruned_with_sigma_0_3']
 - if Bedingung entfernt (if frequency < 4)
+- um DeprecationWarnings auszublenden: import warnings; warnings.simplefilter('ignore')
 
 SizeComparison.ipynb
 - Dateipfade von absoluten zu relativen Pfaden geaendert
@@ -57,6 +58,34 @@ SizeComparison.ipynb
 - den in rf_list abgespeicherten String auf rowStr[0] abgeaendert (dudurch ist auch 'pruned_with_sigma...' enthalten)
 - bei size_list_dsf (usw.) lineCount auf 481 erhoeht
 - bei best_dsf (usw.) Werte fuer i in if Bedingung erhoeht
+
+
+InferenceComparison.ipynb
+- Dateipfade von absoluten zu relativen Pfaden geaendert
+- dataSet = 'adult', variant = 'NoLeafEdgesWithSplitValues'
+- for Schleife (pruning) am Anfang hinzugefuegt
+- beim einlesen der accuracy files: linecount auf 120 erhoeht und rowStr[0] eingefuegt (vgl. SizeComparison)
+- naechster Abschnitt: lineCount auf 481 erhoeht (vgl. SizeComparison)
+- bei best_dsf (usw.) Werte fuer i in if Bedingung erhoeht (vgl. SizeComparison)
+
+
+DSF_RF.ipynb
+- Dateipfade von absoluten zu relativen Pfaden geaendert
+- dataSet = 'adult', variant = 'NoLeafEdgesWithSplitValues'
+- for Schleife (pruning) am Anfang hinzugefuegt
+	- pruning in entsprechenden Dateipfaden eingefuegt (f = open(...+pruning+...) )
+	- pruning in best_prediction_majority_vote_dsf und best_prediction_average_probability_dsf eingefuegt
+- for Schleife (pruning) am Ende hinzugefuegt (zum speichern der Ergebnisse in den Dateien)
+
+
+LearningAlgo.ipynb
+- Dateipfade von absoluten zu relativen Pfaden geaendert
+- dataSet = 'adult', variant = 'NoLeafEdgesWithSplitValues'
+- linecount auf 120 erhoeht und rowStr[0] eingefuegt (vgl. SizeComparison)
+- bei best_dsf (usw.) Werte fuer i in if Bedingung erhoeht (vgl. SizeComparison)
+- Funktion convert_index erstellt um den Index zu berichtigen (z.B. Index 1 -> 'pruned_with_sigma_0_0_t2' oder Index 119 -> 'pruned_with_sigma_0_3_t25')
+
+
 
 
 
