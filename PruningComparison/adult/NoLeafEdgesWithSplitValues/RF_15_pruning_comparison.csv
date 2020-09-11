@@ -1,0 +1,6 @@
+ , RF_15, RF_15_pruned_with_sigma_0_0, RF_15_pruned_with_sigma_0_1, RF_15_pruned_with_sigma_0_2, RF_15_pruned_with_sigma_0_3
+number of frequent subtrees (FS), 4019, 4520, 5176, 5455, 5571
+ratio of FS compared to RF_15, 1, 1.12, 1.29, 1.36, 1.39
+average frequency of all FS, 3.74, 3.96, 3.73, 3.73, 3.79
+number of FS that also appear in RF_15, 4019, 1, 1, 1, 1
+average frequency ratio of such FS, 1, 1.0, 1.0, 1.0, 1.0
