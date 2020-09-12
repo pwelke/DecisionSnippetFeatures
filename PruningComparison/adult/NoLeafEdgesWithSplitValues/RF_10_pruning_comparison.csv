@@ -1,6 +1,5 @@
  , RF_10, RF_10_pruned_with_sigma_0_0, RF_10_pruned_with_sigma_0_1, RF_10_pruned_with_sigma_0_2, RF_10_pruned_with_sigma_0_3
-number of frequent subtrees (FS), 1087, 1249, 1444, 1571, 1648
-ratio of FS compared to RF_10, 1, 1.15, 1.33, 1.45, 1.52
-average frequency of all FS, 4.29, 4.31, 3.98, 3.75, 3.62
-number of FS that also appear in RF_10, 1087, 1, 1, 1, 1
-average frequency ratio of such FS, 1, 1.0, 1.0, 1.0, 1.0
+number of frequent subtrees (FS), 1116, 1271, 1456, 1534, 1628
+ratio of FS compared to RF_10, 1, 1.14, 1.3, 1.37, 1.46
+average frequency of all FS, 4.27, 4.31, 4.01, 3.74, 3.65
+average size of all FS, 1.74, 1.76, 1.95, 1.99, 2.01
