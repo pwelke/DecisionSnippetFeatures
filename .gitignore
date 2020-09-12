@@ -1,6 +1,12 @@
 arch-forest/*/*
 !arch-forest/*/trainForest.py
 !arch-forest/*/init.sh
+!**.train
+!**.test
+'DSF Random Forest'/**
+DSF Random Forest/**
+FeatureGenerators/__pycache__
 .ipynb_checkpoints/
 forests
+!forests/rootedFrequentTrees/adult/Results_NoLeafEdgesWithSplitValues/**
 .ipynb_checkpoints
