@@ -248,7 +248,7 @@ def readDataLetter(type):
 	return np.array(X).astype(dtype=np.int32), np.array(Y)
 
 
-def readDataAdult(type):
+def readDataAdultNormal(type):
 	path = "arch-forest/data/"
 	X = []
 	Y = []       
@@ -280,8 +280,8 @@ def readDataAdult(type):
 	return (X, Y)
 	
 
-def readDataAdultNormal(type):
-	path = "../arch-forest/data/"
+def readDataAdult(type):
+	path = "arch-forest/data/"
 	X = []
 	Y = []       
 
