@@ -4,6 +4,7 @@ private notes of Manuel and Markus
 Was haben wir gemacht?
 - pruning.py erstellt für das prunen der Random Forests (json -> json)
 - trainForest.py im arch-forest Ordner abgeändert. Fuer jeden Datensatz den Befehl "X.dump("FeatureVectors.dat")" in die trainForest Datei eingefuegt. Dadurch entstehen auch neue Dateien (FeatureVectors.dat) fuer jeden Datensatz im arch-forest Order.
+- '0 Pruning Distinct Branching Conditions.ipynb' erstellt um pruning.py auf die Decision Forest Dateien anzuwenden. 
 - '2 Initial Rooted Frequent Subtree Mining -- With Split Values'.ipynb erstellt fuer das frequent-subtree-mining. Nur fuer threshold 2! 
 
 
@@ -31,3 +32,61 @@ moeglicherweise interessante Dateien im Repository (für die Auswertung der Erge
 für Auswertung nur einen Datensatz benutzen (adult)?
 
 !!! im Notebook Program.ipynb werden evtl die Dateien erstellt die in LearningAlgo.ipynb benutzt werden !!!
+
+
+------------------
+Classification.ipynb
+- Programmblock zur Erstellung von Ordnern am Anfang eingefügt:
+	- Ordner erstellt: forests/rootedFrequentTrees/adult/Results_NoLeafEdgesWithSplitValues
+	- Ordner erstellt: forests/rootedFrequentTrees/adult/Results_NoLeafEdgesWithSplitValues/leq6
+- Dateipfade von absoluten zu relativen Pfaden geändert:
+	- dataPath, frequentTreesPath and resultsPath
+- dataSet = 'adult':
+	- adult.data in adult.train umbenannt und adult.test vom UCI repository gedownloaded.
+- variant = 'NoLeafEdgesWithSplitValues'
+- dt_score und rf_score, sowie results_list, in erste for Schleife verschoben (rf_depth)
+- for-Schleife hinzugefügt:
+	- for pruning in ['','_pruned_with_sigma_0_0','_pruned_with_sigma_0_1','_pruned_with_sigma_0_2','_pruned_with_sigma_0_3']
+- if Bedingung entfernt (if frequency < 4)
+- um DeprecationWarnings auszublenden: import warnings; warnings.simplefilter('ignore')
+
+SizeComparison.ipynb
+- Dateipfade von absoluten zu relativen Pfaden geaendert
+- dataSet = 'adult', variant = 'NoLeafEdgesWithSplitValues'
+- for Schleife (pruning) am Anfang hinzugefuegt
+- beim Einlesen der accuracy.csv files: line_count auf 120 erhoeht.
+- den in rf_list abgespeicherten String auf rowStr[0] abgeaendert (dudurch ist auch 'pruned_with_sigma...' enthalten)
+- bei size_list_dsf (usw.) lineCount auf 481 erhoeht
+- bei best_dsf (usw.) Werte fuer i in if Bedingung erhoeht
+
+
+InferenceComparison.ipynb
+- Dateipfade von absoluten zu relativen Pfaden geaendert
+- dataSet = 'adult', variant = 'NoLeafEdgesWithSplitValues'
+- for Schleife (pruning) am Anfang hinzugefuegt
+- beim einlesen der accuracy files: linecount auf 120 erhoeht und rowStr[0] eingefuegt (vgl. SizeComparison)
+- naechster Abschnitt: lineCount auf 481 erhoeht (vgl. SizeComparison)
+- bei best_dsf (usw.) Werte fuer i in if Bedingung erhoeht (vgl. SizeComparison)
+
+
+DSF_RF.ipynb
+- Dateipfade von absoluten zu relativen Pfaden geaendert
+- dataSet = 'adult', variant = 'NoLeafEdgesWithSplitValues'
+- readDataAdultNormal zu readDataAdult geaendert
+- for Schleife (pruning) am Anfang hinzugefuegt
+	- pruning in entsprechenden Dateipfaden eingefuegt (f = open(...+pruning+...) )
+	- pruning in best_prediction_majority_vote_dsf und best_prediction_average_probability_dsf eingefuegt
+- for Schleife (pruning) am Ende hinzugefuegt (zum speichern der Ergebnisse in den Dateien)
+
+
+LearningAlgo.ipynb
+- Dateipfade von absoluten zu relativen Pfaden geaendert
+- dataSet = 'adult', variant = 'NoLeafEdgesWithSplitValues'
+- linecount auf 120 erhoeht und rowStr[0] eingefuegt (vgl. SizeComparison)
+- bei best_dsf (usw.) Werte fuer i in if Bedingung erhoeht (vgl. SizeComparison)
+- Funktion convert_index erstellt um den Index zu berichtigen (z.B. Index 1 -> 'pruned_with_sigma_0_0_t2' oder Index 119 -> 'pruned_with_sigma_0_3_t25')
+
+
+
+
+

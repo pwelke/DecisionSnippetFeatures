@@ -1,0 +1,6 @@
+ , RF_20, RF_20_pruned_with_sigma_0_0, RF_20_pruned_with_sigma_0_1, RF_20_pruned_with_sigma_0_2, RF_20_pruned_with_sigma_0_3
+number of frequent subtrees (FS), 7984, 8731, 9778, 10109, 10198
+ratio of FS compared to RF_20, 1, 1.09, 1.22, 1.27, 1.28
+average frequency of all FS, 3.7, 4.04, 3.83, 3.89, 3.98
+number of FS that also appear in RF_20, 7984, 1, 1, 1, 1
+average frequency ratio of such FS, 1, 1.0, 1.0, 1.0, 1.0
