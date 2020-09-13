@@ -10,3 +10,9 @@ FeatureGenerators/__pycache__
 forests
 !forests/rootedFrequentTrees/adult/Results_NoLeafEdgesWithSplitValues/**
 .ipynb_checkpoints
+Classification.ipynb
+DSF_RF.ipynb
+InferenceComparison.ipynb
+LearningAlgo.ipynb
+PruningComparison.ipynb
+Size_Comparison.ipynb
