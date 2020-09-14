@@ -176,7 +176,8 @@ def main(argv):
 
 	X = np.array(X).astype(dtype=np.int32)
 	Y = np.array(Y)
-
+	
+	X.dump("FeatureVectors.dat")
 	fitModels(True,X,Y)
 
 if __name__ == "__main__":
