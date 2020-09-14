@@ -16,3 +16,6 @@ InferenceComparison.ipynb
 LearningAlgo.ipynb
 PruningComparison.ipynb
 Size_Comparison.ipynb
+0\ Pruning\ Distinct\ Branching\ Conditions.ipynb
+2\ Initial\ Rooted\ Frequent\ Subtree\ Mining\ --\ With\ Split\ Values\ --\ without\ leaves\ --\ after\ pruning.ipynb
+3\ Compute\ and\ Store\ all\ Embeddings\ of\ the\ Frequent\ Rooted\ Subtrees\ up\ to\ Size\ 6.ipynb
