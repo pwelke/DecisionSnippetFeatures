@@ -22,7 +22,7 @@ def readFile(path):
 
 def main(argv):
 	X,Y = readFile("spambase.data")
-
+	#X.dump("FeatureVectors.dat")
 	fitModels(True,X,Y)
 
 if __name__ == "__main__":

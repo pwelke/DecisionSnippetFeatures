@@ -21,7 +21,7 @@ def main(argv):
 	XTest = DTest[:,0:-1].astype(dtype=np.int32)
 	YTest = DTest[:,-1]
 	YTest = [y-1 if y != 7 else 5 for y in YTest]
-
+	XTrain.dump("FeatureVectors.dat")
 	fitModels(True,XTrain,YTrain,XTest,YTest,True)
 
 if __name__ == "__main__":

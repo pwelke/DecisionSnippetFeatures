@@ -206,7 +206,7 @@ def readDataMagic(type):
 def readDataSpambase(type):
 	path = "../arch-forest/data/"
 	if (type =='train'):
-		f = open(path+"spambase/spambase.data",'r')
+		f = open(path+"spambase/train.csv",'r')
 	if (type =='test'):
 		f = open(path+"spambase/test.csv",'r')
 	X = []
