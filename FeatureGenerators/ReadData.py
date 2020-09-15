@@ -130,7 +130,7 @@ def readDataSensorlessDrive(type):
 def readDataSatlog(type):
 	X = []
 	Y = []
-	path = "../arch-forest/data/"
+	path = "arch-forest/data/"
 	if (type =='train'):
 		D = np.genfromtxt(path+"satlog/sat.trn", delimiter=' ')
 	if (type =='test'):
@@ -204,9 +204,9 @@ def readDataMagic(type):
 	return np.array(X).astype(dtype=np.int32), np.array(Y)
 
 def readDataSpambase(type):
-	path = "../arch-forest/data/"
+	path = "arch-forest/data/"
 	if (type =='train'):
-		f = open(path+"spambase/train.csv",'r')
+		f = open(path+"spambase/spambase.data",'r')
 	if (type =='test'):
 		f = open(path+"spambase/test.csv",'r')
 	X = []

@@ -1,4 +1,5 @@
- #load_ext line_profiler
+#!/usr/bin/env python
+#load_ext line_profiler
 import sys
 import csv,operator,sys,os
 import numpy as np
