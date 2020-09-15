@@ -3,3 +3,9 @@ number of frequent subtrees (FS), 515, 560, 417, 488, 572
 ratio of FS compared to RF_10, 1, 1.09, 0.81, 0.95, 1.11
 average frequency of all FS, 2.77, 4.11, 5.47, 4.82, 4.2
 average size of all FS, 1.01, 1.05, 1.53, 1.75, 1.87
+number of FS of size 1, 507, 532, 194, 127, 90
+number of FS of size 2, 7, 27, 221, 355, 465
+number of FS of size 3, 0, 0, 1, 5, 16
+number of FS of size 4, 0, 0, 0, 0, 0
+number of FS of size 5, 0, 0, 0, 0, 0
+number of FS of size 6, 0, 0, 0, 0, 0
