@@ -147,7 +147,7 @@ def readDataSatlog(type):
 def readDataMnist(type):
 	X = []
 	Y = []
-	path = "../arch-forest/data/"
+	path = "arch-forest/data/"
 	if (type =='train'):
 		f = open(path+"mnist/train.csv",'r')
 	if (type =='test'):
