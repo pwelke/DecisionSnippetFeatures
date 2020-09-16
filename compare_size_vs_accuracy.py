@@ -52,8 +52,8 @@ sizes = sizes[:-4]
 accuracies = accuracies[:-4]
 '''
 
-plt.plot(sizes_RF, acc_RF, '.', label='RF')
-plt.plot(sizes_0, acc_0, '.', label='sigma_0_0')
+plt.plot(sizes_RF, acc_RF, '.', label='RF', alpha=0.5)
+plt.plot(sizes_0, acc_0, '.', label='sigma_0_0', alpha=0.5)
 #plt.plot(sizes_1, acc_1, '.', label='sigma_0_1')
 #plt.plot(sizes_2, acc_2, '.', label='sigma_0_2')
 #plt.plot(sizes_3, acc_3, '.', label='sigma_0_3')
