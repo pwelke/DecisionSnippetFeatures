@@ -309,7 +309,7 @@ def readDataAdult(type):
 	return (X, Y)    
     
 def readDataBank(type):
-	path = "../arch-forest/data/"
+	path = "arch-forest/data/"
 	X = []
 	Y = []
     
