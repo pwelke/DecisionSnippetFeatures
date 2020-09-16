@@ -1,0 +1,30 @@
+Naive Bayes,
+RF,accuracy,
+RF_5_pruned_with_sigma_0_0_t3,0.9180346,
+RF_10_pruned_with_sigma_0_1_t3,0.93065137,
+RF_15_pruned_with_sigma_0_0_t7,0.9291256,
+RF_20_pruned_with_sigma_0_1_t4,0.9232558,
+
+Best DSF,0.93065137,
+
+
+Log Reg,
+RF,accuracy,
+RF_5_pruned_with_sigma_0_3_t2,0.8297133,
+RF_10_pruned_with_sigma_0_3_t16,0.8027802,
+RF_15_pruned_with_sigma_0_0_t4,0.82450044,
+RF_20_t7,0.803649,
+
+Best DSF,0.8297133,
+
+
+Linear SVM,
+RF,accuracy,
+RF_5_pruned_with_sigma_0_3_t3,0.821894,
+RF_10_pruned_with_sigma_0_0_t2,0.8027802,
+RF_15_pruned_with_sigma_0_0_t4,0.8288445,
+RF_20_t7,0.8027802,
+
+Best DSF,0.8288445,
+
+
