@@ -60,10 +60,12 @@ plt.plot(sizes_RF, acc_RF, '.', label='RF', alpha=0.5)
 if sigma in ["", "0"]:
      plt.plot(sizes_0, acc_0, '.', label='sigma_0_0', alpha=0.5)
 if sigma in ["", "1"]:
-     plt.plot(sizes_1, acc_1, '.', label='sigma_0_1')
+     plt.plot(sizes_1, acc_1, '.', label='sigma_0_1', alpha=0.5)
 if sigma in ["", "2"]:
-     plt.plot(sizes_2, acc_2, '.', label='sigma_0_2')
+     plt.plot(sizes_2, acc_2, '.', label='sigma_0_2', alpha=0.5)
 if sigma in ["", "3"]:
-     plt.plot(sizes_3, acc_3, '.', label='sigma_0_3')
+     plt.plot(sizes_3, acc_3, '.', label='sigma_0_3', alpha=0.5)
+if sigma=="uni":
+     plt.plot(sizes_0+sizes_1+sizes_2+sizes_3, acc_0+acc_1+acc_2+acc_3, '.', label="pruned", alpha=0.5)
 plt.legend(loc='lower right')
 plt.show()
