@@ -71,5 +71,22 @@ for rf_depth in (5,10,15,20):
     plt.scatter(x_str,max_table, marker='_', color='b', s=1000)
     plt.title('maxDepth ' + str(rf_depth))
 
+
+plt.tight_layout()
+# Option 1
+# QT backend
+manager = plt.get_current_fig_manager()
+manager.window.showMaximized()
+
+# Option 2
+# TkAgg backend
+#manager = plt.get_current_fig_manager()
+#manager.resize(*manager.window.maxsize())
+
+# Option 3
+# WX backend
+#manager = plt.get_current_fig_manager()
+#manager.frame.Maximize(True)
+#manager.full_screen_toggle()
 plt.show()
 #plt.savefig(resultsPath + plot_title)
