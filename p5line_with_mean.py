@@ -1,10 +1,14 @@
 #!/usr/bin/env python
-dataset = "bank"
-algostr="_LinearSVM"
 
 import csv
 import matplotlib.pyplot as plt
 import numpy as np
+import sys
+
+dataset = sys.argv[1]
+algostr = ''   #"_LinearSVM"
+if len(sys.argv) > 2:
+    algostr = sys.argv[2]
 
 
 variant = "NoLeafEdgesWithSplitValues"
@@ -12,7 +16,7 @@ scoring_function = 'accuracy'
 pattern_max_size = 6
 filesPath = "forests/rootedFrequentTrees"
 filesPath_RF = "arch-forest/data"
-resultsPath = "LearningAlgoComparisonPruning"
+resultsPath = "Evaluation_p5line/"
 
 
 
@@ -28,10 +32,17 @@ accuracy_list_knn_unpruned = []
 rf_list = []
 
 
-
+plot_title = dataset
+if len(sys.argv) > 2:
+    plot_title += algostr
+else:
+    plot_title += '_NaiveBayes'
+    
+x_str = ['unpruned','sig 0.0','sig 0.1','sig 0.2', 'sig 0.3']
 
 
 List=[]
+plt.title('test')
 for rf_depth in (5,10,15,20):
     List=[]
     with open(filesPath+'/'+dataset+'/Results_'+variant+'/leq'+str(pattern_max_size)+'/'+'RF_'+str(rf_depth)+'_'+scoring_function+algostr+'.csv') as csv_file:
@@ -46,8 +57,19 @@ for rf_depth in (5,10,15,20):
 
     table = np.reshape(np.array(List), (-1,5))
     print(table)
+    mean_table = np.mean(table,axis=0)
+    var_table = np.var(table,axis=0)
+    max_table = np.max(table,axis=0)
+    print('mean',mean_table)
+    print('var',var_table)
+    print('max',max_table,'\n')
 
+    plt.subplot(2,2,int(rf_depth/5))
     for line in table:
-        plt.plot([-0.2, 0, 0.1, 0.2, 0.3], line)
+        plt.plot(x_str, line, alpha=0.3)
+    plt.errorbar(x_str, mean_table,yerr=var_table, capsize=3, color='r')
+    plt.scatter(x_str,max_table, marker='_', color='b', s=1000)
+    plt.title('maxDepth ' + str(rf_depth))
 
-    plt.show()
+plt.show()
+#plt.savefig(resultsPath + plot_title)
