@@ -17,7 +17,7 @@ scoring_function = 'accuracy'
 pattern_max_size = 6
 filesPath = "forests/rootedFrequentTrees"
 filesPath_RF = "arch-forest/data"
-resultsPath = "Evaluation_p5line/"
+resultsPath = "Evaluation_best_accuracy/"
 
 
 
@@ -34,7 +34,7 @@ rf_list = []
 
 for algostr in ['', '_LogReg', '_LinearSVM']:
     plot_title = dataset
-    if len(sys.argv) > 2:
+    if len(algostr) > 2:
         plot_title += algostr
     else:
         plot_title += '_NaiveBayes'
@@ -57,26 +57,28 @@ for algostr in ['', '_LogReg', '_LinearSVM']:
         csv_file.close()
 
     table = np.reshape(np.array(List), (-1,5))
-    print(table)
+    #print(table)
     mean_table = np.mean(table,axis=0)
     var_table = np.var(table,axis=0)
     max_table = np.max(table,axis=0)
-    print('mean',mean_table)
-    print('var',var_table)
-    print('max',max_table,'\n')
+    best_index = np.argmax(max_table)
+    #print('mean',mean_table)
+    #print('var',var_table)
+    #print('max',max_table,'\n')
 
     #for line in table:
     #    plt.plot(x_str, line, alpha=0.3)
     #plt.errorbar(x_str, mean_table,yerr=var_table, capsize=3, color='r')
-    plt.scatter(x_str,max_table, marker='_', color='b', s=1000)
+    plt.plot(x_str,max_table, 'o-', label=plot_title.split('_')[1])
+    plt.plot([x_str[best_index]],[max_table[best_index]],marker='o',color='red')
     #plt.title()
 
 
-    plt.tight_layout()
+    #plt.tight_layout()
     # Option 1
     # QT backend
-    manager = plt.get_current_fig_manager()
-    manager.window.showMaximized()
+    #manager = plt.get_current_fig_manager()
+    #manager.window.showMaximized()
 
     # Option 2
     # TkAgg backend
@@ -88,5 +90,8 @@ for algostr in ['', '_LogReg', '_LinearSVM']:
     #manager = plt.get_current_fig_manager()
     #manager.frame.Maximize(True)
     #manager.full_screen_toggle()
-    plt.show()
-    #plt.savefig(resultsPath + plot_title)
+
+plt.title(dataset)
+plt.legend(loc='best')
+#plt.show()
+plt.savefig(resultsPath + dataset)
