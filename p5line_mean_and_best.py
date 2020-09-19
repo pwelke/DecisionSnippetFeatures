@@ -2,6 +2,7 @@
 
 import csv
 import matplotlib.pyplot as plt
+plt.figure(figsize=(12,4))
 import numpy as np
 import sys
 
