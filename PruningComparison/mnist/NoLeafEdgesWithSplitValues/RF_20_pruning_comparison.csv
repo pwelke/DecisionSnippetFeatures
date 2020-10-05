@@ -1,0 +1,11 @@
+ , RF_20, RF_20_pruned_with_sigma_0_0, RF_20_pruned_with_sigma_0_1, RF_20_pruned_with_sigma_0_2, RF_20_pruned_with_sigma_0_3
+number of frequent subtrees (FS), 27241, 12517, 7253, 9831, 12713
+ratio of FS compared to RF_20, 1, 0.46, 0.27, 0.36, 0.47
+average frequency of all FS, 2.99, 6.44, 7.42, 4.89, 3.86
+average size of all FS, 1.0, 1.02, 1.45, 1.76, 1.86
+number of FS of size 1, 27239, 12249, 3969, 2408, 1825
+number of FS of size 2, 1, 267, 3273, 7399, 10857
+number of FS of size 3, 0, 0, 10, 23, 30
+number of FS of size 4, 0, 0, 0, 0, 0
+number of FS of size 5, 0, 0, 0, 0, 0
+number of FS of size 6, 0, 0, 0, 0, 0

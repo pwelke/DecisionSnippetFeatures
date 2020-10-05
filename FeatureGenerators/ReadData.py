@@ -3,7 +3,7 @@ import csv, operator, sys, os
 
 '''def readResultsFiles(dataSet, scoring_function):
     
-    resultsPath = "/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/forests/rootedFrequentTrees/"
+    resultsPath = "forests/rootedFrequentTrees/"
     
     res_list_dt=[]
     res_list_rf=[]
@@ -67,7 +67,7 @@ import csv, operator, sys, os
 
 
 def readData(dataSetStr):
-	path = "/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"
+	path = "../arch-forest/data/"
 	X = []
 	Y = []
 	if (dataSetStr =='adult'):
@@ -90,10 +90,10 @@ def readData(dataSetStr):
 		f.close()
 	elif(dataSetStr == 'wine-quality'):
 		red = np.genfromtxt(
-			"/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/wine-quality/winequality-red.csv",
+			"/arch-forest/data/wine-quality/winequality-red.csv",
 			delimiter=';', skip_header=1)
 		white = np.genfromtxt(
-			"/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/wine-quality/winequality-white.csv",
+			"//arch-forest/data/wine-quality/winequality-white.csv",
 			delimiter=';', skip_header=1)
 		X = np.vstack((red[:, :-1], white[:, :-1])).astype(dtype=np.float32)
 		Y = np.concatenate((red[:, -1], white[:, -1]))
@@ -102,41 +102,251 @@ def readData(dataSetStr):
 
 	return (X,Y)
 
+def readDataSensorlessDrive(type):
+
+	X = []
+	Y = []
+	path = "../arch-forest/data/"
+	if (type =='train'):
+		data = np.genfromtxt(path+"sensorless-drive/Sensorless_drive_diagnosis.txt", delimiter=' ')
+		idx = np.random.permutation(len(data))
+		X = data[idx,0:-1].astype(dtype=np.float32)
+		Y = data[idx,-1]
+		Y = Y-min(Y)
+        
+	if (type =='test'):
+		data = np.genfromtxt(path+"sensorless-drive/test.csv", delimiter=',')
+		idx = np.random.permutation(len(data))
+		X = data[idx,1:].astype(dtype=np.float32)
+		Y = data[idx,0]
+		Y = Y-min(Y)
+
+	Y = np.array(Y)
+	X = np.array(X)    
+	return np.array(X).astype(dtype=np.int32), np.array(Y).astype(dtype=np.int32)       
+
+    
+    
+def readDataSatlog(type):
+	X = []
+	Y = []
+	path = "arch-forest/data/"
+	if (type =='train'):
+		D = np.genfromtxt(path+"satlog/sat.trn", delimiter=' ')
+	if (type =='test'):
+		D = np.genfromtxt(path+"satlog/sat.tst", delimiter=' ')        
+
+	X = D[:,0:-1].astype(dtype=np.int32)
+	Y = D[:,-1]
+	Y = [y-1 if y != 7 else 5 for y in Y]
+
+	Y = np.array(Y)
+	X = np.array(X)    
+	return np.array(X).astype(dtype=np.int32), np.array(Y).astype(dtype=np.int32)
+
+def readDataMnist(type):
+	X = []
+	Y = []
+	path = "arch-forest/data/"
+	if (type =='train'):
+		f = open(path+"mnist/train.csv",'r')
+	if (type =='test'):
+		f = open(path+"mnist/test.csv",'r')
+
+	for row in f:
+		entries = row.strip("\n").split(",")
+		
+		Y.append(int(entries[0])-1)
+		x = [int(e) for e in entries[1:]]
+		X.append(x)
+
+	Y = np.array(Y)-min(Y)
+	return np.array(X).astype(dtype=np.int32), Y
+
+def readDataCovertype(type):
+	path = "../arch-forest/data/"
+	if (type =='train'):
+		f = open(path+"covertype/covtype.data",'r')
+	if (type =='test'):
+		f = open(path+"covertype/covtype.data",'r')
+	header = next(f)
+	X = []
+	Y = []
+
+	for row in f:
+		entries = row.replace("\n","").split(",")
+
+		X.append([float(e) for e in entries[:-1]])
+		Y.append(int(entries[-1]))
+
+	# NOTE: It seems, that SKLEarn produces an internal mapping from 0-(|Y| - 1) for classification
+	# 		For some reason I was not able to extract this mapping from SKLearn ?!?!
+	Y = np.array(Y)
+	X = np.array(X)
+	Y = Y-min(Y)
+	return np.array(X).astype(dtype=np.int32), np.array(Y)
+
+def readDataMagic(type):
+	path = "../arch-forest/data/"
+	if (type =='train'):
+		f = open(path+"magic/magic04.data",'r')
+	if (type =='test'):
+		f = open(path+"magic/magic04.data",'r')
+	X = []
+	Y = []
+	for row in f:
+		entries = row.strip().split(",")
+		x = [float(e) for e in entries[0:-1]]
+		y = 0 if entries[-1] == 'g' else 1
+		X.append(x)
+		Y.append(y)
+
+	return np.array(X).astype(dtype=np.int32), np.array(Y)
+
+def readDataSpambase(type):
+	path = "arch-forest/data/"
+	if (type =='train'):
+		f = open(path+"spambase/spambase.data",'r')
+	if (type =='test'):
+		f = open(path+"spambase/test.csv",'r')
+	X = []
+	Y = []
+	for row in f:
+		entries = row.strip().split(",")
+		x = [int(float(e)*100) for e in entries[0:-1]]
+		if (type =='train'):           
+			y = int(entries[-1])
+		if (type =='test'):           
+			y = int(entries[0])            
+		X.append(x)
+		Y.append(y)
+
+	return np.array(X).astype(dtype=np.int32), np.array(Y)
+
+def readDataLetter(type):
+	path = "../arch-forest/data/"
+	if (type =='train'):
+		f = open(path+"letter/letter-recognition.data",'r')
+	if (type =='test'):
+		f = open(path+"letter/test.csv",'r')
+	X = []
+	Y = []
+	for row in f:
+		entries = row.strip().split(",")
+		x = [int(e) for e in entries[1:]]
+		# Labels are capital letter has. 'A' starts in ASCII code with 65
+		# We map it to '0' here, since SKLearn internally starts with mapping = 0 
+		# and I have no idea how it produces correct outputs in the first place
+		if (type =='train'):
+			y = ord(entries[0]) - 65
+		if (type =='test'):
+			y = int(entries[0])
+            
+		X.append(x)
+		Y.append(y)
+
+	return np.array(X).astype(dtype=np.int32), np.array(Y)
 
 
-
-def readDataAdult(type):
-	path = "/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"
+def readDataAdultNormal(type):
+	path = "arch-forest/data/"
 	X = []
 	Y = []       
 
 	f = open(path + "adult/adult."+type)
+	counter = 0    
 	for row in f:
 		if (len(row) > 1):
 			entries = row.replace("\n", "").replace(" ", "").split(",")
 
 			x = getFeatureVectorAdult(entries)
 
-			if (entries[-1] == "<=50K"):
-				y = 0
+			if (entries[-1] == "<=50K." or entries[-1] == "<=50K"):
+				counter += 1
+				if (counter %3 == 0):
+					y = 0
+					Y.append(y)
+					X.append(x) 
+                
+                
 			else:
-				y = 1
-
-			Y.append(y)
-			X.append(x)
+					y = 1
+					Y.append(y)
+					X.append(x) 
+                    
 	X = np.array(X).astype(dtype=np.int32)
 	Y = np.array(Y)
 	f.close()
 	return (X, Y)
 	
 
+def readDataAdult(type):
+	path = "arch-forest/data/"
+	X = []
+	Y = []       
+
+	f = open(path + "adult/adult."+type)   
+	for row in f:
+		if (len(row) > 1):
+			entries = row.replace("\n", "").replace(" ", "").split(",")
+
+			x = getFeatureVectorAdult(entries)
+
+			if (entries[-1] == "<=50K." or entries[-1] == "<=50K"):
+					y = 0
+					Y.append(y)
+					X.append(x) 
+                
+                
+			else:
+					y = 1
+					Y.append(y)
+					X.append(x) 
+                    
+	X = np.array(X).astype(dtype=np.int32)
+	Y = np.array(Y)
+	f.close()
+	return (X, Y)    
+    
+def readDataBank(type):
+	path = "arch-forest/data/"
+	X = []
+	Y = []
+    
+	if (type =='train'):
+		f = open(path+"bank/bank-additional/bank-additional-full.csv")
+	if (type =='test'):
+		f = open(path+"bank/bank-additional/bank-additional.csv")    
+        
+	next(f)
+	for row in f:
+		if (len(row) > 1):
+			entries = row.replace("\n", "").replace(" ", "").replace("\"","").split(";")
+
+			x = getFeatureVectorBank(entries)
+
+			if (entries[-1] == "no"):
+				y = 0
+			else:
+				y = 1
+
+			Y.append(y)
+			X.append(x)
+
+	X = np.array(X).astype(dtype=np.int32)
+	Y = np.array(Y)
+
+	f.close()
+	return (X, Y)    
+
+    
 def readWine():
 	X = []
 	Y = []
 	red = np.genfromtxt(
-		"/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/wine-quality/winequality-red.csv",
+		"../arch-forest/data/wine-quality/winequality-red.csv",
 		delimiter=';', skip_header=1)
-	white = np.genfromtxt("/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/wine-quality/winequality-white.csv", delimiter=';', skip_header=1)
+	white = np.genfromtxt("../arch-forest/data/wine-quality/winequality-white.csv", delimiter=';', skip_header=1)
 	X = np.vstack((red[:, :-1], white[:, :-1])).astype(dtype=np.float32)
 	Y = np.concatenate((red[:, -1], white[:, -1]))
 	Y = Y - min(Y)
@@ -146,9 +356,9 @@ def readWineTest():
 	X = []
 	Y = []
 	red = np.genfromtxt(
-		"/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/wine-quality/test.csv",
+		"../arch-forest/data/wine-quality/test.csv",
 		delimiter=';', skip_header=1)
-	white = np.genfromtxt("/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/wine-quality/test2.csv", delimiter=';', skip_header=1)
+	white = np.genfromtxt("../arch-forest/data/wine-quality/test2.csv", delimiter=';', skip_header=1)
 	X = np.vstack((red[:, :-1], white[:, :-1])).astype(dtype=np.float32)
 	Y = np.concatenate((red[:, -1], white[:, -1]))
 	Y = Y - min(Y)
