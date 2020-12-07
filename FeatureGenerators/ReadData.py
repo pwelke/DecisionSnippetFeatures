@@ -168,7 +168,7 @@ def readDataCovertype(type):
 	if (type =='train'):
 		f = open(path+"covertype/covtype.data",'r')
 	if (type =='test'):
-		f = open(path+"covertype/covtype.data",'r')
+		f = open(path+"covertype/test.csv",'r')
 	header = next(f)
 	X = []
 	Y = []
@@ -191,7 +191,7 @@ def readDataMagic(type):
 	if (type =='train'):
 		f = open(path+"magic/magic04.data",'r')
 	if (type =='test'):
-		f = open(path+"magic/magic04.data",'r')
+		f = open(path+"magic/test.csv",'r')
 	X = []
 	Y = []
 	for row in f:
