@@ -2,42 +2,27 @@ import numpy as np
 import csv, operator, sys, os
 
 
-# def readData(dataSetStr, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
-
-# 	X = []
-# 	Y = []
-# 	if (dataSetStr =='adult'):
-# 		f = open(path + "adult/adult.data")
-# 		for row in f:
-# 			if (len(row) > 1):
-# 				entries = row.replace("\n", "").replace(" ", "").split(",")
-
-# 				x = getFeatureVectorAdult(entries)
-
-# 				if (entries[-1] == "<=50K"):
-# 					y = 0
-# 				else:
-# 					y = 1
-
-# 				Y.append(y)
-# 				X.append(x)
-# 		X = np.array(X).astype(dtype=np.int32)
-# 		Y = np.array(Y)
-# 		f.close()
-# 	elif(dataSetStr == 'wine-quality'):
-# 		red = np.genfromtxt(
-# 			"/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/wine-quality/winequality-red.csv",
-# 			delimiter=';', skip_header=1)
-# 		white = np.genfromtxt(
-# 			"/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/wine-quality/winequality-white.csv",
-# 			delimiter=';', skip_header=1)
-# 		X = np.vstack((red[:, :-1], white[:, :-1])).astype(dtype=np.float32)
-# 		Y = np.concatenate((red[:, -1], white[:, -1]))
-# 		Y = Y - min(Y)
-
-
-# 	return (X,Y)
-
+def readData(dataset, type, path):
+	if dataset == 'sensorless':
+		return readDataSensorlessDrive(type, path)
+	if dataset == 'satlog':
+		return readDataSatlog(type, path)
+	if dataset == 'mnist':
+		return readDataMnist(type, path)
+	if dataset == 'magic':
+		return readDataMagic(type, path)
+	if dataset == 'spambase':
+		return readDataSpambase(type, path)
+	if dataset == 'letter':
+		return readDataLetter(type, path)
+	if dataset == 'bank':
+		return readDataBank(type, path)
+	if dataset == 'adult':
+		return readDataAdult(type, path)
+	
+	# error
+	raise Exception('Name of dataset unknown: ' + dataset)
+	
 
 def readDataSensorlessDrive(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
 
@@ -99,30 +84,6 @@ def readDataMnist(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInR
 
 	Y = np.array(Y)-min(Y)
 	return np.array(X).astype(dtype=np.int32), Y
-
-
-# def readDataCovertype(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
-	
-# 	if (type =='train'):
-# 		f = open(os.path.join(path, "covertype/covtype.data",'r'))
-# 	if (type =='test'):
-# 		f = open(os.path.join(path, "covertype/test.csv",'r'))
-# 	header = next(f)
-# 	X = []
-# 	Y = []
-
-# 	for row in f:
-# 		entries = row.replace("\n","").split(",")
-
-# 		X.append([float(e) for e in entries[:-1]])
-# 		Y.append(int(entries[-1]))
-
-# 	# NOTE: It seems, that SKLEarn produces an internal mapping from 0-(|Y| - 1) for classification
-# 	# 		For some reason I was not able to extract this mapping from SKLearn ?!?!
-# 	Y = np.array(Y)
-# 	X = np.array(X)
-# 	Y = Y-min(Y)
-# 	return np.array(X).astype(dtype=np.int32), np.array(Y)
 
 
 def readDataMagic(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
@@ -218,36 +179,7 @@ def readDataAdult(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInR
 	X = np.array(X).astype(dtype=np.int32)
 	Y = np.array(Y)
 	f.close()
-	return (X, Y)
-	
-
-# def readDataAdultNormal(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
-	
-# 	X = []
-# 	Y = []       
-
-# 	f = open(path + "adult/adult."+type)   
-# 	for row in f:
-# 		if (len(row) > 1):
-# 			entries = row.replace("\n", "").replace(" ", "").split(",")
-
-# 			x = getFeatureVectorAdult(entries)
-
-# 			if (entries[-1] == "<=50K." or entries[-1] == "<=50K"):
-# 					y = 0
-# 					Y.append(y)
-# 					X.append(x) 
-                
-                
-# 			else:
-# 					y = 1
-# 					Y.append(y)
-# 					X.append(x) 
-                    
-# 	X = np.array(X).astype(dtype=np.int32)
-# 	Y = np.array(Y)
-# 	f.close()
-# 	return (X, Y)    
+	return X, Y
     
 
 def readDataBank(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
