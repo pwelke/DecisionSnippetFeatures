@@ -33,7 +33,7 @@ def parseTree(tree):
     return recParse(tree, vertexLabels, edges)
 
 def transform2GraphDB(vertexLabels, edges, graphCounter, out):
-    print(' '.join(['#', str(graphCounter), '0', str(len(vertexLabels)), str(len(edges))]))
+    out.write(f'# {graphCounter} 0 {len(vertexLabels)} {len(edges)}\n')
     for v in sorted(vertexLabels.keys()):
         out.write(str(vertexLabels[v]) + ' ')
     out.write('\n')
@@ -43,7 +43,10 @@ def transform2GraphDB(vertexLabels, edges, graphCounter, out):
     out.write('\n')
         
 def main(file, out):
-    f = open(file)
+    if type(file) is str:
+        f = open(file)
+    else:
+        f = file
     j = json.load(f)
     f.close()
 
@@ -52,7 +55,7 @@ def main(file, out):
         vertexLabels, edges = parseTree(tree)
         transform2GraphDB(vertexLabels, edges, graphCounter, out)
         graphCounter += 1
-    print('$')
+    out.write('$\n')
 
 if __name__ == '__main__':
     main(sys.argv[1], sys.stdout)
