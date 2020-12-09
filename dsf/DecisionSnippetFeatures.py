@@ -4,9 +4,9 @@ import sklearn
 import json
 from functools import reduce
 
-sys.path.append('./arch-forest/data/adult/')
-sys.path.append('./arch-forest/data/')
-sys.path.append('./arch-forest/code/')
+sys.path.append('../arch-forest/data/adult/')
+sys.path.append('../arch-forest/data/')
+sys.path.append('../arch-forest/code/')
 
 import Tree
 
@@ -74,7 +74,9 @@ class FeatureGeneratingTree(Tree.Tree):
         self.fromJSON(makeProperBinaryDT(pattern))
         self.n_nodes = len(self.nodes)
 
-    def get_features(self, x,output): # to get nodeId set output as 0, to get count of comparisons set output to 1
+    
+    def get_features(self, x, output=0):
+        ''' to get nodeId set output as 0, to get count of comparisons set output to 1'''
         curNode = self.head
         counter = 0 
 
@@ -92,8 +94,8 @@ class FeatureGeneratingTree(Tree.Tree):
         #return counter
         #self.x_counter +=1
            
-    def get_features_batch(self, X,output):
-        return np.array([self.get_features(x,output) for x in X])
+    def get_features_batch(self, X, output=0):
+        return np.array([self.get_features(x, output) for x in X])
 
 
 class FrequentSubtreeFeatures():
@@ -133,17 +135,25 @@ class FrequentSubtreeFeatures():
             return size_list[0]
         else:
             return size_list
+
+    def get_categories(self):
+        """ Variant of the above that is hopefully compatible with the sklearn.preprocessing.OneHotEncoder of newer sklearn versions"""
+        size_list = [pattern.n_nodes for pattern in self.patterns]
+        return [range(leaves) for leaves in size_list]
     
     def fit(self, X=None, y=None):
         """Nothing to be done. The fitting already happenened during the creation of the random forest/decision tree/
         frequent rooted subtree models."""
         pass
     
-    def transform(self, X,output):
-        """Compute the ids of the leafs of the decision trees that the data points end up in."""
-        return np.stack([pattern.get_features_batch(X,output) for pattern in self.patterns]).T
+    def transform(self, X, output=0):
+        """Compute the ids of the leafs of the decision trees that the data points end up in. (default)
+        Or compute the number of comparisons made during leaf id inference"""
+        return np.stack([pattern.get_features_batch(X, output) for pattern in self.patterns]).T
 
-    def fit_transform(self, X,output, y=None):
-        """Equivalent to transform(X)."""
-        return self.transform(X,output)
+    def fit_transform(self, X, output=0, y=None):
+        """Equivalent to transform(X).
+        Compute the ids of the leafs of the decision trees that the data points end up in. (default)
+        Or compute the number of comparisons made during leaf id inference"""
+        return self.transform(X, output)
 
