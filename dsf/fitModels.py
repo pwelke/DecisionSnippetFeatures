@@ -66,7 +66,13 @@ def testModel(roundSplit, XTrain, YTrain, XTest, YTest, model, name, model_dir):
 	print(str(len(XTest)) + "\t" + str(len(XTest[0])) + "\t" + str(accuracy) + "\t" + str(mymodel.getAvgDepth()))
 	print()
 
-def fitModels(roundSplit, XTrain, YTrain, XTest=None, YTest=None, createTest=False, model_dir='text'):
+def fitModels(roundSplit, XTrain, YTrain, XTest=None, YTest=None, createTest=False, model_dir='text', types=['RF', 'ET', 'DT']):
+	''' Fit a bunch of forest models to the given train data and write the resulting models to disc.
+	Possible forest types are: 
+	- DT (decision tree)
+	- ET (extra trees)
+	- RF (random forest)
+	- AB (adaboost) '''
 	if XTest is None or YTest is None:
 		XTrain,XTest,YTrain,YTest = train_test_split(XTrain, YTrain, test_size=0.25)
 		createTest = True
@@ -80,32 +86,31 @@ def fitModels(roundSplit, XTrain, YTrain, XTest=None, YTest=None, createTest=Fal
 
 				outFile.write(line + "\n")
 
-	# testModel(XTrain,YTrain,XTest,YTest,DecisionTreeClassifier(max_depth=1),"DT_1")
-	# testModel(XTrain,YTrain,XTest,YTest,DecisionTreeClassifier(max_depth=5),"DT_5")
-	# testModel(XTrain,YTrain,XTest,YTest,DecisionTreeClassifier(max_depth=15),"DT_15")
-	# testModel(XTrain,YTrain,XTest,YTest,DecisionTreeClassifier(max_depth=None),"DT_unlimited")
+	if 'DT' in types:
+		testModel(roundSplit,XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=1,n_jobs=8,max_depth=1),"DT_1", model_dir)
+		testModel(roundSplit,XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=1,n_jobs=8,max_depth=5),"DT_5", model_dir)
+		testModel(roundSplit,XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=1,n_jobs=8,max_depth=10),"DT_10", model_dir)
+		testModel(roundSplit,XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=1,n_jobs=8,max_depth=15),"DT_15", model_dir)
+		testModel(roundSplit,XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=1,n_jobs=8,max_depth=20),"DT_20", model_dir)
+		#testModel(XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=1,n_jobs=4,max_depth=None),"DT_unlimited", model_dir)
 
-	testModel(roundSplit,XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=1,n_jobs=8,max_depth=1),"DT_1", model_dir)
-	testModel(roundSplit,XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=1,n_jobs=8,max_depth=5),"DT_5", model_dir)
-	testModel(roundSplit,XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=1,n_jobs=8,max_depth=10),"DT_10", model_dir)
-	testModel(roundSplit,XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=1,n_jobs=8,max_depth=15),"DT_15", model_dir)
-	testModel(roundSplit,XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=1,n_jobs=8,max_depth=20),"DT_20", model_dir)
-	#testModel(XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=1,n_jobs=4,max_depth=None),"DT_unlimited", model_dir)
+	if 'ET' in types:
+		testModel(roundSplit,XTrain,YTrain,XTest,YTest,ExtraTreesClassifier(n_estimators=25,n_jobs=8,max_depth=1),"ET_1", model_dir)
+		testModel(roundSplit,XTrain,YTrain,XTest,YTest,ExtraTreesClassifier(n_estimators=25,n_jobs=8,max_depth=5),"ET_5", model_dir)
+		testModel(roundSplit,XTrain,YTrain,XTest,YTest,ExtraTreesClassifier(n_estimators=25,n_jobs=8,max_depth=10),"ET_10", model_dir)
+		testModel(roundSplit,XTrain,YTrain,XTest,YTest,ExtraTreesClassifier(n_estimators=25,n_jobs=8,max_depth=15),"ET_15", model_dir)
+		testModel(roundSplit,XTrain,YTrain,XTest,YTest,ExtraTreesClassifier(n_estimators=25,n_jobs=8,max_depth=20),"ET_20", model_dir)
+		#testModel(XTrain,YTrain,XTest,YTest,ExtraTreesClassifier(n_estimators=25,n_jobs=4,max_depth=None),"ET_unlimited", model_dir)
 
-	testModel(roundSplit,XTrain,YTrain,XTest,YTest,ExtraTreesClassifier(n_estimators=25,n_jobs=8,max_depth=1),"ET_1", model_dir)
-	testModel(roundSplit,XTrain,YTrain,XTest,YTest,ExtraTreesClassifier(n_estimators=25,n_jobs=8,max_depth=5),"ET_5", model_dir)
-	testModel(roundSplit,XTrain,YTrain,XTest,YTest,ExtraTreesClassifier(n_estimators=25,n_jobs=8,max_depth=10),"ET_10", model_dir)
-	testModel(roundSplit,XTrain,YTrain,XTest,YTest,ExtraTreesClassifier(n_estimators=25,n_jobs=8,max_depth=15),"ET_15", model_dir)
-	testModel(roundSplit,XTrain,YTrain,XTest,YTest,ExtraTreesClassifier(n_estimators=25,n_jobs=8,max_depth=20),"ET_20", model_dir)
-	#testModel(XTrain,YTrain,XTest,YTest,ExtraTreesClassifier(n_estimators=25,n_jobs=4,max_depth=None),"ET_unlimited", model_dir)
+	if 'RF' in types:
+		testModel(roundSplit,XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=25,n_jobs=8,max_depth=1),"RF_1", model_dir)
+		testModel(roundSplit,XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=25,n_jobs=8,max_depth=5),"RF_5", model_dir)
+		testModel(roundSplit,XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=25,n_jobs=8,max_depth=10),"RF_10", model_dir)
+		testModel(roundSplit,XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=25,n_jobs=8,max_depth=15),"RF_15", model_dir)
+		testModel(roundSplit,XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=25,n_jobs=8,max_depth=20),"RF_20", model_dir)
+		#testModel(XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=25,n_jobs=4,max_depth=None),"RF_unlimited", model_dir)
 
-	testModel(roundSplit,XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=25,n_jobs=8,max_depth=1),"RF_1", model_dir)
-	testModel(roundSplit,XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=25,n_jobs=8,max_depth=5),"RF_5", model_dir)
-	testModel(roundSplit,XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=25,n_jobs=8,max_depth=10),"RF_10", model_dir)
-	testModel(roundSplit,XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=25,n_jobs=8,max_depth=15),"RF_15", model_dir)
-	testModel(roundSplit,XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=25,n_jobs=8,max_depth=20),"RF_20", model_dir)
-	#testModel(XTrain,YTrain,XTest,YTest,RandomForestClassifier(n_estimators=25,n_jobs=4,max_depth=None),"RF_unlimited", model_dir)
-
-	#testModel(XTrain,YTrain,XTest,YTest,AdaBoostClassifier(n_estimators=50,base_estimator=DecisionTreeClassifier(max_depth=1)),"AB_1", model_dir)
-	#testModel(XTrain,YTrain,XTest,YTest,AdaBoostClassifier(n_estimators=50,base_estimator=DecisionTreeClassifier(max_depth=3)),"AB_3", model_dir)
-	#testModel(XTrain,YTrain,XTest,YTest,AdaBoostClassifier(n_estimators=50,base_estimator=DecisionTreeClassifier(max_depth=5)),"AB_5", model_dir)
+	if 'AB' in types:
+		testModel(roundSplit, XTrain,YTrain,XTest,YTest,AdaBoostClassifier(n_estimators=25,base_estimator=DecisionTreeClassifier(max_depth=1)),"AB_1", model_dir)
+		testModel(roundSplit, XTrain,YTrain,XTest,YTest,AdaBoostClassifier(n_estimators=25,base_estimator=DecisionTreeClassifier(max_depth=3)),"AB_3", model_dir)
+		testModel(roundSplit, XTrain,YTrain,XTest,YTest,AdaBoostClassifier(n_estimators=25,base_estimator=DecisionTreeClassifier(max_depth=5)),"AB_5", model_dir)
