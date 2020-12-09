@@ -74,7 +74,9 @@ class FeatureGeneratingTree(Tree.Tree):
         self.fromJSON(makeProperBinaryDT(pattern))
         self.n_nodes = len(self.nodes)
 
-    def get_features(self, x,output): # to get nodeId set output as 0, to get count of comparisons set output to 1
+    
+    def get_features(self, x, output=0):
+        ''' to get nodeId set output as 0, to get count of comparisons set output to 1'''
         curNode = self.head
         counter = 0 
 
@@ -92,8 +94,8 @@ class FeatureGeneratingTree(Tree.Tree):
         #return counter
         #self.x_counter +=1
            
-    def get_features_batch(self, X,output):
-        return np.array([self.get_features(x,output) for x in X])
+    def get_features_batch(self, X, output=0):
+        return np.array([self.get_features(x, output) for x in X])
 
 
 class FrequentSubtreeFeatures():
@@ -139,11 +141,14 @@ class FrequentSubtreeFeatures():
         frequent rooted subtree models."""
         pass
     
-    def transform(self, X,output):
-        """Compute the ids of the leafs of the decision trees that the data points end up in."""
-        return np.stack([pattern.get_features_batch(X,output) for pattern in self.patterns]).T
+    def transform(self, X, output=0):
+        """Compute the ids of the leafs of the decision trees that the data points end up in. (default)
+        Or compute the number of comparisons made during leaf id inference"""
+        return np.stack([pattern.get_features_batch(X, output) for pattern in self.patterns]).T
 
-    def fit_transform(self, X,output, y=None):
-        """Equivalent to transform(X)."""
-        return self.transform(X,output)
+    def fit_transform(self, X, output=0, y=None):
+        """Equivalent to transform(X).
+        Compute the ids of the leafs of the decision trees that the data points end up in. (default)
+        Or compute the number of comparisons made during leaf id inference"""
+        return self.transform(X, output)
 
