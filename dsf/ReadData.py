@@ -19,9 +19,24 @@ def readData(dataset, type, path):
 		return readDataBank(type, path)
 	if dataset == 'adult':
 		return readDataAdult(type, path)
+	if dataset == 'drinking':
+		return readDataDrinking(type, path)
 	
 	# error
 	raise Exception('Name of dataset unknown: ' + dataset)
+
+
+def readDataDrinking(type, path='./data/'):
+	if type == 'train':
+		file = os.path.join(path, 'drinking/drinking.train')
+	if type == 'test':
+		file = os.path.join(path, 'drinking/drinking.test')
+
+	X = np.loadtxt(file, delimiter=',', dtype=np.int32)
+	Y = X[:, -1]
+	X = X[:, :-1]
+
+	return X, Y
 	
 
 def readDataSensorlessDrive(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
@@ -89,19 +104,16 @@ def readDataMnist(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInR
 def readDataMagic(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
 	
 	if (type =='train'):
-		f = open(os.path.join(path, "magic/magic04.data",'r'))
+		filename = os.path.join(path, "magic/magic04.train")
 	if (type =='test'):
-		f = open(os.path.join(path, "magic/test.csv",'r'))
-	X = []
-	Y = []
-	for row in f:
-		entries = row.strip().split(",")
-		x = [float(e) for e in entries[0:-1]]
-		y = 0 if entries[-1] == 'g' else 1
-		X.append(x)
-		Y.append(y)
+		filename = os.path.join(path, "magic/magic04.test")
 
-	return np.array(X).astype(dtype=np.int32), np.array(Y)
+	X = np.loadtxt(filename, delimiter=',', dtype=np.int32)
+	Y = X[:, -1]
+	X = X[:, :-1]
+
+	return X, Y
+
 
 
 def readDataSpambase(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
