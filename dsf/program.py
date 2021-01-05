@@ -1,11 +1,20 @@
 
 # %%
 
-import cString2json as cString2json
-import json2graphNoLeafEdgesWithSplitValues as json2graphNoLeafEdgesWithSplitValues
-from fitModels import fitModels 
+import csv
+import operator
+import sys
+import os
+import numpy as np
+import sklearn
+import json
+import time
+from functools import reduce
+import subprocess
+import pickle
 
-import DecisionSnippetFeatures as DecisionSnippetFeatures
+import matplotlib.pyplot as plt
+
 from sklearn.utils.estimator_checks import check_estimator
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
@@ -16,20 +25,14 @@ from sklearn.linear_model import LinearRegression
 from sklearn.svm import LinearSVC
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.metrics import accuracy_score
-from IPython import get_ipython
+# from IPython import get_ipython
 
-import csv,operator,sys,os
-import numpy as np
-import sklearn
-import json
-import time
-from functools import reduce
-import subprocess
-import pickle
+import cString2json as cString2json
+import json2graphNoLeafEdgesWithSplitValues as json2graphNoLeafEdgesWithSplitValues
+from fitModels import fitModels
+import DecisionSnippetFeatures as DecisionSnippetFeatures
 
-
-# sys.path.append('./arch-forest/code/')
-# import Tree
+# %% Parameters
 
 # dataPath = "./arch-forest/data/"
 dataPath = "./data/"
@@ -40,8 +43,13 @@ resultsPath = "./tmp/results/"
 dataSet = 'magic'
 # dataSet = 'adult'
 # dataSet = 'drinking'
-possible forest_types ['RF', 'DT', 'ET']
-# forest_types = ['RF']
+
+# possible forest_types ['RF', 'DT', 'ET']
+forest_types = ['RF']
+
+# TODO: include
+forest_depths = [5, 10, 15, 20]
+
 maxPatternSize = 6
 minThreshold = 2
 maxThreshold = 25
@@ -56,9 +64,11 @@ learner_class = [GaussianNB, LinearSVC, LogisticRegression]
 # for quick debugging, let the whole thing run once. Afterwards, you may deactivate individual steps
 # each step stores its output for the subsequent step(s) to process
 run_fit_models = True
-run_mining = False
-run_training = False
-run_eval = False
+run_mining = True
+run_training = True
+run_eval = True
+
+verbose = True
 
 # %% load data
 import ReadData
@@ -67,10 +77,10 @@ X_train, Y_train = ReadData.readData(dataSet, 'train', dataPath)
 X_test, Y_test = ReadData.readData(dataSet, 'test', dataPath)
 
 
-# %% create forest data
+# %% create forest data, evaluate and report accuracy on test data
 
 if run_fit_models:
-    fitModels(roundSplit=True, XTrain=X_train, YTrain=Y_train, XTest=None, YTest=None, createTest=False, model_dir=os.path.join(forestsPath, dataSet), types=forest_types)
+    fitModels(roundSplit=True, XTrain=X_train, YTrain=Y_train, XTest=X_test, YTest=Y_test, createTest=False, model_dir=os.path.join(forestsPath, dataSet), types=forest_types)
 
 
 # %% compute decision snippets
@@ -78,10 +88,13 @@ if run_fit_models:
 if run_mining:
 
     def pattern_frequency_filter(f_patterns, frequency, f_filtered_patterns):
+        pattern_count = 0
         for line in f_patterns:
             tokens = line.split('\t')
             if int(tokens[0]) >= frequency:
                 f_filtered_patterns.write(line)
+                pattern_count += 1
+        return pattern_count
 
 
     # translate json to graph files
@@ -112,21 +125,34 @@ if run_mining:
                 subprocess.run(args, stdout=f_out, stderr=f_err)
 
         # filtering of patterns for larger thresholds
-        print(f"filtering less frequent patterns for {graph_file}")
+        print(f"filtering more frequent patterns for {graph_file}")
         for threshold in range(maxThreshold, minThreshold, -1):
             filtered_pattern_file=os.path.join(snippetsPath, dataSet, graph_file[:-6] + f'_t{threshold}.patterns')
+            pattern_count = -1
             with open(pattern_file, 'r') as f_patterns:
                 with open(filtered_pattern_file, 'w') as f_filtered_patterns:
-                    pattern_frequency_filter(f_patterns, threshold, f_filtered_patterns)
+                    pattern_count = pattern_frequency_filter(f_patterns, threshold, f_filtered_patterns)
+            
+            # if there are no frequent patterns for given threshold, remove the file.
+            if pattern_count == 0:
+                os.remove(filtered_pattern_file)
+            else:
+                if verbose:
+                    print(f'threshold {threshold}: {pattern_count} frequent patterns')
+
 
         # transform canonical string format to json
         for threshold in range(maxThreshold, minThreshold-1, -1):
             filtered_pattern_file = os.path.join(snippetsPath, dataSet, graph_file[:-6] + f'_t{threshold}.patterns')
             filtered_json_file = os.path.join(snippetsPath, dataSet, graph_file[:-6] + f'_t{threshold}.json')
-            with open(filtered_pattern_file, 'r') as f_filtered_patterns:
-                with open(filtered_json_file, 'w') as f_filtered_json:
-                    json_data = cString2json.parseCStringFileUpToSizePatterns(f_filtered_patterns, patternSize=maxPatternSize)
-                    f_filtered_json.write(json_data)
+            try:
+                with open(filtered_pattern_file, 'r') as f_filtered_patterns:
+                    with open(filtered_json_file, 'w') as f_filtered_json:
+                        json_data = cString2json.parseCStringFileUpToSizePatterns(f_filtered_patterns, patternSize=maxPatternSize)
+                        f_filtered_json.write(json_data)
+            except EnvironmentError:
+                # this might happen if a certain threshold resulted in no frequent patterns and is OK
+                pass
 
 
 # %% Training of classifiers. For later selection of best candidate learners, run xval on train to estimate generalization
@@ -187,45 +213,37 @@ if run_training:
         with open(os.path.join(resultsPath, dataSet, "training_xval.pkl"), 'wb') as f_pickle:
             pickle.dump(results_list, f_pickle)
 
-# %% Find, for each learner, the best decision snippet features
-import matplotlib.pyplot as plt
-
+# %% Find, for each learner, the best decision snippet features on training data
 
 if run_eval:
     with open(os.path.join(resultsPath, dataSet, "training_xval.pkl"), 'rb') as f_pickle:
         results_list = pickle.load(f_pickle)
-       
-        for model_type in learner_type:
-            print('processing', model_type)
-            best_score = 0
-            scores = list()
-            labels = list()
-            for result in filter(lambda x: x[1] == model_type, results_list):
-                # store run with max score
-                if result[0] > best_score:
-                    best_result = result
-                    best_score = result[0]
-                scores.append(result[0])
-                labels.append(result[2])
 
-            # print train xval score etc.
-            print(model_type)
-            print(best_result)
-            print(best_score)
+        unique_forests = map(lambda x: x[:-5] + '_', filter(lambda x: x.endswith('.json'), os.listdir(os.path.join(forestsPath, dataSet))))
 
-            print([x for x in zip(labels, scores)])
+        print(f'best_snippets model_type train_xval_acc test_acc n_features')
+        for forest in unique_forests:
+            for model_type in learner_type:
+                # print('processing', model_type, forest)
+                best_score = 0
+                scores = list()
+                labels = list()
+                for result in filter(lambda x: x[2].startswith(forest), filter(lambda x: x[1] == model_type, results_list)):
+                    # store run with max score
+                    if result[0] > best_score:
+                        best_result = result
+                        best_score = result[0]
+                    scores.append(result[0])
+                    labels.append(result[2])
 
-            # evaluate on test
-            graph_file = best_result[2]
-            # get Decision Snippet Features
-            fts_onehot = dsf_transform(os.path.join(snippetsPath, dataSet, graph_file), X_test)
-            pred_test = best_result[3].predict(fts_onehot)
-            test_acc = accuracy_score(Y_test, pred_test)
-            print('test_acc', test_acc)
+                # evaluate on test
+                graph_file = best_result[2]
+                fts_onehot = dsf_transform(os.path.join(snippetsPath, dataSet, graph_file), X_test)
+                pred_test = best_result[3].predict(fts_onehot)
+                test_acc = accuracy_score(Y_test, pred_test)
 
-            # plt.title(dataSet)
-            # plt.bar(labels, scores)
-            # plt.show()
+                print(f'{best_result[2]} {model_type} {best_result[0]:.3f} {test_acc:.3f} {fts_onehot.shape[1]}')
+
 
                 
 # %% TEST
