@@ -23,10 +23,11 @@ from sklearn.model_selection import cross_val_score
 from sklearn.linear_model import LogisticRegression
 from sklearn.linear_model import LinearRegression
 from sklearn.svm import LinearSVC
-from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.metrics import accuracy_score
-# from IPython import get_ipython
+from sklearn.pipeline import Pipeline
 
+import ReadData
 import cString2json as cString2json
 import json2graphNoLeafEdgesWithSplitValues as json2graphNoLeafEdgesWithSplitValues
 from fitModels import fitModels
@@ -46,32 +47,30 @@ dataSet = 'magic'
 
 # possible forest_types ['RF', 'DT', 'ET']
 forest_types = ['RF']
-
-# TODO: include
 forest_depths = [5, 10, 15, 20]
+forest_size = 25
 
 maxPatternSize = 6
 minThreshold = 2
 maxThreshold = 25
 
 scoring_function = 'accuracy'
-learner_type = ['DSF_NB', 'DSF_SVM', 'DSF_LR']
-learner_class = [GaussianNB, LinearSVC, LogisticRegression]
 
-# learner_type = ['DSF_NB']
-# learner_class = [GaussianNB]
+learners = {'DSF_NB': GaussianNB,
+            'DSF_SVM': LinearSVC, 
+            'DSF_LR': LogisticRegression}
+
 
 # for quick debugging, let the whole thing run once. Afterwards, you may deactivate individual steps
 # each step stores its output for the subsequent step(s) to process
-run_fit_models = True
-run_mining = True
+run_fit_models = False
+run_mining = False
 run_training = True
 run_eval = True
 
 verbose = True
 
 # %% load data
-import ReadData
 
 X_train, Y_train = ReadData.readData(dataSet, 'train', dataPath)
 X_test, Y_test = ReadData.readData(dataSet, 'test', dataPath)
@@ -80,7 +79,10 @@ X_test, Y_test = ReadData.readData(dataSet, 'test', dataPath)
 # %% create forest data, evaluate and report accuracy on test data
 
 if run_fit_models:
-    fitModels(roundSplit=True, XTrain=X_train, YTrain=Y_train, XTest=X_test, YTest=Y_test, createTest=False, model_dir=os.path.join(forestsPath, dataSet), types=forest_types)
+    fitModels(roundSplit=True, 
+              XTrain=X_train, YTrain=Y_train, 
+              XTest=X_test, YTest=Y_test, 
+              createTest=False, model_dir=os.path.join(forestsPath, dataSet), types=forest_types)
 
 
 # %% compute decision snippets
@@ -184,14 +186,16 @@ if run_training:
     def train_model_on_top(model, fts_onehot, Y_train, scoring_function, model_name, descriptor):
         '''TODO: scaling'''
 
-        fts_onehot_nb_cv_score = cross_val_score(model, fts_onehot, Y_train, cv=5, scoring=scoring_function)
+        pipe = Pipeline([('scaler', StandardScaler()), (model_name, model)])
+
+        fts_onehot_nb_cv_score = cross_val_score(pipe, fts_onehot, Y_train, cv=5, scoring=scoring_function)
         # dsf_time = time.time() - start_time
         # print(fts_onehot_nb_cv_score)
         dsf_score = fts_onehot_nb_cv_score.mean()
         dsf_std = fts_onehot_nb_cv_score.std()
         print(f'{model_name} {descriptor} {dsf_score} +- {dsf_std}')
         model.fit(fts_onehot, Y_train)
-        return dsf_score, model, fts_onehot_nb_cv_score
+        return dsf_score, pipe, fts_onehot_nb_cv_score
 
     # train several models on the various decision snippet features
     # store all xval results on traning data in a list
@@ -201,9 +205,7 @@ if run_training:
         fts_onehot = dsf_transform(os.path.join(snippetsPath, dataSet, graph_file), X_train)
        
         # train models
-        for i in range(len(learner_type)):
-            model_type = learner_type[i]
-            model_class = learner_class[i]
+        for model_type, model_class in learners.items():
             xval_score, learner_model, xval_results = train_model_on_top(model_class(), fts_onehot, Y_train, scoring_function, model_type, graph_file)
             results_list.append((xval_score, model_type, graph_file, learner_model, xval_results))
             # cleanup
@@ -213,7 +215,7 @@ if run_training:
         with open(os.path.join(resultsPath, dataSet, "training_xval.pkl"), 'wb') as f_pickle:
             pickle.dump(results_list, f_pickle)
 
-# %% Find, for each learner, the best decision snippet features on training data
+# %% Find, for each learner, the best decision snippet features on training data (the proposed model) and evaluate its performance on test data
 
 if run_eval:
     with open(os.path.join(resultsPath, dataSet, "training_xval.pkl"), 'rb') as f_pickle:
@@ -223,7 +225,7 @@ if run_eval:
 
         print(f'best_snippets model_type train_xval_acc test_acc n_features')
         for forest in unique_forests:
-            for model_type in learner_type:
+            for model_type in learners:
                 # print('processing', model_type, forest)
                 best_score = 0
                 scores = list()
@@ -243,50 +245,3 @@ if run_eval:
                 test_acc = accuracy_score(Y_test, pred_test)
 
                 print(f'{best_result[2]} {model_type} {best_result[0]:.3f} {test_acc:.3f} {fts_onehot.shape[1]}')
-
-
-                
-# %% TEST
-
-# file = os.path.join(snippetsPath, dataSet, 'RF_5_t2.json')
-# X_train_dsf = dsf_transform(file, X_train)
-# X_test_dsf = dsf_transform(file, X_test) 
-
-# print(X_train_dsf.shape)
-# print(X_test_dsf.shape)
-
-
-
-
-# # %% OLD STUFF
-# from sklearn.base import BaseEstimator, ClassifierMixin
-# class UntrainableDTClassifier(BaseEstimator):
-#     def __init__(self, dt):
-#         super(UntrainableDTClassifier, self).__init__()
-#         self.decisionTreeModel = DecisionSnippetFeatures.FrequentSubtreeFeatures(dt)
-
-#         tree = self.decisionTreeModel.patterns[0]
-#         self.linreg_weights = np.zeros(self.decisionTreeModel.get_n_values())
-#         for i in range(self.decisionTreeModel.get_n_values()):
-#             try:
-#                 self.linreg_weights[i] = tree.nodes[i].prediction[0]
-#             except TypeError:
-#                 self.linreg_weights[i] = 0
-        
-#     def fit(self, X, y):
-#         pass
-
-#     def predict(self, X):
-#         return np.dot(X, self.linreg_weights)
-
-# check_estimator(UntrainableDTClassifier)
-    
-    
-# model = UntrainableDTClassifier(dt)
-# print(dt_fts_onehot.shape)
-# get_ipython().run_line_magic('time', '')
-# dtfeatures_lr_cv_score = cross_val_score(model, dt_fts_onehot, Y, cv=5, scoring='f1')
-# print(dtfeatures_lr_cv_score)
-
-
-
