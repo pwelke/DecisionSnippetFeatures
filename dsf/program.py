@@ -86,6 +86,8 @@ X_test, Y_test = ReadData.readData(dataSet, 'test', dataPath)
 # %% create forest data, evaluate and report accuracy on test data
 
 if run_fit_models:
+    print('\n\nHERE ARE THE ACCURACIES ON TEST DATA OF THE ORIGINAL RANDOM FORESTS\n(don\'t worry, test data is not used for training)\n')
+
     fitModels(roundSplit=True, 
               XTrain=X_train, YTrain=Y_train, 
               XTest=X_test, YTest=Y_test, 
@@ -94,7 +96,10 @@ if run_fit_models:
 
 # %% compute decision snippets
 
+
+
 if run_mining:
+    print('\n\nFEEL FREE TO IGNORE THIS OUTPUT\n')
 
     def pattern_frequency_filter(f_patterns, frequency, f_filtered_patterns):
         pattern_count = 0
@@ -184,6 +189,8 @@ def dsf_transform(snippets_file, X):
         return fts_onehot
 
 if run_training:
+    print('\n\nFEEL FREE TO IGNORE THIS OUTPUT\n')
+
     results_list = list()
 
     # save results list
@@ -222,10 +229,12 @@ if run_training:
         with open(os.path.join(resultsPath, dataSet, "training_xval.pkl"), 'wb') as f_pickle:
             pickle.dump(results_list, f_pickle)
 
+
 # %% Find, for each learner, the best decision snippet features on training data (the proposed model) and evaluate its performance on test data
 
-print('\n\nHERE ARE THE ACCURACIES ON TEST DATA OF THE BEST DECISION SNIPPET FEATURES\n(for each model and each RF depth)\n')
 if run_eval:
+    print('\n\nHERE ARE THE ACCURACIES ON TEST DATA OF THE BEST DECISION SNIPPET FEATURES\n(for each model and each RF depth)\n')
+    
     with open(os.path.join(resultsPath, dataSet, "training_xval.pkl"), 'rb') as f_pickle:
         results_list = pickle.load(f_pickle)
 
