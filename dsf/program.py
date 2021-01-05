@@ -1,27 +1,24 @@
+# This is the (cleaned up) code accompanying the publication
+#
+# Pascal Welke, Fouad Alkhoury, Christian Bauckhage, Stefan Wrobel: Decision Snippet Features.
+# International Conference on Pattern Recognition (ICPR) 2021.
+#
+# Code was written by Pascal Welke and Fouad Alkhoury and is based on
+# code written by Sebastian Buschjäger (TU Dortmund) that is used for 
+# json-serialization of random forest models.
 
-# %%
 
-import csv
-import operator
-import sys
+# %% imports
+
 import os
-import numpy as np
-import sklearn
 import json
-import time
-from functools import reduce
 import subprocess
 import pickle
 
-import matplotlib.pyplot as plt
-
 from sklearn.utils.estimator_checks import check_estimator
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import cross_val_score
 from sklearn.linear_model import LogisticRegression
-from sklearn.linear_model import LinearRegression
 from sklearn.svm import LinearSVC
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.metrics import accuracy_score
@@ -32,6 +29,7 @@ import cString2json as cString2json
 import json2graphNoLeafEdgesWithSplitValues as json2graphNoLeafEdgesWithSplitValues
 from fitModels import fitModels
 import DecisionSnippetFeatures as DecisionSnippetFeatures
+
 
 # %% Parameters
 
@@ -203,8 +201,7 @@ if run_training:
             model = Pipeline([('scaler', StandardScaler()), (model_name, model)])
 
         fts_onehot_nb_cv_score = cross_val_score(model, fts_onehot, Y_train, cv=5, scoring=scoring_function)
-        # dsf_time = time.time() - start_time
-        # print(fts_onehot_nb_cv_score)
+
         dsf_score = fts_onehot_nb_cv_score.mean()
         dsf_std = fts_onehot_nb_cv_score.std()
         print(f'{model_name} {descriptor} {dsf_score} +- {dsf_std}')
