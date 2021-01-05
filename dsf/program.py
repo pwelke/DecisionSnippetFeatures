@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 from sklearn.utils.estimator_checks import check_estimator
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.naive_bayes import GaussianNB
+from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import cross_val_score
 from sklearn.linear_model import LogisticRegression
 from sklearn.linear_model import LinearRegression
@@ -35,12 +35,13 @@ import DecisionSnippetFeatures as DecisionSnippetFeatures
 
 # %% Parameters
 
-# dataPath = "./arch-forest/data/"
 dataPath = "./data/"
 forestsPath = "./tmp/forests/"
 snippetsPath = "./tmp/snippets/"
 resultsPath = "./tmp/results/"
 
+
+# current valid options are ['sensorless', 'satlog', 'mnist', 'magic', 'spambase', 'letter', 'bank', 'adult', 'drinking']
 dataSet = 'magic'
 # dataSet = 'adult'
 # dataSet = 'drinking'
@@ -56,15 +57,21 @@ maxThreshold = 25
 
 scoring_function = 'accuracy'
 
-learners = {'DSF_NB': GaussianNB,
+# learners that are to be used on top of Decision Snippet Features
+learners = {'DSF_NB': MultinomialNB,
             'DSF_SVM': LinearSVC, 
             'DSF_LR': LogisticRegression}
+
+# specify parameters that are given at initialization
+learners_parameters = {'DSF_NB': {},
+                       'DSF_SVM': {'max_iter': 10000},
+                       'DSF_LR': {'max_iter': 1000}}
 
 
 # for quick debugging, let the whole thing run once. Afterwards, you may deactivate individual steps
 # each step stores its output for the subsequent step(s) to process
-run_fit_models = False
-run_mining = False
+run_fit_models = True
+run_mining = True
 run_training = True
 run_eval = True
 
@@ -183,19 +190,19 @@ if run_training:
     if not os.path.exists(os.path.join(resultsPath, dataSet)):
         os.makedirs(os.path.join(resultsPath, dataSet))
 
-    def train_model_on_top(model, fts_onehot, Y_train, scoring_function, model_name, descriptor):
-        '''TODO: scaling'''
+    def train_model_on_top(model, fts_onehot, Y_train, scoring_function, model_name, descriptor, scaling=False):
 
-        pipe = Pipeline([('scaler', StandardScaler()), (model_name, model)])
+        if scaling:
+            model = Pipeline([('scaler', StandardScaler()), (model_name, model)])
 
-        fts_onehot_nb_cv_score = cross_val_score(pipe, fts_onehot, Y_train, cv=5, scoring=scoring_function)
+        fts_onehot_nb_cv_score = cross_val_score(model, fts_onehot, Y_train, cv=5, scoring=scoring_function)
         # dsf_time = time.time() - start_time
         # print(fts_onehot_nb_cv_score)
         dsf_score = fts_onehot_nb_cv_score.mean()
         dsf_std = fts_onehot_nb_cv_score.std()
         print(f'{model_name} {descriptor} {dsf_score} +- {dsf_std}')
         model.fit(fts_onehot, Y_train)
-        return dsf_score, pipe, fts_onehot_nb_cv_score
+        return dsf_score, model, fts_onehot_nb_cv_score
 
     # train several models on the various decision snippet features
     # store all xval results on traning data in a list
@@ -206,7 +213,7 @@ if run_training:
        
         # train models
         for model_type, model_class in learners.items():
-            xval_score, learner_model, xval_results = train_model_on_top(model_class(), fts_onehot, Y_train, scoring_function, model_type, graph_file)
+            xval_score, learner_model, xval_results = train_model_on_top(model_class(**learners_parameters[model_type]), fts_onehot, Y_train, scoring_function, model_type, graph_file)
             results_list.append((xval_score, model_type, graph_file, learner_model, xval_results))
             # cleanup
             xval_score, learner_model, xval_results = None, None, None
@@ -217,6 +224,7 @@ if run_training:
 
 # %% Find, for each learner, the best decision snippet features on training data (the proposed model) and evaluate its performance on test data
 
+print('\n\nHERE ARE THE ACCURACIES ON TEST DATA OF THE BEST DECISION SNIPPET FEATURES\n(for each model and each RF depth)\n')
 if run_eval:
     with open(os.path.join(resultsPath, dataSet, "training_xval.pkl"), 'rb') as f_pickle:
         results_list = pickle.load(f_pickle)
@@ -227,7 +235,7 @@ if run_eval:
         for forest in unique_forests:
             for model_type in learners:
                 # print('processing', model_type, forest)
-                best_score = 0
+                best_score = 0.
                 scores = list()
                 labels = list()
                 for result in filter(lambda x: x[2].startswith(forest), filter(lambda x: x[1] == model_type, results_list)):
