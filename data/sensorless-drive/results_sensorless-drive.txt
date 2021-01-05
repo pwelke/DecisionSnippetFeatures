@@ -1,0 +1,165 @@
+Fitting DT_1
+Testing  DT_1
+Total time: 0.010998562000168022 ms
+Throughput: 1329.9920480310545 #elem/ms
+Saving model
+Accuracy: 0.10042384468143287
+Saving model to PKL on disk
+*** Summary ***
+#Examples	 #Features	 Accuracy	 Avg.Tree Height
+14628	48	0.10042384468143287	2.0
+
+Fitting DT_5
+Testing  DT_5
+Total time: 0.0058971069993276615 ms
+Throughput: 2480.538338827456 #elem/ms
+Saving model
+Accuracy: 0.48195242001640687
+Saving model to PKL on disk
+*** Summary ***
+#Examples	 #Features	 Accuracy	 Avg.Tree Height
+14628	48	0.48195242001640687	4.65
+
+Fitting DT_10
+Testing  DT_10
+Total time: 0.010406568000689731 ms
+Throughput: 1405.6507389401077 #elem/ms
+Saving model
+Accuracy: 0.8470057424118129
+Saving model to PKL on disk
+*** Summary ***
+#Examples	 #Features	 Accuracy	 Avg.Tree Height
+14628	48	0.8470057424118129	8.811666666666667
+
+Fitting DT_15
+Testing  DT_15
+Total time: 0.01054836600087583 ms
+Throughput: 1386.7550669729735 #elem/ms
+Saving model
+Accuracy: 0.9541974295870932
+Saving model to PKL on disk
+*** Summary ***
+#Examples	 #Features	 Accuracy	 Avg.Tree Height
+14628	48	0.9541974295870932	12.410818713450292
+
+Fitting DT_20
+Testing  DT_20
+Total time: 0.008181722998415353 ms
+Throughput: 1787.8874661037987 #elem/ms
+Saving model
+Accuracy: 0.9749111293409899
+Saving model to PKL on disk
+*** Summary ***
+#Examples	 #Features	 Accuracy	 Avg.Tree Height
+14628	48	0.9749111293409899	12.769489247311828
+
+Fitting ET_1
+Testing  ET_1
+Total time: 0.10986692599908565 ms
+Throughput: 133.1428896092145 #elem/ms
+Saving model
+Accuracy: 0.567131528575335
+Saving model to PKL on disk
+*** Summary ***
+#Examples	 #Features	 Accuracy	 Avg.Tree Height
+14628	48	0.567131528575335	2.0
+
+Fitting ET_5
+Testing  ET_5
+Total time: 0.10931145799986552 ms
+Throughput: 133.81945742611902 #elem/ms
+Saving model
+Accuracy: 0.8647798742138365
+Saving model to PKL on disk
+*** Summary ***
+#Examples	 #Features	 Accuracy	 Avg.Tree Height
+14628	48	0.8647798742138365	4.395191642716935
+
+Fitting ET_10
+Testing  ET_10
+Total time: 0.10911536299863656 ms
+Throughput: 134.0599490117884 #elem/ms
+Saving model
+Accuracy: 0.984550177741318
+Saving model to PKL on disk
+*** Summary ***
+#Examples	 #Features	 Accuracy	 Avg.Tree Height
+14628	48	0.984550177741318	8.62260058623374
+
+Fitting ET_15
+Testing  ET_15
+Total time: 0.1069079539993254 ms
+Throughput: 136.82798569030984 #elem/ms
+Saving model
+Accuracy: 0.999316379546076
+Saving model to PKL on disk
+*** Summary ***
+#Examples	 #Features	 Accuracy	 Avg.Tree Height
+14628	48	0.999316379546076	12.564992969623942
+
+Fitting ET_20
+Testing  ET_20
+Total time: 0.10857135399965046 ms
+Throughput: 134.73167148718707 #elem/ms
+Saving model
+Accuracy: 0.9995214656822532
+Saving model to PKL on disk
+*** Summary ***
+#Examples	 #Features	 Accuracy	 Avg.Tree Height
+14628	48	0.9995214656822532	15.05570797239291
+
+Fitting RF_1
+Testing  RF_1
+Total time: 0.10801522000110708 ms
+Throughput: 135.425359498875 #elem/ms
+Saving model
+Accuracy: 0.4337571780147662
+Saving model to PKL on disk
+*** Summary ***
+#Examples	 #Features	 Accuracy	 Avg.Tree Height
+14628	48	0.4337571780147662	2.0
+
+Fitting RF_5
+Testing  RF_5
+Total time: 0.10581366799851821 ms
+Throughput: 138.2430103472535 #elem/ms
+Saving model
+Accuracy: 0.8649849603500137
+Saving model to PKL on disk
+*** Summary ***
+#Examples	 #Features	 Accuracy	 Avg.Tree Height
+14628	48	0.8649849603500137	4.472407730619325
+
+Fitting RF_10
+Testing  RF_10
+Total time: 0.10867306000000099 ms
+Throughput: 134.605577500071 #elem/ms
+Saving model
+Accuracy: 0.9829094886519004
+Saving model to PKL on disk
+*** Summary ***
+#Examples	 #Features	 Accuracy	 Avg.Tree Height
+14628	48	0.9829094886519004	8.603382755015447
+
+Fitting RF_15
+Testing  RF_15
+Total time: 0.10901948300124786 ms
+Throughput: 134.17785149313693 #elem/ms
+Saving model
+Accuracy: 0.9970604320481269
+Saving model to PKL on disk
+*** Summary ***
+#Examples	 #Features	 Accuracy	 Avg.Tree Height
+14628	48	0.9970604320481269	11.776527199884438
+
+Fitting RF_20
+Testing  RF_20
+Total time: 0.1088006049994874 ms
+Throughput: 134.44778179375857 #elem/ms
+Saving model
+Accuracy: 0.9978124145474433
+Saving model to PKL on disk
+*** Summary ***
+#Examples	 #Features	 Accuracy	 Avg.Tree Height
+14628	48	0.9978124145474433	12.975129465010298
+
