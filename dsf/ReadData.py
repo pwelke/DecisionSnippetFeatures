@@ -1,5 +1,8 @@
 import numpy as np
-import csv, operator, sys, os
+import csv
+import operator
+import sys
+import os
 
 
 def readData(dataset, type, path):
@@ -112,7 +115,7 @@ def readDataMagic(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInR
 	Y = X[:, -1]
 	X = X[:, :-1]
 
-	return X, Y
+	return X.astype(dtype=np.int32), Y.astype(dtype=np.int32)
 
 
 
