@@ -1,0 +1,10 @@
+there was no train test split. we have shuffeled the data rows and split into training with 15000 examples and test with the remaining examples.
+
+the resulting files are called magic04.train and magic04.test
+
+there are two class labels in magic04.data
+
+we have mapped 
+
+g -> 0
+h -> 1
