@@ -1,5 +1,0 @@
-[{"patternid":1,"pattern":{"id":0,"feature":1,"split":0.27250000834465027}},
-{"patternid":2,"pattern":{"id":0,"prediction":[]}},
-{"patternid":22,"pattern":{"id":0,"feature":1,"split":0.27250000834465027,"rightChild":{"id":1,"prediction":[]}}},
-{"patternid":21,"pattern":{"id":0,"feature":1,"split":0.27250000834465027,"leftChild":{"id":1,"prediction":[]}}},
-{"patternid":23,"pattern":{"id":0,"feature":1,"split":0.27250000834465027,"leftChild":{"id":1,"prediction":[]},"rightChild":{"id":2,"prediction":[]}}}]

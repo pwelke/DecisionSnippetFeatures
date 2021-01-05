@@ -1,9 +1,0 @@
-Write patterns to file: forests/rootedFrequentTrees/letter/NoLeafEdgesWithSplitValues/RF_10_t8.patterns
-Number of frequent vertices: 152
-Number of frequent edges: 5
-Processing patterns with 2 vertices:
-generated extensions: 10
-unique extensions: 10
-apriori filtered extensions: 10
-intersection filtered extensions: 10
-frequent patterns: 0
