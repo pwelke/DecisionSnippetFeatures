@@ -85,23 +85,16 @@ def readDataSatlog(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesIn
 
 
 def readDataMnist(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
-	X = []
-	Y = []
 	
 	if (type =='train'):
-		f = open(os.path.join(path, "mnist/train.csv",'r'))
+		X = np.loadtxt(os.path.join(path, "mnist/train.csv.gz"), delimiter=',')
 	if (type =='test'):
-		f = open(os.path.join(path, "mnist/test.csv",'r'))
+		X = np.loadtxt(os.path.join(path, "mnist/test.csv.gz"), delimiter=',')
 
-	for row in f:
-		entries = row.strip("\n").split(",")
-		
-		Y.append(int(entries[0])-1)
-		x = [int(e) for e in entries[1:]]
-		X.append(x)
+	Y = X[:, 0]
+	X = X[:, 1:]
 
-	Y = np.array(Y)-min(Y)
-	return np.array(X).astype(dtype=np.int32), Y
+	return X, Y
 
 
 def readDataMagic(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
