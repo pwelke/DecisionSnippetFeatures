@@ -1,0 +1,3 @@
+traintest.readme
+
+The train / test split was obtained from bank-additional-full.csv by shuffling the rows and selecting the first 10% of rows as test set and the remaining rows as training set.

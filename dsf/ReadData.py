@@ -196,9 +196,9 @@ def readDataBank(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRa
 	Y = []
     
 	if (type =='train'):
-		f = open(os.path.join(path, "bank/bank-additional/bank-additional-full.csv"))
+		f = open(os.path.join(path, "bank/train.csv"))
 	if (type =='test'):
-		f = open(os.path.join(path, "bank/bank-additional/bank-additional.csv"))    
+		f = open(os.path.join(path, "bank/test.csv"))    
         
 	next(f)
 	for row in f:
