@@ -8,6 +8,13 @@ Decision Snippet Features.
 
 If you use this code, please cite our paper.
 
+## Requirements
+
+To install the necessary requirements, we provide a ```environment.yml``` file [that can be used with anaconda](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file).
+You may of course use any other means of installing the requirements listed in this file.
+
+It is possible that this code will continue to work with more recent versions of the requirements but we don't guarantee anything.
+
 ## How to run the code
 
 The file ```/dsf/program.py``` is the entry point to the decision snippet pipeline. 
@@ -64,6 +71,7 @@ The code ```/dsf/program.py``` is intended to be run for a single dataset on eac
 
 Output will be written to the folders specified by ```*Path``` variables. 
 For each type of output, a subfolder with the name of the current dataset will be created.
+
 
 
 ## Comments
