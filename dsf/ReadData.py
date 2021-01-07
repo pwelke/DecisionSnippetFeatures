@@ -31,9 +31,9 @@ def readData(dataset, type, path):
 
 def readDataDrinking(type, path='./data/'):
 	if type == 'train':
-		file = os.path.join(path, 'drinking/drinking.train')
+		file = os.path.join(path, 'drinking', 'drinking.train')
 	if type == 'test':
-		file = os.path.join(path, 'drinking/drinking.test')
+		file = os.path.join(path, 'drinking', 'drinking.test')
 
 	X = np.loadtxt(file, delimiter=',', dtype=np.int32)
 	Y = X[:, -1]
@@ -48,22 +48,22 @@ def readDataSensorlessDrive(type, path="/home/falkhoury/Study/Lab/Project/freque
 	Y = []
 	
 	if (type =='train'):
-		data = np.genfromtxt(os.path.join(path, "sensorless-drive/Sensorless_drive_diagnosis.txt", delimiter=' '))
+		data = np.genfromtxt(os.path.join(path, "sensorless-drive", "Sensorless_drive_diagnosis.txt"), delimiter=' ')
 		idx = np.random.permutation(len(data))
 		X = data[idx,0:-1].astype(dtype=np.float32)
 		Y = data[idx,-1]
 		Y = Y-min(Y)
         
 	if (type =='test'):
-		data = np.genfromtxt(os.path.join(path, "sensorless-drive/test.csv", delimiter=','))
+		data = np.genfromtxt(os.path.join(path, "sensorless-drive", "test.csv"), delimiter=',')
 		idx = np.random.permutation(len(data))
 		X = data[idx,1:].astype(dtype=np.float32)
 		Y = data[idx,0]
 		Y = Y-min(Y)
 
 	Y = np.array(Y)
-	X = np.array(X)    
-	return np.array(X).astype(dtype=np.int32), np.array(Y).astype(dtype=np.int32)       
+	X = np.array(X)
+	return np.array(X).astype(dtype=np.int32), np.array(Y).astype(dtype=np.int32)
 
     
 def readDataSatlog(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
@@ -71,9 +71,9 @@ def readDataSatlog(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesIn
 	Y = []
 	
 	if (type =='train'):
-		D = np.genfromtxt(os.path.join(path, "satlog/sat.trn", delimiter=' '))
+		D = np.genfromtxt(os.path.join(path, "satlog", "sat.trn"), delimiter=' ')
 	if (type =='test'):
-		D = np.genfromtxt(os.path.join(path, "satlog/sat.tst", delimiter=' '))     
+		D = np.genfromtxt(os.path.join(path, "satlog", "sat.tst"), delimiter=' ')
 
 	X = D[:,0:-1].astype(dtype=np.int32)
 	Y = D[:,-1]
@@ -87,9 +87,9 @@ def readDataSatlog(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesIn
 def readDataMnist(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
 	
 	if (type =='train'):
-		X = np.loadtxt(os.path.join(path, "mnist/train.csv.gz"), delimiter=',')
+		X = np.loadtxt(os.path.join(path, "mnist", "train.csv.gz"), delimiter=',')
 	if (type =='test'):
-		X = np.loadtxt(os.path.join(path, "mnist/test.csv.gz"), delimiter=',')
+		X = np.loadtxt(os.path.join(path, "mnist", "test.csv.gz"), delimiter=',')
 
 	Y = X[:, 0]
 	X = X[:, 1:]
@@ -100,9 +100,9 @@ def readDataMnist(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInR
 def readDataMagic(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
 	
 	if (type =='train'):
-		filename = os.path.join(path, "magic/magic04.train")
+		filename = os.path.join(path, "magic", "magic04.train")
 	if (type =='test'):
-		filename = os.path.join(path, "magic/magic04.test")
+		filename = os.path.join(path, "magic", "magic04.test")
 
 	X = np.loadtxt(filename, delimiter=',', dtype=np.int32)
 	Y = X[:, -1]
@@ -136,9 +136,9 @@ def readDataSpambase(type, path="/home/falkhoury/Study/Lab/Project/frequentTrees
 def readDataLetter(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
 
 	if (type =='train'):
-		f = open(os.path.join(path, "letter/letter-recognition.data",'r'))
+		f = open(os.path.join(path, "letter", "letter-recognition.data"),'r')
 	if (type =='test'):
-		f = open(os.path.join(path, "letter/test.csv",'r'))
+		f = open(os.path.join(path, "letter", "test.csv"),'r')
 	X = []
 	Y = []
 	for row in f:
@@ -163,7 +163,7 @@ def readDataAdult(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInR
 	X = []
 	Y = []       
 
-	f = open(os.path.join(path, "adult/adult."+type))
+	f = open(os.path.join(path, "adult", "adult."+type), 'r')
 	counter = 0    
 	for row in f:
 		if (len(row) > 1):
