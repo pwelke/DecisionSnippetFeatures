@@ -3,10 +3,11 @@
 Code and data accompanying the paper
 
 Pascal Welke, Fouad Alkhoury, Christian Bauckhage, and Stefan Wrobel: 
-Decision Snippet Features.
-25th International Conference on Pattern Recognition (ICPR) 2021, Milano, Italy
+[Decision Snippet Features](https://mlai.cs.uni-bonn.de/publications/welke2021-dsf.pdf).
+25th International Conference on Pattern Recognition (ICPR) 2021, Milano, Italy.
+[DOI:10.1109/ICPR48806.2021.9412025](http://dx.doi.org/10.1109/ICPR48806.2021.9412025)
 
-If you use this code, please cite our paper.
+If you use this code, please [cite our paper](https://dblp.uni-trier.de/rec/conf/icpr/WelkeABW20.html?view=bibtex).
 
 ## Requirements
 
