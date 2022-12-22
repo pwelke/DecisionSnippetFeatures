@@ -3,7 +3,7 @@ import csv
 import operator
 import sys
 import os
-
+from sklearn.datasets import load_svmlight_file
 
 def readData(dataset, type, path):
 	if dataset == 'sensorless':
@@ -24,10 +24,48 @@ def readData(dataset, type, path):
 		return readDataAdult(type, path)
 	if dataset == 'drinking':
 		return readDataDrinking(type, path)
-	
+	if dataset == 'OGB':
+		return readDataOGB(type, path)  
+	if dataset == 'shares':
+		return readDataShares(type, path)   
+	if dataset == 'skin':
+		return readDataSkin(type, path) 
+	if dataset == 'room':
+		return readDataRoom(type, path)
+	if dataset == 'credit':
+		return readDataCredit(type, path)   
+	if dataset == 'wine':
+		return readDataWine(type, path)  
+	if dataset == 'bikes':
+		return readDataBikes(type, path)     
+	if dataset == 'temperature':
+		return readDataTemperature(type, path)
+	if dataset == 'boolean':
+		return readDataBoolean(type, path)     
+    
 	# error
 	raise Exception('Name of dataset unknown: ' + dataset)
 
+def readDataOGB(type, path='./data/'):
+	file = os.path.join(path, 'OGB', 'data-29000.svm')
+#	X, Y = load_svmlight_file(file, n_features=425)
+	data = load_svmlight_file(file, n_features=21849)#26300,23320,         23200,21849
+	X = data[0]
+	Y = data[1]
+	X = X.toarray()  
+	if type == 'train':
+		X = X[:23200]        
+		Y = Y[:23200]
+	if type == 'test':
+		X = X[23200:]        
+		Y = Y[23200:]        
+#		#file = os.path.join(path, 'OGB', 'test3.svm')
+
+	#	X = np.loadtxt(file, delimiter=',', dtype=np.int32)
+	#	Y = X[:, -1]
+	#	X = X[:, :-1]
+
+	return X, Y
 
 def readDataDrinking(type, path='./data/'):
 	if type == 'train':
@@ -104,18 +142,108 @@ def readDataMagic(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInR
 	if (type =='test'):
 		filename = os.path.join(path, "magic", "magic04.test")
 
-	X = np.loadtxt(filename, delimiter=',', dtype=np.int32)
+	X = np.loadtxt(filename, delimiter=',',dtype = np.float64)
 	Y = X[:, -1]
 	X = X[:, :-1]
 
-	return X.astype(dtype=np.int32), Y.astype(dtype=np.int32)
+	return X, Y
 
+def readDataBoolean(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
+	
+	if (type =='train'):
+		filename = os.path.join(path, "boolean", "boolean.train")
+	if (type =='test'):
+		filename = os.path.join(path, "boolean", "boolean.test")
 
+	X = np.loadtxt(filename, delimiter=',',dtype = np.float64)
+	Y = X[:, -1]
+	X = X[:, :-1]
+
+	return X, Y
+
+def readDataSkin(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
+	
+	if (type =='train'):
+		filename = os.path.join(path, "skin", "skin.train")
+	if (type =='test'):
+		filename = os.path.join(path, "skin", "skin.test")
+
+	X = np.loadtxt(filename, delimiter='\t',dtype = np.float64)
+	Y = X[:, -1]
+	X = X[:, :-1]
+
+	return X, Y
+
+def readDataTemperature(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
+	
+	if (type =='train'):
+		filename = os.path.join(path, "temperature", "temperature.train")
+	if (type =='test'):
+		filename = os.path.join(path, "temperature", "temperature.test")
+
+	X = np.loadtxt(filename, delimiter=',',dtype = np.float64)
+	Y = X[:, -1].astype(dtype = np.int32)
+	X = X[:, :-1]
+
+	return X, Y
+
+def readDataRoom(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
+	
+	if (type =='train'):
+		filename = os.path.join(path, "room", "room.train")
+	if (type =='test'):
+		filename = os.path.join(path, "room", "room.test")
+
+	X = np.loadtxt(filename, delimiter=',',dtype = np.float64)
+	Y = X[:, -1]
+	X = X[:, :-1]
+
+	return X, Y
+
+def readDataCredit(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
+	
+	if (type =='train'):
+		filename = os.path.join(path, "credit", "credit.train")
+	if (type =='test'):
+		filename = os.path.join(path, "credit", "credit.test")
+
+	X = np.loadtxt(filename, delimiter=',',dtype = np.float64)
+	Y = X[:, -1]
+	X = X[:, 1:-1]
+
+	return X, Y
+
+def readDataShares(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
+	
+	if (type =='train'):
+		filename = os.path.join(path, "shares", "shares.train")
+	if (type =='test'):
+		filename = os.path.join(path, "shares", "shares.test")
+
+	X = np.loadtxt(filename, delimiter=',',dtype = np.float64)  
+	Y = X[:, -1]
+	X = X[:, :-1]
+
+	return X, Y
+
+def readDataWine(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
+	
+	if (type =='train'):
+		filename = os.path.join(path, "wine", "wine.train")
+	if (type =='test'):
+		filename = os.path.join(path, "wine", "wine.test")
+
+	X = np.loadtxt(filename, delimiter=';',dtype = np.float64)  
+	Y = X[:, -1]
+	X = X[:, :-1]
+
+	return X, Y
 
 def readDataSpambase(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
 	
 	if (type =='train'):
-		f = open(os.path.join(path, "spambase/spambase.data",'r'))
+		f = os.path.join(path, "spambase", "spambase.data")
+#		f = open(os.path.join(path, "spambase/spambase.data",'r'))
 	if (type =='test'):
 		f = open(os.path.join(path, "spambase/test.csv",'r'))
 	X = []
@@ -158,6 +286,30 @@ def readDataLetter(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesIn
 	return np.array(X).astype(dtype=np.int32), np.array(Y)
 
 
+def readDataBikes(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
+	
+	X = []
+	Y = []       
+
+	f = open(os.path.join(path, "bikes", "bikes."+type), 'r')
+	counter = 0    
+	for row in f:
+		if (len(row) > 1):
+			entries = row.replace("\n", "").replace(" ", "").split(",")
+
+			x = getFeatureVectorBikes(entries)
+			x = x[1:]
+			y = int(entries[0])            
+
+			X.append(x)
+			Y.append(y)            
+                    
+	X = np.array(X).astype(dtype=np.float64)
+	Y = np.array(Y)
+	f.close()
+	return X, Y
+
+
 def readDataAdult(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRandomForests/arch-forest/data/"):
 	
 	X = []
@@ -196,9 +348,9 @@ def readDataBank(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRa
 	Y = []
     
 	if (type =='train'):
-		f = open(os.path.join(path, "bank/train.csv"))
+		f = open(os.path.join(path, "bank/bank.train"))
 	if (type =='test'):
-		f = open(os.path.join(path, "bank/test.csv"))    
+		f = open(os.path.join(path, "bank/bank.test"))    
         
 	next(f)
 	for row in f:
@@ -220,6 +372,40 @@ def readDataBank(type, path="/home/falkhoury/Study/Lab/Project/frequentTreesInRa
 
 	f.close()
 	return (X, Y)    
+
+def getFeatureVectorBikes(entries):
+	x = []
+	for i in range(10):
+		x.append(float(entries[i])) 
+        
+
+	season = [0 for i in range(4)]
+	if entries[10] == "Winter":
+		season[0] = 1
+	elif entries[10] == "Spring":
+		season[1] = 1
+	elif entries[10] == "Summer":
+		season[2] = 1
+	elif entries[10] == "Autumn":
+		season[3] = 1
+	x.extend(season)
+
+	holiday = [0 for i in range(2)]
+	if entries[11] == "Holiday":
+		holiday[0] = 1
+	else:
+		holiday[1] = 1
+	x.extend(holiday)
+
+	functioning_day = [0 for i in range(2)]
+	if entries[12] == "Yes":
+		functioning_day[0] = 1
+	else:
+		functioning_day[1] = 1
+	x.extend(functioning_day)
+
+	return x
+
 
 
 def getFeatureVectorAdult(entries):
